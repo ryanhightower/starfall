@@ -22,7 +22,8 @@
 <body>
 	<div class="sessions">
     	<pre>
-    	<?php print_r($_SESSION['user']); ?>
+    	<?php print_r($_SESSION); ?>
+    	<?php //print_r($_SESSION['curriculum']); ?>
         <?php echo session_name(); ?>
         </pre>
     </div>

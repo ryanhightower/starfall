@@ -40,6 +40,6 @@
 
 	<div class="sessions">
     	<pre>
-    	<?php print_r($_SESSION['user']); ?>
+    	<?php print_r($_SESSION); ?>
         </pre>
     </div>
