@@ -10,7 +10,6 @@ if (session_status() == PHP_SESSION_NONE) {
   
 
 
-
 if(isset($_POST['submit'])){
   
   // Store Product values and move to next step
@@ -21,7 +20,8 @@ if(isset($_POST['submit'])){
 
     //echo $_SESSION['curriculum']['products'][$i]."<br>";
   } 
-  
+  //echo "<pre>";
+ // print_r($_SESSION['curriculum']['products']);   echo "</pre>"; exit;
   $next_step = SITE_URL."/curr-purchase-3.php";
   header("Location: $next_step", true);
   exit();
@@ -128,7 +128,7 @@ to order a few extras for replacements and new student transfers.
                      	<div class="col-sm-9">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                <div><strong>Product Item 1</strong><br />
+                                <div><strong>Product Item 2</strong><br />
                                 Short description of the product and what it does,why it’s useful or fun, etc.
                                 </div> 
                                 <div class="newClear"></div>
@@ -141,7 +141,7 @@ to order a few extras for replacements and new student transfers.
                      	<div class="col-sm-9">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                <div><strong>Product Item 1</strong><br />
+                                <div><strong>Product Item 3</strong><br />
                                 Short description of the product and what it does,why it’s useful or fun, etc.
                                 </div> 
                                 <div class="newClear"></div>
@@ -154,7 +154,7 @@ to order a few extras for replacements and new student transfers.
                      	<div class="col-sm-9">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                <div><strong>Product Item 1</strong><br />
+                                <div><strong>Product Item 4</strong><br />
                                 Short description of the product and what it does,why it’s useful or fun, etc.
                                 </div> 
                                 <div class="newClear"></div>
@@ -191,7 +191,7 @@ to order a few extras for replacements and new student transfers.
                      	<div class="col-sm-9">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                <div><strong>Product Item 1</strong><br />
+                                <div><strong>Product Item 2</strong><br />
                                 Short description of the product and what it does,why it’s useful or fun, etc.
                                 </div> 
                                 <div class="newClear"></div>
@@ -204,7 +204,7 @@ to order a few extras for replacements and new student transfers.
                      	<div class="col-sm-9">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                <div><strong>Product Item 1</strong><br />
+                                <div><strong>Product Item 3</strong><br />
                                 Short description of the product and what it does,why it’s useful or fun, etc.
                                 </div> 
                                 <div class="newClear"></div>
@@ -217,7 +217,7 @@ to order a few extras for replacements and new student transfers.
                      	<div class="col-sm-9">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                <div><strong>Product Item 1</strong><br />
+                                <div><strong>Product Item 4</strong><br />
                                 Short description of the product and what it does,why it’s useful or fun, etc.
                                 </div> 
                                 <div class="newClear"></div>

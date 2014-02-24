@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,6 +20,12 @@
 
 </head>
 <body>
+	<div class="sessions">
+    	<pre>
+    	<?php print_r($_SESSION['user']); ?>
+        <?php echo session_name(); ?>
+        </pre>
+    </div>
 	<div class="container">
 		<header>
 			<!-- Starfall logo -->
