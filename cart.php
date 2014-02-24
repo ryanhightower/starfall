@@ -21,8 +21,26 @@ print_r($_SESSION['curriculum']['Optionalproducts']);   echo "</pre>";
 		header("Location: $next_step", true);
 		exit();
 	}
+	$cart_url = SITE_URL."/cart.php";
+	//print_r($_SESSION['curriculum']['products']); 
 ?>
-
+<script>
+function cartupdate()
+{ 
+var serial_ids =$('#cart').serializeArray();
+	$.ajax({
+	url: "<?php echo SITE_URL; ?>cartupdate.php",
+	data: {
+	serial_ids: serial_ids
+	},
+	success: function( data ) {
+	//$( "#weather-temp" ).html( "<strong>" + data + "</strong> degrees" );
+	//alert(data);
+	window.location.href = "<?php echo $cart_url; ?>";
+	}
+	});
+}
+</script>
 	<div class="container">
     
 		<header>
@@ -41,6 +59,7 @@ print_r($_SESSION['curriculum']['Optionalproducts']);   echo "</pre>";
 		</header>
 
         <section class="container">
+		<form name="cart" id="cart" method="post">
         <div class="row">
         <div class="col-sm-12">		
                          <div class="row">
@@ -64,15 +83,15 @@ print_r($_SESSION['curriculum']['Optionalproducts']);   echo "</pre>";
                                 <div class="col-sm-10">
                                     <div class="studItemBox">
                                         <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                        <div><strong>Product Item <?php echo $key; ?></strong><br />
-                                        Short description of the product and what it does,why it’s useful or fun, etc.
+                                        <div><strong><?php echo $DB['product_item_'.$key]['name']; ?></strong><br />
+                                        <?php echo $DB['product_item_'.$key]['description']; ?>
                                         </div> 
                                         <div class="newClear"></div>
                                     </div>
                                 </div>                       
                                 <div class="col-sm-2">
                                 <div class="rightfinshedBox">
-                                <span>$4.99&nbsp;</span><input type="text" name="textfield" id="textfield" value="<?php echo $product; ?>">
+                                <span>$<?php echo $DB['product_item_'.$key]['price']; ?>&nbsp;</span><input type="text" name="products_<?php echo $key;?>" id="products_<?php echo $key;?>" value="<?php echo $product; ?>">
                                 <img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive">
                                 <div class="newClear"></div>
                                 </div>
@@ -92,15 +111,15 @@ print_r($_SESSION['curriculum']['Optionalproducts']);   echo "</pre>";
                                 <div class="col-sm-10">
                                     <div class="studItemBox">
                                         <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                        <div><strong>Product Item <?php echo $key; ?></strong><br />
-                                        Short description of the product and what it does,why it’s useful or fun, etc.
+                                        <div><strong><?php echo $DB['product_item_'.$key]['name']; ?></strong><br />
+                                        <?php echo $DB['product_item_'.$key]['description']; ?>
                                         </div> 
                                         <div class="newClear"></div>
                                     </div>
                                 </div>                       
                                 <div class="col-sm-2">
                                 <div class="rightfinshedBox">
-                                <span>$4.99&nbsp;</span><input type="text" name="textfield" id="textfield" value="<?php echo $optionalproducts; ?>">
+                                <span>$<?php echo $DB['product_item_'.$key]['price']; ?>&nbsp;</span><input type="text" name="Optionalproducts_<?php echo $key;?>" id="Optionalproducts_<?php echo $key;?>" value="<?php echo $optionalproducts; ?>">
                                 <img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive">
                                 <div class="newClear"></div>
                                 </div>
@@ -222,7 +241,7 @@ print_r($_SESSION['curriculum']['Optionalproducts']);   echo "</pre>";
                                 </div>                        
                                 <div class="newClear"></div>
                              </div>-->
-                             <div class="simplecartTxt"><a href="#">Update Cart</a></div>
+                             <div class="simplecartTxt"><a href="javascript:void(0);" onclick="return cartupdate();">Update Cart</a></div>
                             </div>
                            </div>
                         </div>
@@ -252,15 +271,12 @@ print_r($_SESSION['curriculum']['Optionalproducts']);   echo "</pre>";
             <div class="padsim3"><a class="btn btn-primary btn-lg" href="<?php echo SITE_URL; ?>/price-quote.php">Convert to Quote</a></div>
         </div>
         </div>
-                    
+        </form>            
         
                     
         </section>
 
 		
 		<div class="clearfix"></div>
-
-
-
 
 <?php //get_footer(); ?>

@@ -9,19 +9,23 @@ if (session_status() == PHP_SESSION_NONE) {
   // echo "students: ".$_SESSION['curriculum']['students']."<br>";
   
 
-
+//session_destroy();
 if(isset($_POST['submit'])){
-  
+ array_pop($_POST);
   // Store Product values and move to next step
-  for ($i=1; $i<=8; $i++){
+$i=0;	
+foreach($_POST as $key => $row)
+{ $i++;
+$product_key_arr =explode('_',$key);
 
-    
-    $_SESSION['curriculum']['products'][$i]= $_POST['product'.$i];
-
+	if(isset($_POST[$key]) && $_POST[$key]!='')
+	{
+		$_SESSION['curriculum']['products'][$product_key_arr[1]]= $_POST[$key];
+	}
     //echo $_SESSION['curriculum']['products'][$i]."<br>";
   } 
-  //echo "<pre>";
- // print_r($_SESSION['curriculum']['products']);   echo "</pre>"; exit;
+ //echo "<pre>";
+ //print_r($_SESSION['curriculum']['products']);   echo "</pre>"; exit;
   $next_step = SITE_URL."/curr-purchase-3.php";
   header("Location: $next_step", true);
   exit();
@@ -111,20 +115,28 @@ to order a few extras for replacements and new student transfers.
                         <div class="col-sm-3">Price</div>
                         <div class="newClear"></div>
                     </div>
+	<?php 
+	foreach($DB as $key => $product)
+	{
+		if($product['type']=='Per Student Items')
+		{
+		$product_id = substr($key,13,strlen($key));
+	?>
                      <div class="padsim1">
                      	<div class="col-sm-9">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                <div><strong>Product Item 1</strong><br />
-                                Short description of the product and what it does,why it’s useful or fun, etc.
+                                <div><strong><?php echo $product['name']; ?></strong><br />
+                                <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product1" id="product1" value="<?php echo $total_students; ?>"></div>                        
+                        <div class="col-sm-3"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>"></div>                        
                         <div class="newClear"></div>
                      </div> 
-                     <div class="padsim1">
+	<?php } }?>
+                     <!--<div class="padsim1">
                      	<div class="col-sm-9">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
@@ -162,7 +174,7 @@ to order a few extras for replacements and new student transfers.
                         </div>                       
                         <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product4" id="product4" value="<?php echo $total_students; ?>"></div>                        
                         <div class="newClear"></div>
-                     </div>
+                     </div>-->
                      
                      <div class="padsim1">
                     	<div class="col-sm-9">
@@ -174,20 +186,28 @@ to order a few extras for replacements and new student transfers.
                         <div class="col-sm-3">Price</div>
                         <div class="newClear"></div>
                     </div>
+	<?php 
+	foreach($DB as $key => $product)
+	{
+		if($product['type']=='Per Classroom Items')
+		{ 
+		$product_id = substr($key,13,strlen($key));
+	?>
                      <div class="padsim1">
                      	<div class="col-sm-9">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                <div><strong>Product Item 1</strong><br />
-                                Short description of the product and what it does,why it’s useful or fun, etc.
+                                <div><strong><?php echo $product['name']; ?></strong><br />
+                                <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product5" id="product5" value="<?php echo $classrooms; ?>"></div>                        
+                        <div class="col-sm-3"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $classrooms; ?>"></div>                        
                         <div class="newClear"></div>
-                     </div> 
-                     <div class="padsim1">
+                     </div>
+	<?php } } ?>					 
+                    <!--<div class="padsim1">
                      	<div class="col-sm-9">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
@@ -212,9 +232,9 @@ to order a few extras for replacements and new student transfers.
                         </div>                       
                         <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product7" id="product7" value="<?php echo $classrooms; ?>"></div>                        
                         <div class="newClear"></div>
-                     </div>
+                     </div>-->
                      <div class="padsim1">
-                     	<div class="col-sm-9">
+                     	<!--<div class="col-sm-9">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
                                 <div><strong>Product Item 4</strong><br />
@@ -223,8 +243,8 @@ to order a few extras for replacements and new student transfers.
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product8" id="product8" value="<?php echo $classrooms; ?>"></div>                        
-                        <div class="newClear"></div>
+                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product8" id="product8" value="<?php echo $classrooms; ?>"></div>-->
+						<div class="newClear"></div>
                         <input type="submit" class="btn btn-success" name="submit" value="Next Step">
                      </div>
                     </div>
