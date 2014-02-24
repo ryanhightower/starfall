@@ -35,17 +35,8 @@ $product_key_arr =explode('_',$key);
 if(isset($_SESSION['curriculum'])&&$_SESSION['curriculum']['returning']=="no"){
   $returning = $_SESSION['curriculum']['returning'];
   $classrooms = $_SESSION['curriculum']['classrooms'];
-  if(is_array($_SESSION['curriculum']['students'])){
-    foreach ($_SESSION['curriculum']['students'] as $students) {
-      $total_students += $students;
-    }
-  } else {
-    $total_students = $_SESSION['curriculum']['students'];
-  }
-  $_SESSION['curriculum']['total_students'] = $total_students;
-
-
-
+  $total_students = $_SESSION['curriculum']['students'];
+  
 } ?>
 
 <?php 

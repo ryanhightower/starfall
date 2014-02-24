@@ -7,18 +7,11 @@ if ($_GET['payment']) { $_SESSION['user']['payment'] = $_GET['payment']; }
 if(isset($_POST['single-class'])){
 
 
-
   $_SESSION['curriculum']['returning'] = $_POST['return'];
 
   $_SESSION['curriculum']['classrooms'] = $_POST['classrooms']=="single" ? 1 : $_POST['num-classrooms'];
 
   $_SESSION['curriculum']['students'] = $_POST['students'];
-
-
-
-  
-
-
 
 
 
@@ -35,6 +28,16 @@ if(isset($_POST['single-class'])){
   exit();
 
 } elseif(isset($_POST['multiple-class'])){
+
+  $_SESSION['curriculum']['returning'] = $_POST['return'];
+  $_SESSION['curriculum']['multiclassroom'] = 'yes';
+
+  $_SESSION['curriculum']['classrooms'] = $num = $_POST['classrooms']=="single" ? 1 : $_POST['num-classrooms'];
+  $_SESSION['curriculum']['students'] = 0;
+  for($i=0;$i<$num; $i++ ){
+    $_SESSION['curriculum']['students'] += $_POST['class'.$i];  
+  }
+  //$_SESSION['curriculum']['students'] = $_POST['students'];
 
   $location = SITE_URL."/curr-purchase-2.php";
 
@@ -273,8 +276,11 @@ get_header_inner();
                         The recommended number of materials will be based on this number.
 
                       </p>
+                          <div id="multiple-inputs">
+                            
+                          </div>
 
-                      <p>
+                      <!-- <p>
 
                         <input type="text" name="textfield3" id="textfield3">
 
@@ -296,7 +302,7 @@ get_header_inner();
 
                         <label for="textfield5"> Classroom 3 Students</label>
 
-                      </p>
+                      </p> -->
 
                       <p>
 
@@ -309,8 +315,6 @@ get_header_inner();
                     </div>
 
                   </div>
-
-                   
 
 				</div>
 
@@ -340,17 +344,35 @@ get_header_inner();
 
   $(document).ready(function(){ 
 
+      // Hide divs to start
+
       $("div.conditional-1").hide();
 
       $("div.conditional-2").hide();
 
-      $("input[name$='return']").change(function() {
+      $q1 = $("input[name$='return']");
+      
 
-          var test = $(this).val();
+      // Check if divs should already be shown
+        
+        $val1 = $("input:checked");
+         if($val1 != undefined){
+          $val1.each(function(index){
+            var div = $( this ).val();
+            $("#"+div).show();
+          });
+         
+         } 
+
+      // Show divs when selected
+
+      $q1.change(function() {
+
+          var div = $(this).val();
 
           $("div.conditional-1").hide();
 
-          $("#"+test).show();
+          $("#"+div).show();
 
       }); 
 
@@ -366,7 +388,10 @@ get_header_inner();
 
             $("#"+test).show();
 
-          }else if(test=="multiple"){
+          } else if(test=="multiple"){
+
+            // MULTIPLE CLASSROOMS
+            // need to calculate how many fields to show
 
             $("#"+test).show();
 
@@ -374,41 +399,37 @@ get_header_inner();
 
               var $num = $(this).val();
 
-              console.log($num);
+              // console.log($num);
 
               $("#"+test).show();
 
-              var $elem;
+              var elem;
 
               for (var i=0;i<$num;i++)
-
               { 
-
-
-
+                var p = $("<p/>", {
+                  class: "class-"+i
+                });
                 var input = $("<input/>", {
-
-                  class: "class",
-
+                  id: "class"+i,
                   type: "text",
-
-                  val: "2"
-
+                  name: "class"+i
+                });
+                var label = $("<label/>", {
+                  html: "Classroom "+(i+1)+" Students"
                 });
 
-                $($elem).add(input);
+                p.append(input).append(" ").append(label);
 
-                
+
+                $('#multiple-inputs').append(p);
+                //$(elem).add(input);
 
               }
 
-              console.log($elem);
+              // console.log($elem);
 
             })
-
-            
-
-
 
           }
 
