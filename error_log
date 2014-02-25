@@ -1,2 +1,0 @@
-[24-Feb-2014 10:07:26 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ryanhigh/public_html/dev/starfall/theme/header-inner.php:15) in /home/ryanhigh/public_html/dev/starfall/cart.php on line 21
-[24-Feb-2014 10:07:35 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ryanhigh/public_html/dev/starfall/theme/header-inner.php:15) in /home/ryanhigh/public_html/dev/starfall/cart.php on line 21

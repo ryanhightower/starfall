@@ -1,0 +1,7 @@
+
+error_log
+
+*.phpBK*
+*.php_*
+*.cssBK*
+*.css_*
