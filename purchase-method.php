@@ -2,7 +2,7 @@
 
 if ($_POST['login']) {
 	if ((!$_POST['textfield']) || (!$_POST['textfield2'])) { $error .= "You must have both a username and password."; }
-	else { $_SESSION['user']['username'] = $_POST['textfield']; $error .= ""; header( 'Location: /'.$_GET['l'] ) ; }
+	else { $_SESSION['user']['username'] = $_POST['textfield']; $error .= ""; header( 'Location: /purchase-'.$_SESSION["user"]["redirect"].'.php'); }
 }
 
 if ($_GET['member']) { $_SESSION['user']['member'] = $_GET['member']; }
@@ -108,7 +108,7 @@ get_header();
 
 							<div class="col-sm-4">
 
-								<a href="<?php echo $_SESSION['link']; ?>?payment=po"><p><img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive" /></p>
+								<a href="<?php echo $_SESSION['link']; ?>?payment=po" id="po" class="payment"><p><img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive" /></p>
 
 								<p>I want to create a Price Quote and pay by PURCHASE ORDER</p></a>
 

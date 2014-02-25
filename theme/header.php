@@ -20,10 +20,16 @@
 
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$( "a.redirect" ).click(function( event ) {
+		$("a.redirect").click(function( event ) {
 			event.preventDefault();
-			var link = $(this).attr('href');
-			window.location.href = "/purchase-method.php?l=" + link;
+			var currentId = $(this).attr('id');
+			$.ajax({
+				type: "POST",
+				url: "redirect.php",
+				data: {redirect:currentId}
+			}).done(function( result ) {
+				window.location.href = "/purchase-method.php";
+			});
 		});
 		$('a.method').click(function( event ){
 			event.preventDefault();

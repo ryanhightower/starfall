@@ -1,6 +1,9 @@
 <?php  include("includes/functions.php");
 
-if ($_GET['payment']) { $_SESSION['user']['payment'] = $_GET['payment']; }
+if ($_SESSION['user']['payment'] == "po") { $payMethod = "Checkout w/ purchase order"; }
+elseif ($_SESSION['user']['payment'] == "cc") { $payMethod = "Checkout w/ credit card"; }
+elseif ($_SESSION['user']['payment'] == "off") { $payMethod = "Checkout offline (mail/phone)"; }
+
 
 // Set variables for form and move to next step
 
@@ -105,13 +108,15 @@ get_header_inner();
 
             	<div class="dropdown top_rightCorner">
 
-  					<a data-toggle="dropdown" href="#" class="check">Checkout w/ purchase order</a>
+  					<a data-toggle="dropdown" href="#" class="check" id="check"><?php echo $payMethod; ?></a>
 
                       <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 
-                        <li class="one"><a href="#">Checkout w/ credit card</a></li>
+                        <li class="one"><a href="#" id="po" class="method">Checkout w/ purchase order</a></li>
 
-                        <li class="two"><a href="#">Checkout offline (mail/phone)</a></li>
+                        <li class="two"><a href="#" id="cc" class="method">Checkout w/ credit card</a></li>
+
+                        <li class="three"><a href="#" id="off" class="method">Checkout offline (mail/phone)</a></li>
 
                       </ul>
 

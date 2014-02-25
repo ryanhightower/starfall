@@ -22,7 +22,7 @@ print_r($_SESSION['curriculum']['Optionalproducts']);   echo "</pre>";
 		exit();
 	}
 	$cart_url = SITE_URL."/cart.php";
-	//print_r($_SESSION['curriculum']['products']); 
+	//print_r($_SESSION['curriculum']['cart']); 
 
     get_header_inner(); 
 ?>
@@ -31,7 +31,7 @@ function cartupdate()
 { 
 var serial_ids =$('#cart').serializeArray();
 	$.ajax({
-	url: "<?php echo SITE_URL; ?>cartupdate.php",
+	url: "<?php echo SITE_URL; ?>/cartupdate.php",
 	data: {
 	serial_ids: serial_ids
 	},
@@ -223,9 +223,9 @@ var serial_ids =$('#cart').serializeArray();
                            </div>
                         </div>
 	<?php 
-	if(isset($_SESSION['curriculum']['products']) || isset($_SESSION['curriculum']['Optionalproducts']))
+	if(isset($_SESSION['curriculum']['cart']))
 	{
-	$total = $products_total + $optional_total;
+	$total = $products_total;
 	//session_destroy();
 	}
 	?>

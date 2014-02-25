@@ -6,7 +6,7 @@ foreach($cartproduct as $key => $val)
 	if($productname[0]=='products')
 	{
 	//echo $productname[1].'value'.$val['value'];
-	$_SESSION['curriculum']['products'][$productname[1]]= $val['value'];
+	$_SESSION['curriculum']['cart'][$productname[1]]= $val['value'];
 	}else
 	{
 	$_SESSION['curriculum']['Optionalproducts'][$productname[1]]= $val['value'];
