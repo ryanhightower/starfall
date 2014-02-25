@@ -42,73 +42,73 @@ $DB = array(
 	"product_item_1" => array(
          "name" => "Product Item 1",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Per Student Items"
          ),
 	"product_item_2" => array(
          "name" => "Product Item 2",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Per Student Items"
          ),
 	"product_item_3" => array(
          "name" => "Product Item 3",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Per Student Items"
          ),
 	"product_item_4" => array(
          "name" => "Product Item 4",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Per Student Items"
          ),
 	"product_item_5" => array(
          "name" => "Product Item 1",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Per Classroom Items"
          ),
 	"product_item_6" => array(
          "name" => "Product Item 2",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Per Classroom Items"
          ),
 	"product_item_7" => array(
          "name" => "Product Item 3",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Per Classroom Items"
          ),
 	"product_item_8" => array(
          "name" => "Product Item 4",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Per Classroom Items"
          ),
 	"product_item_9" => array(
          "name" => "Product Item 1",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Optional Items"
          ),
     "product_item_10" => array(
          "name" => "Product Item 2",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Optional Items"
          ),
 	"product_item_11" => array(
          "name" => "Product Item 3",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Optional Items"
          ),
 	"product_item_12" => array(
          "name" => "Product Item 4",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => "4.99",
+		 "price" => 4.99,
 		 "type" => "Optional Items"
          )
 );

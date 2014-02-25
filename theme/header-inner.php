@@ -38,6 +38,26 @@
 			event.preventDefault();
 			var link = $('a.redirect').attr('href');
 			window.location.href = "/purchase-method.php?l=" + link;
+			event.preventDefault();
+			var currentId = $(this).attr('id');
+			$.ajax({
+				type: "POST",
+				url: "pm.php",
+				data: {method:currentId}
+			}).done(function( result ) {
+				$("#check").html(result);
+			});
+		});
+		$('a.method').click(function( event ){
+			event.preventDefault();
+			var currentId = $(this).attr('id');
+			$.ajax({
+				type: "POST",
+				url: "pm.php",
+				data: {method:currentId}
+			}).done(function( result ) {
+				$("#check").html(result);
+			});
 		});
 	});
 	</script>
