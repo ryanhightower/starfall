@@ -156,10 +156,6 @@ get_header_inner();
                       </p>
                           <div id="multiple-inputs">
                           </div>
-                        <input type="text" name="textfield3" id="textfield3">
-                        <label for="textfield3"> Classroom 1 Students</label>
-
-                        <input type="text" name="textfield4" id="textfield4">
                       <p>
                         <input type="submit" name="multiple-class" id="button" value="Next Step" class="btn btn-primary">
                       </p>
@@ -354,6 +350,4 @@ to order a few extras for replacements and new student transfers.
       });
   });
 </script>
-
-
 <?php get_footer(); ?>
