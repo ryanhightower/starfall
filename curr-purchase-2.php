@@ -20,7 +20,7 @@ $product_key_arr =explode('_',$key);
 
 	if(isset($_POST[$key]) && $_POST[$key]!='')
 	{
-		$_SESSION['curriculum']['products'][$product_key_arr[1]]= $_POST[$key];
+		$_SESSION['curriculum']['cart'][$product_key_arr[1]]= $_POST[$key];
 	}
     //echo $_SESSION['curriculum']['products'][$i]."<br>";
   } 

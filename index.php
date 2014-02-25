@@ -28,7 +28,7 @@ get_header(); ?>
 					<img data-src="holder.js/150x150" alt="150x150" class="img-circle pull-left img-responsive">
 					<h1>Starfall Membership</h1>
 					<p>Lorem ipsum Aute in pariatur aliquip qui in veniam aliqua pariatur adipisicing mollit cupidatat quis laboris tempor in officia in irure ut fugiat mollit velit exercitation in.</p>
-					<a href="" class="btn btn-link">Learn more</a>
+					<a href="/" class="btn btn-link">Learn more</a>
 				</div>
 				<div class="row">
 					<div class="col-sm-4">
@@ -39,7 +39,7 @@ get_header(); ?>
 							<li>Lorem ipsum Sint cillum.</li>
 							<li>Lorem ipsum Sint cillum esse aliquip.</li>
 						</ul> -->
-						<a href="/purchase-method.php?member=teacher" class="btn btn-primary">Join Today</a>  <span class="price">$70</span>
+						<a href="purchase-teacher.php" class="btn btn-primary redirect">Join Today</a>  <span class="price">$70</span>
 					</div>
 					<div class="col-sm-4">
 						<h2>Classroom</h2>
@@ -51,7 +51,7 @@ get_header(); ?>
 							<li>Lorem ipsum Sint aliquip pariatur.</li>
 							<li>Lorem ipsum Sint cillum esse.</li>
 						</ul> -->
-						<a href="/purchase-method.php?member=class" class="btn btn-primary">Join Today</a>  <span class="price">$150</span>
+						<a href="purchase-classroom.php" class="btn btn-primary redirect">Join Today</a>  <span class="price">$150</span>
 					</div>
 					<div class="col-sm-4">
 						<h2>School</h2>
@@ -62,7 +62,7 @@ get_header(); ?>
 							<li>Lorem ipsum cillum esse aliquip pariatur.</li>
 							<li>Lorem ipsum Sint cillum esse pariatur.</li>
 						</ul> -->
-						<a href="/purchase-method.php?member=school" class="btn btn-primary">Join Today</a>  <span class="price">$270</span>
+						<a href="purchase-school.php" class="btn btn-primary redirect">Join Today</a>  <span class="price">$270</span>
 					</div>
 				</div>
 			</div>
@@ -85,7 +85,7 @@ get_header(); ?>
 						<img src="" alt="" class="pull-left" data-src="holder.js/150x150">
 						<h2>Starfall Pre-K</h2>
 						<p>Lorem ipsum Laboris dolor eu sint ea minim consequat in dolore esse nostrud Ut consectetur ea ad incididunt irure enim.</p>
-						<a href="<?php echo SITE_URL; ?>purchase-method.php?grade=pre_k" class="btn btn-success">Buy now</a><a href="<?php echo SITE_URL; ?>/curriculum.php" class="btn btn-link">Learn more</a>
+						<a href="purchase-pre_k.php" class="btn btn-success redirect">Buy now</a><a href="<?php echo SITE_URL; ?>/curriculum.php" class="btn btn-link">Learn more</a>
 						<div class="clearfix"></div>
 						
 					</div>
@@ -93,7 +93,7 @@ get_header(); ?>
 						<img src="" alt="" class="pull-left" data-src="holder.js/150x150">
 						<h2>Starfall Kindergarten</h2>
 						<p>Lorem ipsum Laboris dolor eu sint ea minim consequat in dolore esse nostrud Ut consectetur ea ad incididunt irure enim.</p>
-						<a href="<?php echo SITE_URL; ?>purchase-method.php?grade=k" class="btn btn-success">Buy now</a><a href="<?php echo SITE_URL; ?>/curriculum.php" class="btn btn-link">Learn more</a>
+						<a href="purchase-kindergarten.php" class="btn btn-success redirect">Buy now</a><a href="<?php echo SITE_URL; ?>/curriculum.php" class="btn btn-link">Learn more</a>
 						<div class="clearfix"></div>
 						
 					</div>

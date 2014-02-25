@@ -18,6 +18,15 @@
 	<!-- holder.js temp images -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.3.0/holder.js"></script>
 
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$( "a.redirect" ).click(function( event ) {
+			event.preventDefault();
+			var link = $(this).attr('href');
+			window.location.href = "/purchase-method.php?l=" + link;
+		});
+	});
+	</script>
 </head>
 <body>
 	<div class="sessions">

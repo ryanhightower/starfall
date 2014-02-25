@@ -2,11 +2,14 @@
 
 if ($_POST['login']) {
 	if ((!$_POST['textfield']) || (!$_POST['textfield2'])) { $error .= "You must have both a username and password."; }
-	else { $_SESSION['user']['username'] = $_POST['textfield']; $error .= ""; }
+	else { $_SESSION['user']['username'] = $_POST['textfield']; $error .= ""; header( 'Location: /'.$_GET['l'] ) ; }
 }
 
 if ($_GET['member']) { $_SESSION['user']['member'] = $_GET['member']; }
 if ($_GET['grade']) { $_SESSION['user']['grade'] = $_GET['grade']; }
+if ($_GET['l']) { $_SESSION['link'] = $_GET['l']; }
+
+
 get_header(); 
 
 
@@ -105,7 +108,7 @@ get_header();
 
 							<div class="col-sm-4">
 
-								<a href="curr-purchase-1.php?payment=po"><p><img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive" /></p>
+								<a href="<?php echo $_SESSION['link']; ?>?payment=po"><p><img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive" /></p>
 
 								<p>I want to create a Price Quote and pay by PURCHASE ORDER</p></a>
 
@@ -115,7 +118,7 @@ get_header();
 
 							<div class="col-sm-4">
 
-								<a href="curr-purchase-1.php?payment=cc">
+								<a href="<?php echo $_SESSION['link']; ?>?payment=cc">
 
 								<p><img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive"></p>
 
@@ -127,7 +130,7 @@ get_header();
 
 							<div class="col-sm-4">
 
-								<a href="curr-purchase-1.php?payment=off">
+								<a href="<?php echo $_SESSION['link']; ?>?payment=off">
 
 								<p><img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive"></p>
 
