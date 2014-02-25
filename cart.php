@@ -8,14 +8,14 @@ if (session_status() == PHP_SESSION_NONE) {
 //    echo "session_start"."<br>";
     session_start();
 }
-get_header_inner(); 
+
 /*
 echo "<pre>";
 print_r($_SESSION['curriculum']['products']);   echo "</pre>"; 
 echo "<pre>";
 print_r($_SESSION['curriculum']['Optionalproducts']);   echo "</pre>";
 */
- if(!isset($_SESSION['curriculum']['products']) || !isset($_SESSION['curriculum']['Optionalproducts']))
+ if(!isset($_SESSION['curriculum']['cart']))
 	{
 		 $next_step = SITE_URL."/curr-purchase-1.php";
 		header("Location: $next_step", true);
@@ -23,6 +23,8 @@ print_r($_SESSION['curriculum']['Optionalproducts']);   echo "</pre>";
 	}
 	$cart_url = SITE_URL."/cart.php";
 	//print_r($_SESSION['curriculum']['products']); 
+
+    get_header_inner(); 
 ?>
 <script>
 function cartupdate()
@@ -72,61 +74,36 @@ var serial_ids =$('#cart').serializeArray();
                                 <div class="newClear"></div>
                             </div>
 		<?php 
-		if(isset($_SESSION['curriculum']['products']))
+		if(isset($_SESSION['curriculum']['cart']))
 		{
-		$products_total = 0;
-		foreach($_SESSION['curriculum']['products'] as $key => $product)
-		{
-		$products_total = $products_total + ($product * 4.99);
-		?>
-                             <div class="padsim2">
-                                <div class="col-sm-10">
-                                    <div class="studItemBox">
-                                        <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                        <div><strong><?php echo $DB['product_item_'.$key]['name']; ?></strong><br />
-                                        <?php echo $DB['product_item_'.$key]['description']; ?>
-                                        </div> 
-                                        <div class="newClear"></div>
-                                    </div>
-                                </div>                       
-                                <div class="col-sm-2">
-                                <div class="rightfinshedBox">
-                                <span>$<?php echo $DB['product_item_'.$key]['price']; ?>&nbsp;</span><input type="text" name="products_<?php echo $key;?>" id="products_<?php echo $key;?>" value="<?php echo $product; ?>">
-                                <img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive">
+    		$products_total = 0;
+    		foreach($_SESSION['curriculum']['cart'] as $key => $product)
+    		{
+    		$products_total = $products_total + ($product * $DB['product_item_'.$key]['price']);
+    		?>
+                     <div class="padsim2">
+                        <div class="col-sm-10">
+                            <div class="studItemBox">
+                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <div><strong><?php echo $DB['product_item_'.$key]['name']; ?></strong><br />
+                                <?php echo $DB['product_item_'.$key]['description']; ?>
+                                </div> 
                                 <div class="newClear"></div>
-                                </div>
-                                </div>                        
-                                <div class="newClear"></div>
-                             </div> 
-		<?php } } ?>
-		<?php 
-		if(isset($_SESSION['curriculum']['Optionalproducts']))
-		{
-		$optional_total = 0;
-		foreach($_SESSION['curriculum']['Optionalproducts'] as $key => $optionalproducts)
-		{
-		$optional_total = $optional_total + ($optionalproducts * 4.99);
-		?>
-                        	 <div class="padsim2">
-                                <div class="col-sm-10">
-                                    <div class="studItemBox">
-                                        <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                        <div><strong><?php echo $DB['product_item_'.$key]['name']; ?></strong><br />
-                                        <?php echo $DB['product_item_'.$key]['description']; ?>
-                                        </div> 
-                                        <div class="newClear"></div>
-                                    </div>
-                                </div>                       
-                                <div class="col-sm-2">
-                                <div class="rightfinshedBox">
-                                <span>$<?php echo $DB['product_item_'.$key]['price']; ?>&nbsp;</span><input type="text" name="Optionalproducts_<?php echo $key;?>" id="Optionalproducts_<?php echo $key;?>" value="<?php echo $optionalproducts; ?>">
-                                <img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive">
-                                <div class="newClear"></div>
-                                </div>
-                                </div>                        
-                                <div class="newClear"></div>
-                             </div>
-		<?php } }?>
+                            </div>
+                        </div>                       
+                        <div class="col-sm-2">
+                        <div class="rightfinshedBox">
+                        <span>$<?php echo $DB['product_item_'.$key]['price']; ?>&nbsp;</span><input type="text" name="products_<?php echo $key;?>" id="products_<?php echo $key;?>" value="<?php echo $product; ?>">
+                        <img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive">
+                        <div class="newClear"></div>
+                        </div>
+                        </div>                        
+                        <div class="newClear"></div>
+                     </div> 
+    		<?php 
+            } 
+        } ?>
+		
                             <!-- <div class="padsim2">
                                 <div class="col-sm-10">
                                     <div class="studItemBox">
