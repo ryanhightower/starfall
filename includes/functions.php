@@ -28,6 +28,9 @@ function get_header(){
 function get_header_inner(){
 	require_once(THEME_PATH."/header-inner.php");
 }
+function get_header_product(){
+	require_once(THEME_PATH."/header-product.php");
+}
 function get_footer(){
 	require_once(THEME_PATH."/footer.php");
 }
