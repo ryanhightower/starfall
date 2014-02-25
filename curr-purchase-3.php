@@ -26,7 +26,7 @@ $product_key_arr =explode('_',$key);
   exit();
 }
 // Set variables for Step 3
-$total_students = $_SESSION['curriculum']['total_students'];
+$total_students = $_SESSION['curriculum']['students'];
 //var_dump($_SESSION['curriculum']['products']);
 
 ?>

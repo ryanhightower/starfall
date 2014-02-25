@@ -2,15 +2,17 @@
 
 if ($_GET['payment']) { $_SESSION['user']['payment'] = $_GET['payment']; }
 
+if ($_SESSION['user']['payment'] == "po") { $payMethod = "Checkout w/ purchase order"; }
+elseif ($_SESSION['user']['payment'] == "cc") { $payMethod = "Checkout w/ credit card"; }
+elseif ($_SESSION['user']['payment'] == "off") { $payMethod = "Checkout offline (mail/phone)"; }
+
 // Set variables for form and move to next step
 
 if(isset($_POST['single-class'])){
 
 
   $_SESSION['curriculum']['returning'] = $_POST['return'];
-
   $_SESSION['curriculum']['classrooms'] = $_POST['classrooms']=="single" ? 1 : $_POST['num-classrooms'];
-
   $_SESSION['curriculum']['students'] = $_POST['students'];
 
 
@@ -105,13 +107,15 @@ get_header_inner();
 
             	<div class="dropdown top_rightCorner">
 
-  					<a data-toggle="dropdown" href="#" class="check">Checkout w/ purchase order</a>
+  					<a data-toggle="dropdown" href="#" class="check"><?php echo $payMethod; ?></a>
 
                       <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 
-                        <li class="one"><a href="#">Checkout w/ credit card</a></li>
+                        <li class="one"><a href="#">Checkout w/ purchase order</a></li>
 
-                        <li class="two"><a href="#">Checkout offline (mail/phone)</a></li>
+                        <li class="two"><a href="#">Checkout w/ credit card</a></li>
+
+                        <li class="three"><a href="#">Checkout offline (mail/phone)</a></li>
 
                       </ul>
 
