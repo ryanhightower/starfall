@@ -6,12 +6,12 @@ foreach($cartproduct as $key => $val)
 	if($productname[0]=='products')
 	{
 	//echo $productname[1].'value'.$val['value'];
-	$_SESSION['curriculum']['cart'][$productname[1]]= $val['value'];
+	$_SESSION['curriculum']['cart'][$productname[1]]= array("quantity" => $val['value'],"price" => $_SESSION['curriculum']['cart'][$productname[1]]['price']);
 	}else
 	{
 	$_SESSION['curriculum']['Optionalproducts'][$productname[1]]= $val['value'];
 	}
 }
 //print_r($cartproduct);
-//print_r($_SESSION['curriculum']['products']);  
+print_r($_SESSION['curriculum']['cart']);  
 ?>

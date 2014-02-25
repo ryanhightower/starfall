@@ -8,9 +8,9 @@ if (session_status() == PHP_SESSION_NONE) {
   // echo "classrooms: ".$_SESSION['curriculum']['classrooms']."<br>";
   // echo "students: ".$_SESSION['curriculum']['students']."<br>";
   
-
 //session_destroy();
 if(isset($_POST['submit'])){
+//print_r($_SESSION);
  array_pop($_POST);
   // Store Product values and move to next step
 $i=0;	
@@ -20,12 +20,12 @@ $product_key_arr =explode('_',$key);
 
 	if(isset($_POST[$key]) && $_POST[$key]!='')
 	{
-		$_SESSION['curriculum']['cart'][$product_key_arr[1]]= $_POST[$key];
+		$_SESSION['curriculum']['cart'][$product_key_arr[1]]= array("quantity" => $_POST[$key],"price" => $_SESSION[$key]);
 	}
     //echo $_SESSION['curriculum']['products'][$i]."<br>";
   } 
  //echo "<pre>";
- //print_r($_SESSION['curriculum']['products']);   echo "</pre>"; exit;
+ //print_r($_SESSION['curriculum']['cart']);   echo "</pre>"; exit;
   $next_step = SITE_URL."/curr-purchase-3.php";
   header("Location: $next_step", true);
   exit();
@@ -123,7 +123,8 @@ to order a few extras for replacements and new student transfers.
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>"></div>                        
+                        <div class="col-sm-3"><span>$<?php 
+						$_SESSION['product_'.$product_id] = $product['price']; echo $product['price'];?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>"></div>                        
                         <div class="newClear"></div>
                      </div> 
 	<?php } }?>
@@ -194,7 +195,7 @@ to order a few extras for replacements and new student transfers.
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $classrooms; ?>"></div>                        
+                        <div class="col-sm-3"><span>$<?php $_SESSION['product_'.$product_id] = $product['price']; echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $classrooms; ?>"></div>                        
                         <div class="newClear"></div>
                      </div>
 	<?php } } ?>					 

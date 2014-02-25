@@ -1,5 +1,4 @@
 <?php  include("includes/functions.php");
-
 if ($_SESSION['user']['payment'] == "po") { $payMethod = "Checkout w/ purchase order"; }
 elseif ($_SESSION['user']['payment'] == "cc") { $payMethod = "Checkout w/ credit card"; }
 elseif ($_SESSION['user']['payment'] == "off") { $payMethod = "Checkout offline (mail/phone)"; }

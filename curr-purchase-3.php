@@ -14,13 +14,13 @@ foreach($_POST as $key => $row)
 $product_key_arr =explode('_',$key);
 	if(isset($_POST[$key]) && $_POST[$key]!='')
 	{
-    $_SESSION['curriculum']['cart'][$product_key_arr[1]]= $_POST[$key];
+    $_SESSION['curriculum']['cart'][$product_key_arr[1]]= array("quantity" => $_POST[$key],"price" => $_SESSION[$key]);
 	}
     //echo $_SESSION['curriculum']['products'][$i]."<br>";
   } 
 /*echo "<pre>";
- print_r($_SESSION['curriculum']['Optionalproducts']);  
- echo "</pre>"; exit;*/
+print_r($_SESSION['curriculum']['cart']);  
+echo "</pre>"; exit;*/
   $next_step = SITE_URL."/cart.php";
   header("Location: $next_step", true);
   exit();
@@ -114,7 +114,7 @@ to order a few extras for replacements and new student transfers.
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="textfield_<?php echo $product_id; ?>" id="textfield_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>"></div>                        
+                        <div class="col-sm-3"><span>$<?php $_SESSION['textfield_'.$product_id] = $product['price']; echo $product['price']; ?>&nbsp;</span><input type="text" name="textfield_<?php echo $product_id; ?>" id="textfield_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>"></div>                        
                         <div class="newClear"></div>
                      </div> 
 <?php } }?>
