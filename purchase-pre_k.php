@@ -6,35 +6,35 @@ elseif ($_SESSION['user']['payment'] == "off") { $payMethod = "Checkout offline 
 
 // Set variables for form and move to next step
 if(isset($_POST['single-class'])){
-  $_SESSION['curriculum']['returning'] = $_POST['return'];
-  $_SESSION['curriculum']['classrooms'] = $_POST['classrooms']=="single" ? 1 : $_POST['num-classrooms'];
-  $_SESSION['curriculum']['students'] = $_POST['students'];
-  $location = SITE_URL."/curr-purchase-2.php";
-  // $_SERVER['curriculum']['returning'] = $_POST['radio'];
-  //echo $_SERVER['curriculum']['returning'];
-  header("Location: $location", true);
-  exit();
+    $_SESSION['curriculum']['returning'] = $_POST['return'];
+    $_SESSION['curriculum']['classrooms'] = $_POST['classrooms']=="single" ? 1 : $_POST['num-classrooms'];
+    $_SESSION['curriculum']['students'] = $_POST['students'];
+    $location = SITE_URL."/curr-purchase-2.php";
+    // $_SERVER['curriculum']['returning'] = $_POST['radio'];
+    //echo $_SERVER['curriculum']['returning'];
+    header("Location: $location", true);
+    exit();
 } elseif(isset($_POST['multiple-class'])){
-  $_SESSION['curriculum']['returning'] = $_POST['return'];
-  $_SESSION['curriculum']['multiclassroom'] = 'yes';
+    $_SESSION['curriculum']['returning'] = $_POST['return'];
+    $_SESSION['curriculum']['multiclassroom'] = 'yes';
 
-  $_SESSION['curriculum']['classrooms'] = $num = $_POST['classrooms']=="single" ? 1 : $_POST['num-classrooms'];
-  $_SESSION['curriculum']['students'] = 0;
-  for($i=0;$i<$num; $i++ ){
-    $_SESSION['curriculum']['students'] += $_POST['class'.$i];  
-  }
-  //$_SESSION['curriculum']['students'] = $_POST['students'];
-  $location = SITE_URL."/curr-purchase-2.php";
-  // $_SERVER['curriculum']['returning'] = $_POST['radio'];
-  //echo $_SERVER['curriculum']['returning'];
-  header("Location: $location", true);
-  exit();
+    $_SESSION['curriculum']['classrooms'] = $num = $_POST['classrooms']=="single" ? 1 : $_POST['num-classrooms'];
+    $_SESSION['curriculum']['students'] = 0;
+    for($i=0;$i<$num; $i++ ){
+      $_SESSION['curriculum']['students'] += $_POST['class'.$i];  
+    }
+    //$_SESSION['curriculum']['students'] = $_POST['students'];
+    $location = SITE_URL."/curr-purchase-2.php";
+    // $_SERVER['curriculum']['returning'] = $_POST['radio'];
+    //echo $_SERVER['curriculum']['returning'];
+    header("Location: $location", true);
+    exit();
 }
 //session_destroy();
 if(isset($_POST['submit'])){
 //print_r($_SESSION); 
- array_pop($_POST);
-  // Store Product values and move to next step
+    array_pop($_POST);
+    // Store Product values and move to next step
 foreach($_POST as $key => $row)
 { 
 $product_key_arr =explode('_',$key);
@@ -77,11 +77,18 @@ get_header_inner();
             </div>
             <div class="col-sm-3">
             	<div class="dropdown top_rightCorner">
-  					<a data-toggle="dropdown" href="#" class="check">Checkout w/ purchase order</a>
-                      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                        <li class="one"><a href="#">Checkout w/ credit card</a></li>
-                        <li class="two"><a href="#">Checkout offline (mail/phone)</a></li>
-                      </ul>
+
+  					<a data-toggle="dropdown" href="#" class="check" id="check"><?php echo $payMethod; ?></a>
+
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+
+              <li class="one"><a href="#" id="po" class="method">Checkout w/ purchase order</a></li>
+
+              <li class="two"><a href="#" id="cc" class="method">Checkout w/ credit card</a></li>
+
+              <li class="three"><a href="#" id="off" class="method">Checkout offline (mail/phone)</a></li>
+
+            </ul>
 				</div>
             </div>
             <div class="newClear"></div>
@@ -91,17 +98,17 @@ get_header_inner();
 <section class="container">
 		<div class="row">
 			<div class="col-sm-12">
-            <a href="<?php echo SITE_URL; ?>">Educators</a> // <a href="<?php echo SITE_URL; ?>/curriculum.php">Curriculum</a> // Step1  
-            </div>
-            </div>
-			<div class="space20"></div>
-            <div class="col-sm-10 col-sm-push-2">
-            <h2>Step 1 of 3</h2>
-            </div>
-            <div class="space20"></div>
-			<div class="col-sm-12">
-				<div class="row">
-                <div class="col-sm-3">
+        <a href="<?php echo SITE_URL; ?>">Educators</a> // <a href="<?php echo SITE_URL; ?>/curriculum.php">Curriculum</a> // Step1  
+      </div>
+    </div>
+		<div class="space20"></div>
+    <div class="col-sm-10 col-sm-push-2">
+      <h2>Step 1 of 3</h2>
+    </div>
+    <div class="space20"></div>
+		<div class="col-sm-12">
+	   		<div class="row">
+            <div class="col-sm-3">
                 <img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive">
                 <div class="space20"></div>
                 </div>

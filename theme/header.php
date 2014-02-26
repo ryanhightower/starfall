@@ -34,12 +34,25 @@
 		$('a.method').click(function( event ){
 			event.preventDefault();
 			var currentId = $(this).attr('id');
+			var redirectLink = $(this).attr('href');
 			$.ajax({
 				type: "POST",
 				url: "pm.php",
-				data: {method:currentId}
-			}).done(function( result ) {
-				$("#check").html(result);
+				data: {method:currentId, redirect:redirectLink}
+			}).done(function( data ) {
+				$("#check").html(data);
+			});
+		});
+		$('a.payment').click(function( event ){
+			event.preventDefault();
+			var currentId = $(this).attr('id');
+			var redirectLink = $(this).attr('href');
+			$.ajax({
+				type: "POST",
+				url: "pm.php",
+				data: {method:currentId, redirect:redirectLink}
+			}).done(function( data ) {
+				window.location.href = redirectLink;
 			});
 		});
 	});
