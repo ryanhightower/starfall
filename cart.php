@@ -229,18 +229,10 @@ var serial_ids =$('#cart').serializeArray();
                 </div>
 
             </div>
+<?php if($payMethod=="Checkout w/ credit card"){ $convert = "Convert to Quote"; $convertID = "po"; $href = SITE_URL."/checkout-cc.php"; } elseif ($payMethod=="Checkout w/ purchase order"){ $convert = "Pay with Credit Card"; $convertID = "cc"; $href = SITE_URL."/checkout-po.php"; } ?>
 
-            <div class="padsim3"><a class="btn btn-primary btn-lg" href="<?php echo SITE_URL; ?>/price-quote.php"><?php echo $payMethod; ?></a></div>
-
-            <?php if($payMethod=="Checkout w/ credit card"){ ?>
-
-                <div class="padsim3"><a id="po" class="btn btn-link btn-lg payment method" href="#">Convert to Quote</a></div>
-
-            <?php }elseif($payMethod=="Checkout w/ purchase order"){ ?>
-
-                <div class="padsim3"><a id="cc" class="btn btn-link btn-lg payment method" href="#">Pay with Credit Card</a></div>
-
-            <?php } ?>
+            <div class="padsim3"><a class="btn btn-primary btn-lg" href="<?php echo $href; ?>" id="price-quote"><?php echo $payMethod; ?></a></div>
+			<div class="padsim3"><a id="<?php echo $convertID; ?>" class="btn btn-link btn-lg payment" href="#"><?php echo $convert; ?></a></div>
             
 
         </div>

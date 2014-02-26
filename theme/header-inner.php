@@ -66,10 +66,15 @@
 				url: "pm.php",
 				data: {method:currentId, redirect:redirectLink}
 			}).done(function( data ) {
-				if(redirectLink == "#"){
-					location.reload(true);
-				}else{
-					window.location.href = redirectLink;
+				$("#price-quote").html(data);
+				if(currentId == "po"){
+					$("#po").html("Pay with Credit Card");
+					$("#price-quote").attr('href', '/checkout-po.php' );
+					$('#po').attr('id', 'cc');
+				}if(currentId == "cc"){
+					$("#cc").html("Convert to Quote");
+					$("#price-quote").attr('href', '/checkout-cc.php' );
+					$('#cc').attr('id', 'po');
 				}
 				
 			});
