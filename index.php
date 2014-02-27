@@ -1,5 +1,9 @@
 
 <?php include("includes/functions.php");
+if (session_status() == PHP_SESSION_NONE) {
+//    echo "session_start"."<br>";
+    session_start();
+}
 
 get_header(); ?>
 
@@ -18,7 +22,7 @@ get_header(); ?>
 				<h4>Quick Links</h4>
 				<ul class="list-unstyled">
 					<li><a href="" class="img">Curriculum Products</a></li>
-					<li><a href="" class="img">The Starfall Store</a></li>
+					<li><a href="<?php echo SITE_URL; ?>/store.php" class="img" style="background: #cceeff;">The Starfall Store</a></li>
 					<li><a href="" class="img">Starfall App Catalog</a></li>
 				</ul>
 			</aside>
@@ -135,7 +139,7 @@ get_header(); ?>
 					</ul>
 				</div>
 				<div class="col-sm-4">
-					<img class="img" data-src="holder.js/100x100" alt=""> 
+					<a href="<?php echo SITE_URL; ?>/product-details.php" class="redirect"><img class="img" data-src="holder.js/100x100" alt=""> </a>
 					<img class="img" data-src="holder.js/100x100" alt="">
 				</div>
 			</section>

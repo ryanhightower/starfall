@@ -49,10 +49,7 @@ get_header_product(); ?>
               Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, Mox, TinMan, Gus, and introducing Backpack Bear. 140 stickers in all! Your 
               children will love to be rewarded for their hardwork with these stickers.
               New Level-K Stickers. Contains more stickers. Best for large class use.</p>
-              <p>Great Value!<br>
-              Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, Mox, TinMan, Gus, and introducing Backpack Bear. 140 stickers in all! Your 
-              children will love to be rewarded for their hardwork with these stickers.
-              New Level-K Stickers. Contains more stickers. Best for large class use.</p>
+              
               </div>
             </div>
 		</section>
