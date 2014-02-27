@@ -5,3 +5,7 @@ error_log
 *.php_*
 *.cssBK*
 *.css_*
+
+sftp-config.json
+
+sftp-config.json

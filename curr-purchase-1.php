@@ -1,8 +1,4 @@
 <?php  include("includes/functions.php");
-if (session_status() == PHP_SESSION_NONE) {
-//    echo "session_start"."<br>";
-    session_start();
-}
 
 if ($_GET['payment']) { $_SESSION['user']['payment'] = $_GET['payment']; }
 

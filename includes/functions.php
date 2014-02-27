@@ -13,7 +13,7 @@ if(!defined("SITE_URL")){
 	}
 	$dir = "http://". substr($dir, 0, strlen($dir)-1); //remove trailing slash
 	define("SITE_URL", $dir);
-	// echo SITE_URL;	
+//	echo SITE_URL;	
 } 
 
 if(!defined("THEME_URL")) define("THEME_URL", SITE_URL."/theme");

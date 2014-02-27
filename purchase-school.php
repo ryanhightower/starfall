@@ -1,8 +1,4 @@
 <?php  include("includes/functions.php");
-if (session_status() == PHP_SESSION_NONE) {
-//    echo "session_start"."<br>";
-    session_start();
-}
 
 if ($_SESSION['user']['payment'] == "po") { $payMethod = "Checkout w/ purchase order"; }
 elseif ($_SESSION['user']['payment'] == "cc") { $payMethod = "Checkout w/ credit card"; }

@@ -1,5 +1,5 @@
 
-<?php include_once(dirname(__DIR__).'/includes/functions.php'); ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,13 +22,13 @@
 	$(document).ready(function() {
 		$("a.redirect").click(function( event ) {
 			event.preventDefault();
-			var href = $(this).attr('href');
+			var currentId = $(this).attr('id');
 			$.ajax({
 				type: "POST",
 				url: "redirect.php",
-				data: {redirect:href}
+				data: {redirect:currentId}
 			}).done(function( result ) {
-				window.location.href = "<?php echo SITE_URL; ?>/purchase-method.php";
+				window.location.href = "/purchase-method.php";
 			});
 		});
 		$('a.method').click(function( event ){

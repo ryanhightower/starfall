@@ -1,14 +1,14 @@
 <?php include("includes/functions.php");
-if (session_status() == PHP_SESSION_NONE) {
-//    echo "session_start"."<br>";
-    session_start();
-}
-
 if ($_SESSION['user']['payment'] == "po") { $payMethod = "Checkout w/ purchase order"; }
 elseif ($_SESSION['user']['payment'] == "cc") { $payMethod = "Checkout w/ credit card"; }
 elseif ($_SESSION['user']['payment'] == "off") { $payMethod = "Checkout offline (mail/phone)"; }
 
 
+if (session_status() == PHP_SESSION_NONE) {
+
+    session_start();
+
+}
 
 
  if(isset($_SESSION['curriculum']['cart']) || isset($_SESSION['Pre_K_Curriculum']['cart'])) {
