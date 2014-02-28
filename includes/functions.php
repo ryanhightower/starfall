@@ -13,7 +13,7 @@ if(!defined("SITE_URL")){
 	}
 	$dir = "http://". substr($dir, 0, strlen($dir)-1); //remove trailing slash
 	define("SITE_URL", $dir);
-//	echo SITE_URL;	
+	// echo SITE_URL;	
 } 
 
 if(!defined("THEME_URL")) define("THEME_URL", SITE_URL."/theme");
@@ -34,6 +34,9 @@ function get_header_product(){
 function get_footer(){
 	require_once(THEME_PATH."/footer.php");
 }
+function get_dropdown(){
+	require_once(THEME_PATH."/dropdown.php");
+}
 
 
 /*
@@ -42,87 +45,129 @@ function get_footer(){
 */
 global $DB;
 $DB = array(
-	"KIT65" => array(
-		 "id" => "KIT65"
-         "name" => "\"I\'m Reading!\" Mega Set of 15 Books",
-         "short" => "We recommend 1 set per child; 1 set per 2 children minimum",
-		 "description" => "Enjoy all of the books in the \"I\'m Reading!\" series. This kit contains 15 softcover books by Margaret Hillert. 32 pages each. 8.5\" x 5.75.\"",
-		 "price" => 15.75,
-		 // "type" => "Per Student Items"
-		 "category" => array("curriculum", "kindergarten"),
-		 "options" => array("")
-         ),
-	"product_item_1" => array(
+	"1" => array(
          "name" => "Product Item 1",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 7.99,
+		 "type_option" => array(),
 		 "type" => "Per Student Items"
          ),
-	"product_item_2" => array(
+	"2" => array(
          "name" => "Product Item 2",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 7.99,
+		 "type_option" => array(),
 		 "type" => "Per Student Items"
          ),
-	"product_item_3" => array(
+	"3" => array(
          "name" => "Product Item 3",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 7.99,
+		 "type_option" => array(),
 		 "type" => "Per Student Items"
          ),
-	"product_item_4" => array(
+	"4" => array(
          "name" => "Product Item 4",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 7.99,
+		 "type_option" => array(),
 		 "type" => "Per Student Items"
          ),
-	"product_item_5" => array(
+	"5" => array(
          "name" => "Product Item 1",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 0,
+		 "type_option" => array(),
 		 "type" => "Per Classroom Items"
          ),
 	"product_item_6" => array(
          "name" => "Product Item 2",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 0,
+		 "type_option" => array(),
 		 "type" => "Per Classroom Items"
          ),
-	"product_item_7" => array(
+	"7" => array(
          "name" => "Product Item 3",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 0,
+		 "type_option" => array(),
 		 "type" => "Per Classroom Items"
          ),
-	"product_item_8" => array(
+	"8" => array(
          "name" => "Product Item 4",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 7.99,
+		 "type_option" => array(),
 		 "type" => "Per Classroom Items"
          ),
-	"product_item_9" => array(
+	"9" => array(
          "name" => "Product Item 1",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 0,
+		 "type_option" => array(),
 		 "type" => "Optional Items"
          ),
-    "product_item_10" => array(
+    "10" => array(
          "name" => "Product Item 2",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 0,
+		 "type_option" => array(),
 		 "type" => "Optional Items"
          ),
-	"product_item_11" => array(
+	"11" => array(
          "name" => "Product Item 3",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 7.99,
+		 "type_option" => array(),
 		 "type" => "Optional Items"
          ),
-	"product_item_12" => array(
+	"12" => array(
          "name" => "Product Item 4",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
 		 "price" => 4.99,
+		 "old_price" => 7.99,
+		 "type_option" => array(),
 		 "type" => "Optional Items"
+         ),
+	"13" => array(
+         "name" => "Backpack Bear's Level-K Sticker",
+		 "description" => "Great Value!<br>Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, Mox, TinMan, Gus, and introducing Backpack Bear. 140 stickers in all! Your children will love to be rewarded for their hardwork with these stickers. New Level-K Stickers. Contains more stickers. Best for large class use.",
+		 "price" => 1.45,
+		 "old_price" => 2.50,
+		 "type_option" => array(),
+		 "type" => "others"
+         ),
+	"14" => array(
+         "name" => "Pre-K Curriculum Kit",
+		 "description" => "Everything you need for your Pre-K classroom!",
+		 "price" => 395.00,
+		 "old_price" => 0,
+		 "type_option" => array(),
+		 "type" => "Pre-K Curriculum"
+         ),
+	"15" => array(
+         "name" => "Membership type",
+		 "description" => "",
+		 "price" => 0,
+		 "old_price" => 0,
+		 "type_option" => array(
+					 "1" => array("op_name" => "Teacher price","op_price" => 70),
+					 "2" => array("op_name" => "Classroom price","op_price" => 150),
+					 "3" => array("op_name" => "School price","op_price" => 270)
+					 ),
+		 "type" => "Pre-K member"
          )
 );
 

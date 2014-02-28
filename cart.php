@@ -1,21 +1,21 @@
 <?php include("includes/functions.php");
-if ($_SESSION['user']['payment'] == "po") { $payMethod = "Checkout w/ purchase order"; }
-elseif ($_SESSION['user']['payment'] == "cc") { $payMethod = "Checkout w/ credit card"; }
-elseif ($_SESSION['user']['payment'] == "off") { $payMethod = "Checkout offline (mail/phone)"; }
-
-
 if (session_status() == PHP_SESSION_NONE) {
-
+//    echo "session_start"."<br>";
     session_start();
-
 }
+
+if ($_SESSION['user']['payment'] == "po") { $payMethod = "Checkout w/ purchase order"; $cart = "My Quote Preview"; }
+elseif ($_SESSION['user']['payment'] == "cc") { $payMethod = "Checkout w/ credit card"; $cart = "Cart"; }
+elseif ($_SESSION['user']['payment'] == "off") { $payMethod = "Checkout offline (mail/phone)"; $cart = "My Quote Preview"; }
+
+
 
 
  if(isset($_SESSION['curriculum']['cart']) || isset($_SESSION['Pre_K_Curriculum']['cart'])) {
 		//
 	}else
 	{
-		$next_step = SITE_URL."/purchase-pre_k.php";
+		$next_step = SITE_URL."/";
 		header("Location: $next_step", true);
 		exit();
 	}
@@ -103,7 +103,7 @@ $('#frmpre_k').submit();
                     <div class="padsim1">
                           <!--<div class="col-sm-10">
                            <div class="simplleBoldstyle1">Cart</div></div> -->
-                            <h1>Cart</h1>
+                            <h1><?=$cart?></h1>
                             <div class="col-sm-2">Price</div>
                             <div class="newClear"></div>
                         </div>
@@ -119,15 +119,15 @@ $('#frmpre_k').submit();
                         <div class="col-sm-10">
                             <div class="studItemBox">
                                 <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-                                <div><strong><?php echo $DB['product_item_'.$key]['name']; ?></strong><br />
-                                    <?php echo $DB['product_item_'.$key]['description']; ?>
+                                <div><strong><?php echo $DB[$key]['name']; ?></strong><br />
+                                    <?php echo $DB[$key]['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
                         <div class="col-sm-2">
                             <div class="rightfinshedBox">
-                                <span>$<?php echo $DB['product_item_'.$key]['price']; ?>&nbsp;</span><input type="text" name="products_<?php echo $key;?>" id="products_<?php echo $key;?>" value="<?php echo $product['quantity']; ?>">
+                                <span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="products_<?php echo $key;?>" id="products_<?php echo $key;?>" value="<?php echo $product['quantity']; ?>">
                                 <img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive">
                                 <div class="newClear"></div>
                             </div>
@@ -178,11 +178,6 @@ $('#frmpre_k').submit();
 	if(isset($_SESSION['curriculum']['cart']))
 	{
 	$total = $products_total;
-	//session_destroy();
-	}
-	if(isset($_SESSION['Pre_K_Curriculum']['cart']))
-	{
-	$total = ($_SESSION['Pre_K_Curriculum']['cart']['pre_kvalue'] * $_SESSION['Pre_K_Curriculum']['cart']['curriculum_price']) + $_SESSION['Pre_K_Curriculum']['cart']['option_member'];
 	//session_destroy();
 	}
 	?>

@@ -40,10 +40,12 @@ if(isset($_POST['single-class'])){
   header("Location: $location", true);
   exit();
 }
-
+//session_destroy();
 if(isset($_POST['btnsubmitpre'])){
  array_pop($_POST);
- $_SESSION['Pre_K_Curriculum']['cart']= $_POST;
+
+$_SESSION['curriculum']['cart'][$_POST['Pre_K_id']]= array("quantity" => 1,"price" => $_POST['curriculum_price']);
+$_SESSION['curriculum']['cart'][$_POST['member_id']]= array("quantity" => 1,"price" => $_POST['option_member']);
 //echo "<pre>"; 
 //print_r($_SESSION['Pre_K_Curriculum']['cart']); echo "</pre>"; exit;
   $next_step = SITE_URL."/cart.php"; 
@@ -64,21 +66,12 @@ get_header_inner();
         	<div class="row">
             <div class="col-sm-2">
 			<!-- Starfall logo -->
-			<div id="logo"><h3>Starfall</h3></div>
+			<div id="logo"><h3>Starfall Store</h3></div>
             </div>
             <div class="col-sm-7">
 				<h1>Starfall Pre-K Curriculum</h1>
             </div>
-            <div class="col-sm-3">
-            	<div class="dropdown top_rightCorner">
-  					<a data-toggle="dropdown" href="#" class="check" id="check"><?php echo $payMethod; ?></a>
-                      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                        <li class="one"><a href="#" id="po" class="method">Checkout w/ purchase order</a></li>
-                        <li class="two"><a href="#" id="cc" class="method">Checkout w/ credit card</a></li>
-                        <li class="three"><a href="#" id="off" class="method">Checkout offline (mail/phone)</a></li>
-                      </ul>
-				</div>
-            </div>
+            <div class="col-sm-3"><?php get_dropdown(); ?></div>
             <div class="newClear"></div>
             </div>
 		</header>
@@ -103,36 +96,45 @@ get_header_inner();
                 <div class="col-sm-9">
                     <div class="row">
 					<form method="post" name="frmpre_k" id="frmpre_k">
-					<input type="hidden" name="curriculum_price" id="curriculum_price" value="199.99">
                     <div class="grey-box">
                       <h3 class="text-center"></h3>
-
-                      
+	<?php 
+	foreach($DB as $key => $product)
+	{
+		if($product['type']=='Pre-K Curriculum')
+		{
+		$product_id = $key;
+	?><input type="hidden" name="curriculum_price" id="curriculum_price" value="<?php echo $product['price']; ?>">
+	<input type="hidden" name="Pre_K_id" id="Pre_K_id" value="<?php echo $key; ?>">
                       <div class="col-sm-9">
                             <div class="studItemBox">
-                                <!-- <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span> -->
-                                <div><strong><?php //echo $product['name']; ?>Pre-K Curriculum Kit</strong> $395.00<br />
-                                <?php // echo $product['description']; ?> Everything you need for your Pre-K classroom!
+                                <div><strong><?php echo $product['name']; ?></strong> $<?php echo number_format($product['price'], 2); ?><br />
+                                <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
                             </div>
-                        </div>                       
-                        <div class="col-sm-3"><span><?php // $_SESSION['product_'.$product_id] = $product['price']; echo $product['price']; ?>&nbsp;</span>
-                          <!-- <input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""> -->
-                        </div>
+                        </div> 
+	<?php } }?>						
+                      
                         <div class="newClear"></div>
-                    
-                     <!--  <p>
-                        <label for="radio">Pre-K Curriculum Kit $199.99 <input type="text" name="pre_kvalue" id="pre_kvalue" value=""> </label>
-                      </p> -->
+	<?php 
+	foreach($DB as $key => $product)
+	{
+		if($product['type']=='Pre-K member')
+		{
+		$product_id = $key;
+	?><input type="hidden" name="member_id" id="member_id" value="<?php echo $key; ?>">
                       <div class="col-sm-9">
-                        <label for="radio">Membership type</label>
-            						<ol>
-            							<li><input type="radio" name="option_member" id="option_member1" checked value="70"> Teacher price: $70 </li>
-            							<li><input type="radio" name="option_member" id="option_member2" value="150"> Classroom price: $150</li>
-            							<li><input type="radio" name="option_member" id="option_member3" value="270"> School price: $270 </li>
+                        <label for="radio"><?php echo $product['name']; ?></label>
+            						<ul style="list-style:none;">
+									<?php foreach($product['type_option'] as $opt => $val_type)
+									{
+									?>
+            							<li><input type="radio" name="option_member" id="option_member_<?php echo $opt; ?>" <?php if($opt==1){echo 'checked';} ?> value="<?php echo $val_type['op_price']; ?>"> &nbsp; &nbsp; $<?php echo number_format($val_type['op_price'], 2); ?> <?php echo $val_type['op_name']; ?> </li>
+									<?php } ?>
             						</ol>
                       </div>
+	<?php } }?>
                       <div class="newClear"></div>
 					  	<p>
                         <input type="submit" name="btnsubmitpre" id="btnsubmitpre" value="Add to Cart" class="btn btn-primary">

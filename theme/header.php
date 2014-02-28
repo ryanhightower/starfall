@@ -1,5 +1,5 @@
-
-
+<?php if (!isset($_SESSION['user']['payment'])) { $_SESSION['user']['payment'] = "cc"; } ?>
+<?php include_once(dirname(__DIR__).'/includes/functions.php'); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,29 +20,19 @@
 
 	<script type="text/javascript">
 	$(document).ready(function() {
+		/*
 		$("a.redirect").click(function( event ) {
 			event.preventDefault();
-			var currentId = $(this).attr('id');
+			var href = $(this).attr('href');
 			$.ajax({
 				type: "POST",
 				url: "redirect.php",
-				data: {redirect:currentId}
+				data: {redirect:href}
 			}).done(function( result ) {
-				window.location.href = "/purchase-method.php";
+				window.location.href = "<?php echo SITE_URL; ?>/purchase-method.php";
 			});
 		});
-		$('a.method').click(function( event ){
-			event.preventDefault();
-			var currentId = $(this).attr('id');
-			var redirectLink = $(this).attr('href');
-			$.ajax({
-				type: "POST",
-				url: "pm.php",
-				data: {method:currentId, redirect:redirectLink}
-			}).done(function( data ) {
-				$("#check").html(data);
-			});
-		});
+		*/
 		$('a.payment').click(function( event ){
 			event.preventDefault();
 			var currentId = $(this).attr('id');
