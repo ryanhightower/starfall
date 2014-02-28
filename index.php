@@ -18,7 +18,7 @@ get_header(); ?>
 				<h4>Quick Links</h4>
 				<ul class="list-unstyled">
 					<li><a href="" class="img">Curriculum Products</a></li>
-					<li><a href="" class="img">The Starfall Store</a></li>
+					<li><a href="<?php echo SITE_URL; ?>/store.php" class="img">The Starfall Store</a></li>
 					<li><a href="" class="img">Starfall App Catalog</a></li>
 				</ul>
 			</aside>
@@ -135,8 +135,8 @@ get_header(); ?>
 					</ul>
 				</div>
 				<div class="col-sm-4">
-					<img class="img" data-src="holder.js/100x100" alt=""> 
-					<img class="img" data-src="holder.js/100x100" alt="">
+					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
 				</div>
 			</section>
 			<section class="row">
@@ -151,8 +151,8 @@ get_header(); ?>
 					</ul>
 				</div>
 				<div class="col-sm-4">
-					<img class="img" data-src="holder.js/100x100" alt=""> 
-					<img class="img" data-src="holder.js/100x100" alt="">
+					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
 				</div>
 			</section>
 			<section class="row">
@@ -167,8 +167,8 @@ get_header(); ?>
 					</ul>
 				</div>
 				<div class="col-sm-4">
-					<img class="img" data-src="holder.js/100x100" alt=""> 
-					<img class="img" data-src="holder.js/100x100" alt="">
+					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
 				</div>
 			</section>
 			<section class="row">
@@ -183,8 +183,8 @@ get_header(); ?>
 					</ul>
 				</div>
 				<div class="col-sm-4">
-					<img class="img" data-src="holder.js/100x100" alt=""> 
-					<img class="img" data-src="holder.js/100x100" alt="">
+					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
 				</div>
 			</section>
 			<section class="row">
@@ -199,8 +199,8 @@ get_header(); ?>
 					</ul>
 				</div>
 				<div class="col-sm-4">
-					<img class="img" data-src="holder.js/100x100" alt=""> 
-					<img class="img" data-src="holder.js/100x100" alt="">
+					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
 				</div>
 			</section>
 			
