@@ -1,13 +1,18 @@
 <?php include("includes/functions.php");
-
-if ($_POST['login']) {
-	if ((!$_POST['textfield']) || (!$_POST['textfield2'])) { $error .= "You must have both a username and password."; }
-	else { $_SESSION['user']['username'] = $_POST['textfield']; $error .= ""; header( 'Location: /purchase-'.$_SESSION["user"]["redirect"].'.php'); }
+if (session_status() == PHP_SESSION_NONE) {
+//    echo "session_start"."<br>";
+    session_start();
 }
 
-if ($_GET['member']) { $_SESSION['user']['member'] = $_GET['member']; }
-if ($_GET['grade']) { $_SESSION['user']['grade'] = $_GET['grade']; }
-if ($_GET['l']) { $_SESSION['link'] = $_GET['l']; }
+$error = "";
+if (isset($_POST['login'])) {
+	if ((!$_POST['textfield']) || (!$_POST['textfield2'])) { $error .= "You must have both a username and password."; }
+	else { $_SESSION['user']['username'] = $_POST['textfield']; $error .= ""; 
+		if ($_SESSION['user']['redirect'] != "") { header( 'Location: '.$_SESSION["user"]["redirect"]); }
+		else { header( 'Location: '.SITE_URL.'/curr-purchase-1.php'); }
+	}
+}
+
 
 
 get_header(); 
@@ -108,9 +113,9 @@ get_header();
 
 							<div class="col-sm-4">
 
-								<a href="<?php echo $_SESSION['link']; ?>?payment=po" id="po" class="payment"><p><img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive" /></p>
+								<a href="<?php echo $_SESSION["user"]["redirect"]; ?>" id="po" class="payment"><p><img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive" /></p>
 
-								<p>I want to create a Price Quote and pay by PURCHASE ORDER</p></a>
+								<p>I want to create a Price Quote and eventually pay by PURCHASE ORDER</p></a>
 
 								
 
@@ -118,11 +123,11 @@ get_header();
 
 							<div class="col-sm-4">
 
-								<a href="<?php echo $_SESSION['link']; ?>?payment=cc">
+								<a href="<?php echo $_SESSION["user"]["redirect"]; ?>" id="cc" class="payment">
 
 								<p><img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive"></p>
 
-								<p>I want to browse products and pay by CREDIT CARD</p>	
+								<p>I want to browse products and eventually pay by CREDIT CARD</p>	
 
 								</a>
 
@@ -130,11 +135,11 @@ get_header();
 
 							<div class="col-sm-4">
 
-								<a href="<?php echo $_SESSION['link']; ?>?payment=off">
+								<a href="<?php echo $_SESSION["user"]["redirect"]; ?>" id="off" class="payment">
 
 								<p><img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive"></p>
 
-								<p>I want to create a Price Quote and pay OFFLINE by credit card or check .</p>
+								<p>I want to create a Price Quote and eventually pay OFFLINE by credit card or check .</p>
 
 								</a>
 

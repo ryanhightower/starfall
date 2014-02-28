@@ -1,4 +1,8 @@
 <?php  include("includes/functions.php");
+if (session_status() == PHP_SESSION_NONE) {
+//    echo "session_start"."<br>";
+    session_start();
+}
 
 if ($_GET['payment']) { $_SESSION['user']['payment'] = $_GET['payment']; }
 
@@ -93,7 +97,7 @@ get_header_inner();
 
 			<!-- Starfall logo -->
 
-			<div id="logo"><h3>Starfall</h3></div>
+			<div id="logo"><h3>Starfall Store</h3></div>
 
             </div>
 
@@ -103,28 +107,7 @@ get_header_inner();
 
             </div>
 
-            <div class="col-sm-3">
-
-            	<div class="dropdown top_rightCorner">
-
-  					<a data-toggle="dropdown" href="#" class="check" id="check"><?php echo $payMethod; ?></a>
-
-                      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-
-                        <li class="one"><a href="#" id="po" class="method">Checkout w/ purchase order</a></li>
-
-                        <li class="two"><a href="#" id="cc" class="method">Checkout w/ credit card</a></li>
-
-                        <li class="three"><a href="#" id="off" class="method">Checkout offline (mail/phone)</a></li>
-
-                      </ul>
-                      
-
-				</div>
-
-				
-
-            </div>
+            <div class="col-sm-3"><?php get_dropdown(); ?></div>
 
             <div class="newClear"></div>
 

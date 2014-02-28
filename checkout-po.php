@@ -19,7 +19,7 @@ get_header_inner();
 			<div id="logo"><h3>Starfall</h3></div>
             </div>
             <div class="col-sm-7">
-				<h1>Starfall Kindergarten Curriculum</h1>
+				<h1>Checkout Purchase Order</h1>
             </div>
             
             <div class="newClear"></div>
