@@ -310,7 +310,7 @@ $(document).ready(function(){
 		$("#multiple").show();
 		for(var i=1; i<cnt; i++){ 
 			var htmlString = $( "#multiple-inputs" ).html();
-			var newHTML = '<p><input type="text" name="newtextfield' + i + '" id="newtextfield' + i + '" class="multclass" /><label for="newtextfield' + i + '"> &nbsp; &nbsp; Classroom ' + i + ' Students</label></p>';
+			var newHTML = '<p><input type="text" name="class' + i + '" id="class' + i + '" class="multclass" /><label for="newtextfield' + i + '"> &nbsp; &nbsp; Classroom ' + i + ' Students</label></p>';
 			var newhtml = htmlString + newHTML;
 			$( "#multiple-inputs" ).html( newhtml );
 		}
