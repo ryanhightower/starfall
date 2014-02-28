@@ -46,102 +46,86 @@ function get_dropdown(){
 global $DB;
 $DB = array(
 	"1" => array(
-         "name" => "Product Item 1",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
-		 "old_price" => 7.99,
+         "name" => "KIT65 'I'm Reading!' Mega Set of 15 Books",
+		 "description" => "by Margaret Hillert - We recommend 1 set per child; 1 set per 2 children minimum.",
+		 "price" => 15.75,
+		 "old_price" => 27.99,
 		 "type_option" => array(),
 		 "type" => "Per Student Items"
          ),
 	"2" => array(
-         "name" => "Product Item 2",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
-		 "old_price" => 7.99,
+         "name" => "SB554 The Little Red Hen and other Folk Tales",
+		 "description" => "Retold by Starfall - We recommend: at least 1 per class, more for classroom library.",
+		 "price" => 8.95,
+		 "old_price" => 17.99,
 		 "type_option" => array(),
 		 "type" => "Per Student Items"
          ),
 	"3" => array(
-         "name" => "Product Item 3",
+         "name" => "NG01 Starfall Speedway & Alphabet Avenue Games",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
+		 "price" => 14.95,
 		 "old_price" => 7.99,
 		 "type_option" => array(),
 		 "type" => "Per Student Items"
          ),
 	"4" => array(
-         "name" => "Product Item 4",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
+         "name" => "NP20 Short-Vowel Puzzle Set (5 sturdy puzzles: a,e,i,o,u)",
+		 "description" => "We recommend 2 sets per class of 20; 3 sets per class of 30.",
+		 "price" => 14.95,
 		 "old_price" => 7.99,
 		 "type_option" => array(),
 		 "type" => "Per Student Items"
          ),
 	"5" => array(
-         "name" => "Product Item 1",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
+         "name" => "TKIT02K indergarten Classroom Kit",
+		 "description" => "This kit includes all of the following: Kindergarten Teacher's Guide, Backpack Bear's Pre-Decodable Phonics Kit, Instructional Cards Kit, Decodable Phonics Kit, Books & Other Media Kit. Includes a free one-year School membership to More.Starfall.com. Required practice books and variable quantity items sold separately.",
+		 "price" => 459.91,
 		 "old_price" => 0,
 		 "type_option" => array(),
 		 "type" => "Per Classroom Items"
          ),
 	"product_item_6" => array(
-         "name" => "Product Item 2",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
+         "name" => "KIT60 Block Print - Practice Books Kit",
+		 "description" => "Listening and Writing - Book 1 (Block Print), Reading and Writing - Book 2 (Block Print); Backpack Bear's Expanded Cut-Up/Take-Home Book Set; My Starfall Writing Journal; and My Starfall Dictionary. Free pencils with orders of 20+.",
+		 "price" => 5.41,
 		 "old_price" => 0,
 		 "type_option" => array(),
 		 "type" => "Per Classroom Items"
          ),
 	"7" => array(
-         "name" => "Product Item 3",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
+         "name" => "KIT61 Manuscript - Practice Books Kit",
+		 "description" => "Listening and Writing - Book 1 (Manuscript), Reading and Writing - Book 2 (Manuscript); Backpack Bear's Expanded Cut-Up/Take-Home Book Set; My Starfall Writing Journal; and My Starfall Dictionary. Free pencils with orders of 20+.",
+		 "price" => 5.41,
 		 "old_price" => 0,
 		 "type_option" => array(),
 		 "type" => "Per Classroom Items"
          ),
 	"8" => array(
-         "name" => "Product Item 4",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
-		 "old_price" => 7.99,
-		 "type_option" => array(),
-		 "type" => "Per Classroom Items"
-         ),
-	"9" => array(
-         "name" => "Product Item 1",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
+         "name" => "NS50 Backpack Bear's Level-K Stickers",
+		 "description" => "Optional, but fun.",
+		 "price" => 1.45,
 		 "old_price" => 0,
 		 "type_option" => array(),
 		 "type" => "Optional Items"
          ),
-    "10" => array(
-         "name" => "Product Item 2",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
+    "9" => array(
+         "name" => "NRS01 Backpack Bear's Paw Print Stamp",
+		 "description" => " Optional, but fun.",
+		 "price" => 3.95,
 		 "old_price" => 0,
+		 "type_option" => array(),
+		 "type" => "Optional Items"
+         ),
+	"10" => array(
+         "name" => "WKP100 Pack of 100 Starfall Pencils",
+		 "description" => " High quality pencils for Starfall writers.",
+		 "price" => 2.95,
+		 "old_price" => 1.99,
 		 "type_option" => array(),
 		 "type" => "Optional Items"
          ),
 	"11" => array(
-         "name" => "Product Item 3",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
-		 "old_price" => 7.99,
-		 "type_option" => array(),
-		 "type" => "Optional Items"
-         ),
-	"12" => array(
-         "name" => "Product Item 4",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 4.99,
-		 "old_price" => 7.99,
-		 "type_option" => array(),
-		 "type" => "Optional Items"
-         ),
-	"13" => array(
          "name" => "Backpack Bear's Level-K Sticker",
 		 "description" => "Great Value!<br>Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, Mox, TinMan, Gus, and introducing Backpack Bear. 140 stickers in all! Your children will love to be rewarded for their hardwork with these stickers. New Level-K Stickers. Contains more stickers. Best for large class use.",
 		 "price" => 1.45,
@@ -149,7 +133,7 @@ $DB = array(
 		 "type_option" => array(),
 		 "type" => "others"
          ),
-	"14" => array(
+	"12" => array(
          "name" => "Pre-K Curriculum Kit",
 		 "description" => "Everything you need for your Pre-K classroom!",
 		 "price" => 395.00,
@@ -157,7 +141,7 @@ $DB = array(
 		 "type_option" => array(),
 		 "type" => "Pre-K Curriculum"
          ),
-	"15" => array(
+	"13" => array(
          "name" => "Membership type",
 		 "description" => "",
 		 "price" => 0,
