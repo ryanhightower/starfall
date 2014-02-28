@@ -42,6 +42,16 @@ function get_footer(){
 */
 global $DB;
 $DB = array(
+	"KIT65" => array(
+		 "id" => "KIT65"
+         "name" => "\"I\'m Reading!\" Mega Set of 15 Books",
+         "short" => "We recommend 1 set per child; 1 set per 2 children minimum",
+		 "description" => "Enjoy all of the books in the \"I\'m Reading!\" series. This kit contains 15 softcover books by Margaret Hillert. 32 pages each. 8.5\" x 5.75.\"",
+		 "price" => 15.75,
+		 // "type" => "Per Student Items"
+		 "category" => array("curriculum", "kindergarten"),
+		 "options" => array("")
+         ),
 	"product_item_1" => array(
          "name" => "Product Item 1",
 		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
