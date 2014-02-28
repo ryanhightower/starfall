@@ -190,7 +190,7 @@ to order a few extras for replacements and new student transfers.
 
 						</span></div></div>
 
-                        <div class="col-sm-3">Price</div>
+                        <div class="col-sm-3 text-right">Price</div>
 
                         <div class="newClear"></div>
 
@@ -230,91 +230,13 @@ to order a few extras for replacements and new student transfers.
 
                         </div>                       
 
-                        <div class="col-sm-3"><span>$<?php echo $product['price'];?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>"></div>                        
+                        <div class="col-sm-3 text-right"><span>$<?php echo $product['price'];?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>"></div>                        
 
                         <div class="newClear"></div>
 
                      </div> 
 
 	<?php } }?>
-
-                     <!--<div class="padsim1">
-
-                     	<div class="col-sm-9">
-
-                            <div class="studItemBox">
-
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-
-                                <div><strong>Product Item 2</strong><br />
-
-                                Short description of the product and what it does,why it’s useful or fun, etc.
-
-                                </div> 
-
-                                <div class="newClear"></div>
-
-                            </div>
-
-                        </div>                       
-
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product2" id="product2" value="<?php echo $total_students; ?>"></div>                        
-
-                        <div class="newClear"></div>
-
-                     </div>
-
-                     <div class="padsim1">
-
-                     	<div class="col-sm-9">
-
-                            <div class="studItemBox">
-
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-
-                                <div><strong>Product Item 3</strong><br />
-
-                                Short description of the product and what it does,why it’s useful or fun, etc.
-
-                                </div> 
-
-                                <div class="newClear"></div>
-
-                            </div>
-
-                        </div>                       
-
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product3" id="product3" value="<?php echo $total_students; ?>"></div>                        
-
-                        <div class="newClear"></div>
-
-                     </div>
-
-                     <div class="padsim1">
-
-                     	<div class="col-sm-9">
-
-                            <div class="studItemBox">
-
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-
-                                <div><strong>Product Item 4</strong><br />
-
-                                Short description of the product and what it does,why it’s useful or fun, etc.
-
-                                </div> 
-
-                                <div class="newClear"></div>
-
-                            </div>
-
-                        </div>                       
-
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product4" id="product4" value="<?php echo $total_students; ?>"></div>                        
-
-                        <div class="newClear"></div>
-
-                     </div>-->
 
                      
 
@@ -332,7 +254,7 @@ to order a few extras for replacements and new student transfers.
 
 						</span></div></div>
 
-                        <div class="col-sm-3">Price</div>
+                        <div class="col-sm-3 text-right">Price</div>
 
                         <div class="newClear"></div>
 
@@ -351,7 +273,6 @@ to order a few extras for replacements and new student transfers.
 		$product_id = $key;
 
 	?>
-
                      <div class="padsim1">
 
                      	<div class="col-sm-9">
@@ -372,7 +293,7 @@ to order a few extras for replacements and new student transfers.
 
                         </div>                       
 
-                        <div class="col-sm-3"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $classrooms; ?>"></div>                        
+                        <div class="col-sm-3 text-right"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $classrooms; ?>"></div>                        
 
                         <div class="newClear"></div>
 
@@ -380,79 +301,8 @@ to order a few extras for replacements and new student transfers.
 
 	<?php } } ?>					 
 
-                    <!--<div class="padsim1">
-
-                     	<div class="col-sm-9">
-
-                            <div class="studItemBox">
-
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-
-                                <div><strong>Product Item 2</strong><br />
-
-                                Short description of the product and what it does,why it’s useful or fun, etc.
-
-                                </div> 
-
-                                <div class="newClear"></div>
-
-                            </div>
-
-                        </div>                       
-
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product6" id="product6" value="<?php echo $classrooms; ?>"></div>                        
-
-                        <div class="newClear"></div>
-
-                     </div>
 
                      <div class="padsim1">
-
-                     	<div class="col-sm-9">
-
-                            <div class="studItemBox">
-
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-
-                                <div><strong>Product Item 3</strong><br />
-
-                                Short description of the product and what it does,why it’s useful or fun, etc.
-
-                                </div> 
-
-                                <div class="newClear"></div>
-
-                            </div>
-
-                        </div>                       
-
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product7" id="product7" value="<?php echo $classrooms; ?>"></div>                        
-
-                        <div class="newClear"></div>
-
-                     </div>-->
-
-                     <div class="padsim1">
-
-                     	<!--<div class="col-sm-9">
-
-                            <div class="studItemBox">
-
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-
-                                <div><strong>Product Item 4</strong><br />
-
-                                Short description of the product and what it does,why it’s useful or fun, etc.
-
-                                </div> 
-
-                                <div class="newClear"></div>
-
-                            </div>
-
-                        </div>                       
-
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="product8" id="product8" value="<?php echo $classrooms; ?>"></div>-->
 
 						<div class="newClear"></div>
 

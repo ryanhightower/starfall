@@ -172,7 +172,7 @@ to order a few extras for replacements and new student transfers.
 
 						</span></div></div>
 
-                        <div class="col-sm-3">Price</div>
+                        <div class="col-sm-3 text-right">Price</div>
 
                         <div class="newClear"></div>
 
@@ -212,7 +212,7 @@ to order a few extras for replacements and new student transfers.
 
                         </div>                       
 
-                        <div class="col-sm-3"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="textfield_<?php echo $product_id; ?>" id="textfield_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>"></div>                        
+                        <div class="col-sm-3 text-right"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="textfield_<?php echo $product_id; ?>" id="textfield_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>"></div>                        
 
                         <div class="newClear"></div>
 
@@ -220,85 +220,6 @@ to order a few extras for replacements and new student transfers.
 
 <?php } }?>
 
-                    <!--<div class="padsim1">
-
-                     	<div class="col-sm-9">
-
-                            <div class="studItemBox">
-
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-
-                                <div><strong>Product Item 2</strong><br />
-
-                                Short description of the product and what it does,why it’s useful or fun, etc.
-
-                                </div> 
-
-                                <div class="newClear"></div>
-
-                            </div>
-
-                        </div>                       
-
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="textfield2" id="textfield2" value="<?php echo $total_students; ?>"></div>                        
-
-                        <div class="newClear"></div>
-
-                     </div>
-
-                     <div class="padsim1">
-
-                     	<div class="col-sm-9">
-
-                            <div class="studItemBox">
-
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-
-                                <div><strong>Product Item 3</strong><br />
-
-                                Short description of the product and what it does,why it’s useful or fun, etc.
-
-                                </div> 
-
-                                <div class="newClear"></div>
-
-                            </div>
-
-                        </div>                       
-
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="textfield3" id="textfield3" value="<?php echo $total_students; ?>"></div>                        
-
-                        <div class="newClear"></div>
-
-                     </div>
-
-                     <div class="padsim1">
-
-                     	<div class="col-sm-9">
-
-                            <div class="studItemBox">
-
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
-
-                                <div><strong>Product Item 4</strong><br />
-
-                                Short description of the product and what it does,why it’s useful or fun, etc.
-
-                                </div> 
-
-                                <div class="newClear"></div>
-
-                            </div>
-
-                        </div>                       
-
-                        <div class="col-sm-3"><span>$4.99&nbsp;</span><input type="text" name="textfield4" id="textfield4" value="<?php echo $total_students; ?>"></div>                        
-
-                        <div class="newClear"></div>
-
-                     </div>-->
-
-                  
 
                     </div>
 
@@ -310,11 +231,7 @@ to order a few extras for replacements and new student transfers.
 
                 <div class="col-sm-3 fr">        	
 
-            		<!-- <div class="padsim3"><a class="btn btn-primary btn-lg" href="">Add All to Cart</a></div> -->
-
            			<div class="padsim3">
-
-					<!--<a class="btn btn-primary btn-lg" href="<?php echo SITE_URL;?>/cart.php ">Add All to Quote</a>-->
 
 					<input type="submit" class="btn btn-primary btn-lg" name="submit" value="Add All to Quote"></div>
 
@@ -322,27 +239,14 @@ to order a few extras for replacements and new student transfers.
 
 				</div>
 
-				
-
 			</div>
-
-
 
 	</form>		
 
 </section>
 
 
-
-		
-
 		<div class="clearfix"></div>
-
-
-
-
-
-
 
 
 

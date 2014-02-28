@@ -168,7 +168,7 @@ get_header_inner();
                        <span> A typical classroom will have one of these per student. Tip:you may want
 to order a few extras for replacements and new student transfers.
 						</span></div></div>
-                        <div class="col-sm-3">Price</div>
+                        <div class="col-sm-3 text-right">Price</div>
                         <div class="newClear"></div>
                     </div>
 	<?php 
@@ -188,7 +188,7 @@ to order a few extras for replacements and new student transfers.
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3"><span>$<?php echo $product['price'];?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>                        
+                        <div class="col-sm-3 text-right"><span>$<?php echo $product['price'];?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>                        
                         <div class="newClear"></div>
                      </div> 
 	<?php } }?>
@@ -199,7 +199,7 @@ to order a few extras for replacements and new student transfers.
                         <div class="simplleBoldstyle1">Per Classroom Items<br />
                        <span> A typical classroom will have one or more of each of these per classroom.
 						</span></div></div>
-                        <div class="col-sm-3">Price</div>
+                        <div class="col-sm-3 text-right">Price</div>
                         <div class="newClear"></div>
                     </div>
 	<?php 
@@ -219,7 +219,7 @@ to order a few extras for replacements and new student transfers.
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>                        
+                        <div class="col-sm-3 text-right"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>                        
                         <div class="newClear"></div>
                      </div>
 	<?php } } ?>
@@ -229,7 +229,7 @@ to order a few extras for replacements and new student transfers.
                        <span> A typical classroom will have one of these per student. Tip:you may want
 to order a few extras for replacements and new student transfers.
 						</span></div></div>
-                        <div class="col-sm-3">Price</div>
+                        <div class="col-sm-3 text-right">Price</div>
                         <div class="newClear"></div>
                     </div>	
  	<?php 
@@ -249,7 +249,7 @@ to order a few extras for replacements and new student transfers.
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>                        
+                        <div class="col-sm-3 text-right"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>                        
                         <div class="newClear"></div>
                      </div> 
 <?php } }?>                   
