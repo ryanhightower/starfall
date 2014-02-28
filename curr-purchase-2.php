@@ -184,7 +184,7 @@ get_header_inner();
 
                         <div class="simplleBoldstyle1">Per Student Items<br />
 
-                       <span> A typica lclassroom will have one of these per student. Tip:you may want
+                       <span> A typical classroom will have one of these per student. Tip: you may want
 
 to order a few extras for replacements and new student transfers.
 
