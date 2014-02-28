@@ -7,14 +7,13 @@ elseif ($_SESSION['user']['payment'] == "off") { $payMethod = "Checkout offline 
 ?>
 
 
-<div class="dropdown top_rightCorner">
-	<a data-toggle="dropdown" href="#" class="check" id="check"><?php echo $payMethod; ?></a>
-
-	<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-    	<li class="one"><a href="#" id="po" class="method">Checkout w/ purchase order</a></li>
-        <li class="two"><a href="#" id="cc" class="method">Checkout w/ credit card</a></li>
-        <li class="three"><a href="#" id="off" class="method">Checkout offline (mail/phone)</a></li>
-  	</ul>
+ <div class="dropdown top_rightCorner">
+		<a data-toggle="dropdown" href="#" class="check" id="check"><?php echo $payMethod; ?></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">	
+              <li class="one"><a href="#" id="po" class="method">Checkout w/ purchase order</a></li>
+              <li class="two"><a href="#" id="cc" class="method">Checkout w/ credit card</a></li>
+              <li class="three"><a href="#" id="off" class="method">Checkout offline (mail/phone)</a></li>
+            </ul>
 </div>
 
 <script type="text/javascript">
