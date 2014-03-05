@@ -54,8 +54,8 @@
 			var redirectLink = $(this).attr('href');
 			$.ajax({
 				type: "POST",
-				url: "pm.php",
-				data: {method:currentId, redirect:redirectLink}
+				url: "includes/ajax.php",
+				data: {fun:"payment", method:currentId, redirect:redirectLink}
 			}).done(function( data ) {
 				$("#price-quote").html(data);
 				if(currentId == "po"){
@@ -70,6 +70,20 @@
 				
 			});
 		});
+			$('a.clear-session').click(function( event ){
+				event.preventDefault();
+				var currentId = $(this).attr('id');
+				var vars = $(this).data('vars');
+				$.ajax({
+					type: "POST",
+					url: "includes/ajax.php",
+					data: {fun:"clear-session", vars:vars}
+				}).done(function( data ) {
+					console.log(data);
+    				location.reload();
+				
+				});
+			});
 		// TODO: Combine ajax functions into one ajax.php file.
 		//
 		// $('a#clear-session').click(function( event ){
@@ -94,9 +108,18 @@
 <body>
 
 	<div class="sessions">
+		<a href="#" class="clear-session">Clear SESSION</a>
+        <?php foreach($_SESSION as $key => $value):?>
+
+        	<a href="#" class="clear-session btn btn-link primary btn-sm" data-vars="<?php echo $key; ?>">Clear <?php echo $key; ?></a>
+
+    	<?php endforeach; ?>
+
+
     	<pre>
     	<?php print_r($_SESSION); ?>
         </pre>
         <?php // TODO: create?>
+       
         <!-- <a id="clear-session" href="#">Clear Session</a> -->
     </div>

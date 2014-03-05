@@ -8,48 +8,48 @@ elseif ($_SESSION['user']['payment'] == "cc") { $payMethod = "Checkout w/ credit
 elseif ($_SESSION['user']['payment'] == "off") { $payMethod = "Checkout offline (mail/phone)"; }
 
 
-// Set variables for form and move to next step
+// // Set variables for form and move to next step
 
-if(isset($_POST['single-class'])){
-  $_SESSION['curriculum']['returning'] = $_POST['return'];
+// if(isset($_POST['single-class'])){
+//   $_SESSION['curriculum']['returning'] = $_POST['return'];
 
-  $_SESSION['curriculum']['classrooms'] = $_POST['classrooms']=="single" ? 1 : $_POST['num-classrooms'];
+//   $_SESSION['curriculum']['classrooms'] = $_POST['classrooms']=="single" ? 1 : $_POST['num-classrooms'];
 
-  $_SESSION['curriculum']['students'] = $_POST['students'];
-  $location = SITE_URL."/curr-purchase-2.php";
+//   $_SESSION['curriculum']['students'] = $_POST['students'];
+//   $location = SITE_URL."/curr-purchase-2.php";
 
-  // $_SERVER['curriculum']['returning'] = $_POST['radio'];
+//   // $_SERVER['curriculum']['returning'] = $_POST['radio'];
 
-  //echo $_SERVER['curriculum']['returning'];
-  header("Location: $location", true);
-  exit();
-} elseif(isset($_POST['multiple-class'])){
+//   //echo $_SERVER['curriculum']['returning'];
+//   header("Location: $location", true);
+//   exit();
+// } elseif(isset($_POST['multiple-class'])){
 
-  $_SESSION['curriculum']['returning'] = $_POST['return'];
-  $_SESSION['curriculum']['multiclassroom'] = 'yes';
+//   $_SESSION['curriculum']['returning'] = $_POST['return'];
+//   $_SESSION['curriculum']['multiclassroom'] = 'yes';
 
-  $_SESSION['curriculum']['classrooms'] = $num = $_POST['classrooms']=="single" ? 1 : $_POST['num-classrooms'];
-  $_SESSION['curriculum']['students'] = 0;
-  for($i=0;$i<$num; $i++ ){
-    $_SESSION['curriculum']['students'] += $_POST['class'.$i];  
-  }
-  //$_SESSION['curriculum']['students'] = $_POST['students'];
-  $location = SITE_URL."/curr-purchase-2.php";
-  // $_SERVER['curriculum']['returning'] = $_POST['radio'];
-  //echo $_SERVER['curriculum']['returning'];
-  header("Location: $location", true);
-  exit();
-}
+//   $_SESSION['curriculum']['classrooms'] = $num = $_POST['classrooms']=="single" ? 1 : $_POST['num-classrooms'];
+//   $_SESSION['curriculum']['students'] = 0;
+//   for($i=0;$i<$num; $i++ ){
+//     $_SESSION['curriculum']['students'] += $_POST['class'.$i];  
+//   }
+//   //$_SESSION['curriculum']['students'] = $_POST['students'];
+//   $location = SITE_URL."/curr-purchase-2.php";
+//   // $_SERVER['curriculum']['returning'] = $_POST['radio'];
+//   //echo $_SERVER['curriculum']['returning'];
+//   header("Location: $location", true);
+//   exit();
+// }
 
-if(isset($_POST['btnsubmitpre'])){
- array_pop($_POST);
- $_SESSION['Pre_K_Curriculum']['cart']= $_POST;
-//echo "<pre>"; 
-//print_r($_SESSION['Pre_K_Curriculum']['cart']); echo "</pre>"; exit;
-  $next_step = SITE_URL."/cart.php"; 
-  header("Location: $next_step", true);
-  exit();
-}
+// if(isset($_POST['btnsubmitpre'])){
+//  array_pop($_POST);
+//  $_SESSION['Pre_K_Curriculum']['cart']= $_POST;
+// //echo "<pre>"; 
+// //print_r($_SESSION['Pre_K_Curriculum']['cart']); echo "</pre>"; exit;
+//   $next_step = SITE_URL."/cart.php"; 
+//   header("Location: $next_step", true);
+//   exit();
+// }
 ?>
 <?php
 get_header_inner(); 
@@ -64,7 +64,7 @@ get_header_inner();
         	<div class="row">
             <div class="col-sm-2">
 			<!-- Starfall logo -->
-			<div id="logo"><h3>Starfall</h3></div>
+			<div id="logo"><a href="<?php echo SITE_URL; ?>/store.php"><h3>Starfall Store</h3></a></div>
             </div>
             <div class="col-sm-7">
 				<h1>Starfall Pre-K Curriculum</h1>
@@ -132,61 +132,7 @@ get_header_inner();
 		<div class="clearfix"></div>
 <script type="text/javascript">
   $(document).ready(function(){ 
-      // Hide divs to start
-      $("div.conditional-1").hide();
-      $("div.conditional-2").hide();
-      $q1 = $("input[name$='return']");
-      // Check if divs should already be shown
-        $val1 = $("input:checked");
-         if($val1 != undefined){
-          $val1.each(function(index){
-            var div = $( this ).val();
-            $("#"+div).show();
-          });
-         } 
-      // Show divs when selected
-      $q1.change(function() {
-          var div = $(this).val();
-          $("div.conditional-1").hide();
-          $("#"+div).show();
-      }); 
-	  
-      $("input[name$='classrooms']").change(function() {
-          var test = $(this).val();
-          $("div.conditional-2").hide();
-          if(test=="single"){
-            $("#"+test).show();
-          } else if(test=="multiple"){
-            // MULTIPLE CLASSROOMS
-            // need to calculate how many fields to show
-            $("#"+test).show();
-            $('#num-classrooms').blur(function() {
-              var $num = $(this).val();
-              // console.log($num);
-              $("#"+test).show();
-              var elem;
-              for (var i=0;i<$num;i++)
-              { 
-                var p = $("<p/>", {
-                  class: "class-"+i
-                });
-                var input = $("<input/>", {
-                  id: "class"+i,
-                  type: "text",
-                  name: "class"+i
-                });
-                var label = $("<label/>", {
-                  html: "Classroom "+(i+1)+" Students"
-                });
-
-                p.append(input).append(" ").append(label);
-                $('#multiple-inputs').append(p);
-                //$(elem).add(input);
-              }
-              // console.log($elem);
-            })
-          }
-      });
+     
   });
 </script>
 <?php get_footer(); ?>

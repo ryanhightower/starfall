@@ -20,7 +20,7 @@
 
 	<script type="text/javascript">
 	$(document).ready(function() {
-		/*
+		
 		$("a.redirect").click(function( event ) {
 			event.preventDefault();
 			var href = $(this).attr('href');
@@ -32,7 +32,7 @@
 				window.location.href = "<?php echo SITE_URL; ?>/purchase-method.php";
 			});
 		});
-		*/
+		
 		$('a.payment').click(function( event ){
 			event.preventDefault();
 			var currentId = $(this).attr('id');

@@ -486,7 +486,8 @@ input.btn-cart{background:url(icon/btn-cart.jpg) left top no-repeat; width:100px
 
 .credit_card  label{ width:150px}
 
-.credit_card  input[type="text"]{ width:43%; margin:0px 0 10px 0}
+.credit_card  select{ vertical-align: top; }
+.credit_card  input[type="text"], .credit_card input[type="password"]{ width:43%; margin:0px 0 10px 0; vertical-align: top;}
 
 .credit_card  input[type="submit"]{ margin:0px 0 0 150px}
 

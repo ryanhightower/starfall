@@ -27,25 +27,25 @@ get_header_product(); ?>
 			<img data-src="holder.js/150x150" alt="150x150" class="img-circle pull-left img-responsive">
 			<h3>
 			FIrst featured product</h3>
-			<p>GreatValue!<br>
-Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, Mox, TinMan, Gus, and introducing Backpack Bear.<br>
-<a href="#">Learn More</a></p>
+			<p>Great Value!<br>
+Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, Mox, Tin Man, Gus, and introducing Backpack Bear. <br>
+<a href="#">Learn More</a> </p>
 			</div>
 			<div class="clearfix"></div>
             <div class="col-md-6">
             <img data-src="holder.js/100x100" alt="100x100" class="img-circle pull-left img-responsive">
 			<h3>
 			FIrst featured product</h3>
-			<p>GreatValue!<br>
-Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, Mox, TinMan, Gus, and introducing Backpack Bear.<br>
+			<p>Great Value!<br>
+Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, Mox, Tin Man, Gus, and introducing Backpack Bear. <br>
 <a href="#">Learn More</a>&nbsp;&nbsp;<a href="#">Buy Now</a></p>
             </div>
             <div class="col-md-6">
             <img data-src="holder.js/100x100" alt="100x100" class="img-circle pull-left img-responsive">
 			<h3>
 			FIrst featured product</h3>
-			<p>GreatValue!<br>
-Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, Mox, TinMan, Gus, and introducing Backpack Bear.<br>
+			<p>Great Value!<br>
+Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, Mox, Tin Man, Gus, and introducing Backpack Bear. <br>
 <a href="#">Learn More</a>&nbsp;&nbsp;<a href="#">Buy Now</a></p>
             </div>
             <div class="clearfix"></div>
@@ -53,54 +53,54 @@ Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, 
 		<div class="clearfix"></div>
 		<section class="container pro-list">
 			
-			<h2 align="left">Popular products</h2>
+			<h2 align="left">Popular products</h2>
             <div class="col-md-3">
-            <h3>Product 1</h3>
+            <h3>Product 1</h3>
             <img data-src="holder.js/100x100" alt="100x100" class="img-circle img-responsive"><br>
 			<span>$4.99</span><br>
-            Each pack contains 5 sheetsof <br> colorful stickers featuring Zac
+            Each pack contains 5 sheets of <br> colorful stickers featuring Zac
             </div>
             <div class="col-md-3">
-            <h3>Product 2</h3>
+            <h3>Product 2</h3>
             <img data-src="holder.js/100x100" alt="100x100" class="img-circle img-responsive"><br>
 			<span>$4.99</span><br>
-            Each pack contains 5 sheetsof <br> colorful stickers featuring Zac
+            Each pack contains 5 sheets of <br> colorful stickers featuring Zac
             </div>
             <div class="col-md-3">
-            <h3>Product 3</h3>
+            <h3>Product 3</h3>
             <img data-src="holder.js/100x100" alt="100x100" class="img-circle img-responsive"><br>
 			<span>$4.99</span><br>
-            Each pack contains 5 sheetsof <br> colorful stickers featuring Zac
+            Each pack contains 5 sheets of <br> colorful stickers featuring Zac
             </div>
             <div class="col-md-3">
             <h3>Product 4</h3>
             <img data-src="holder.js/100x100" alt="100x100" class="img-circle img-responsive"><br>
 			<span>$4.99</span><br>
-            Each pack contains 5 sheetsof <br> colorful stickers featuring Zac
+            Each pack contains 5 sheets of <br> colorful stickers featuring Zac
             </div>
             <div class="col-md-3">
             <h3>Product 5</h3>
             <img data-src="holder.js/100x100" alt="100x100" class="img-circle img-responsive"><br>
 			<span>$4.99</span><br>
-            Each pack contains 5 sheetsof <br> colorful stickers featuring Zac
+            Each pack contains 5 sheets of <br> colorful stickers featuring Zac
             </div>
             <div class="col-md-3">
             <h3>Product 6</h3>
             <img data-src="holder.js/100x100" alt="100x100" class="img-circle img-responsive"><br>
 			<span>$4.99</span><br>
-            Each pack contains 5 sheetsof <br> colorful stickers featuring Zac
+            Each pack contains 5 sheets of <br> colorful stickers featuring Zac
             </div>
             <div class="col-md-3">
             <h3>Product 7</h3>
             <img data-src="holder.js/100x100" alt="100x100" class="img-circle img-responsive"><br>
 			<span>$4.99</span><br>
-            Each pack contains 5 sheetsof <br> colorful stickers featuring Zac
+            Each pack contains 5 sheets of <br> colorful stickers featuring Zac
             </div>
             <div class="col-md-3">
             <h3>Product 8</h3>
             <img data-src="holder.js/100x100" alt="100x100" class="img-circle img-responsive"><br>
 			<span>$4.99</span><br>
-            Each pack contains 5 sheetsof <br> colorful stickers featuring Zac
+            Each pack contains 5 sheets of <br> colorful stickers featuring Zac
             </div>
             
 

@@ -101,7 +101,7 @@
 
 			<!-- Starfall logo -->
 
-			<div id="logo"><h3>Starfall Store</h3></div>
+			<div id="logo"><a href="<?php echo SITE_URL; ?>/store.php"><h3>Starfall Store</h3></a></div>
 
 			</div>
 

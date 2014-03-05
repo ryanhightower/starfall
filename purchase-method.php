@@ -9,10 +9,11 @@ if (isset($_POST['login'])) {
 	if ((!$_POST['textfield']) || (!$_POST['textfield2'])) { $error .= "You must have both a username and password."; }
 	else { $_SESSION['user']['username'] = $_POST['textfield']; $error .= ""; 
 		if ($_SESSION['user']['redirect'] != "") { header( 'Location: '.$_SESSION["user"]["redirect"]); }
-		else { header( 'Location: '.SITE_URL.'/curr-purchase-1.php'); }
+		else { header( 'Location: '.$_SESSION["user"]["redirect"]); }
 	}
 }
 
+if($_SESSION["user"]["redirect"]==""){ $_SESSION["user"]["redirect"]= SITE_URL; }
 
 
 get_header(); 

@@ -33,22 +33,22 @@ if(isset($_POST['single-class'])){
 //session_destroy();
 if(isset($_POST['submit'])){
 //print_r($_SESSION); 
-    array_pop($_POST);
+    //array_pop($_POST);
     // Store Product values and move to next step
-foreach($_POST as $key => $row)
-{ 
-$product_key_arr =explode('_',$key);
-	if(isset($_POST[$key]) && $_POST[$key]!='')
-	{
-		$_SESSION['curriculum']['cart'][$product_key_arr[1]]= array("quantity" => $_POST[$key],"price" => $DB[$product_key_arr[1]]['price']);
-	}
-    //echo $_SESSION['curriculum']['products'][$i]."<br>";
-  } 
- //echo "<pre>";
-//print_r($_SESSION['curriculum']['cart']);   echo "</pre>"; exit;
-  $next_step = SITE_URL."/cart.php";
-  header("Location: $next_step", true);
-  exit();
+    foreach($_POST['curriculum'] as $key => $row)
+    { 
+        $product_key_arr =explode('_',$key);
+      	if(isset($_POST[$key]) && $_POST[$key]!='')
+      	{
+      		$_SESSION['curriculum']['cart'][$product_key_arr[1]]= array("quantity" => $_POST[$key],"price" => $DB[$product_key_arr[1]]['price']);
+      	}
+          //echo $_SESSION['curriculum']['products'][$i]."<br>";
+    } 
+     //echo "<pre>";
+    //print_r($_SESSION['curriculum']['cart']);   echo "</pre>"; exit;
+      $next_step = SITE_URL."/cart.php";
+      header("Location: $next_step", true);
+      exit();
 }
 ?>
 <?php
@@ -70,7 +70,7 @@ get_header_inner();
         	<div class="row">
             <div class="col-sm-2">
 			<!-- Starfall logo -->
-			<div id="logo"><h3>Starfall Store</h3></div>
+			<div id="logo"><a href="<?php echo SITE_URL; ?>/store.php"><h3>Starfall Store</h3></a></div>
             </div>
             <div class="col-sm-7">
 				<h1>Starfall Kindergarten Curriculum</h1>
@@ -103,10 +103,10 @@ get_header_inner();
                     <div class="grey-box">
                       <h3 class="text-center">Have you purchased this Curriculum before? </h3>
                       <p>
-                        <label for="radio"><input type="radio" name="return" id="radio_no" value="no" class="return-no"> No. Help me calculate how many materials I need.</label>
-                      </p>
-                      <p>
                         <label for="radio"><input type="radio" name="return" id="radio_yes" value="yes" class="return-yes"> Yes.Take me straight to the itemized order form.</label>
+                      </p>
+                       <p>
+                        <label for="radio"><input type="radio" name="return" id="radio_no" value="no" class="return-no"> No. Help me calculate how many materials I need.</label>
                       </p>
                     </div>
                     </div>

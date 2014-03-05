@@ -142,14 +142,14 @@ $DB = array(
 		 "type" => "Pre-K Curriculum"
          ),
 	"13" => array(
-         "name" => "Membership type",
+         "name" => "Membership",
 		 "description" => "",
 		 "price" => 0,
 		 "old_price" => 0,
 		 "type_option" => array(
-					 "1" => array("op_name" => "Teacher price","op_price" => 70),
-					 "2" => array("op_name" => "Classroom price","op_price" => 150),
-					 "3" => array("op_name" => "School price","op_price" => 270)
+					 "1" => array("op_name" => "Teacher Membership","op_price" => 70),
+					 "2" => array("op_name" => "Classroom Membership","op_price" => 150),
+					 "3" => array("op_name" => "School Membership","op_price" => 270)
 					 ),
 		 "type" => "Pre-K member"
          )

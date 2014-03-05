@@ -54,7 +54,8 @@ echo "</pre>"; exit;*/
 
 // Set variables for Step 3
 
-$total_students = $_SESSION['curriculum']['students'];
+// $total_students = $_SESSION['curriculum']['students'];
+$total_students = 0;  // For OPTIONAL items, we don't want to specify how many they should buy [From Client (02/28/14)];
 
 //var_dump($_SESSION['curriculum']['products']);
 
@@ -94,7 +95,7 @@ get_header_inner();
 
 			<!-- Starfall logo -->
 
-			<div id="logo"><h3>Starfall Store</h3></div>
+			<div id="logo"><a href="<?php echo SITE_URL; ?>/store.php"><h3>Starfall Store</h3></a></div>
 
             </div>
 
