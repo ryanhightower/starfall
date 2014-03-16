@@ -197,7 +197,7 @@ to order a few extras for replacements and new student transfers.
                     </div>
 
 	<?php 
-
+$student_total = 0;
 	foreach($DB as $key => $product)
 
 	{
@@ -207,7 +207,8 @@ to order a few extras for replacements and new student transfers.
 		{
 
 		$product_id = $key;
-
+		if(isset($total_students))
+		$student_total = $student_total + ($total_students * $product['price']);
 	?>
 
                      <div class="padsim1">
@@ -230,7 +231,7 @@ to order a few extras for replacements and new student transfers.
 
                         </div>                       
 
-                        <div class="col-sm-3 text-right"><span>$<?php echo $product['price'];?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>"></div>                        
+                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price'];?></span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php if(isset($total_students)){ echo $total_students;} ?>"><span id="p_cost_<?php echo $product_id; ?>"><?php if(isset($total_students)){ echo '$'.($total_students*$product['price']);} ?></span></div>                        
 
                         <div class="newClear"></div>
 
@@ -261,7 +262,7 @@ to order a few extras for replacements and new student transfers.
                     </div>
 
 	<?php 
-
+$classroom_total = 0;
 	foreach($DB as $key => $product)
 
 	{
@@ -271,7 +272,8 @@ to order a few extras for replacements and new student transfers.
 		{ 
 
 		$product_id = $key;
-
+		if(isset($classrooms))
+		$classroom_total = $classroom_total + ($classrooms * $product['price']);
 	?>
                      <div class="padsim1">
 
@@ -293,15 +295,31 @@ to order a few extras for replacements and new student transfers.
 
                         </div>                       
 
-                        <div class="col-sm-3 text-right"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php echo $classrooms; ?>"></div>                        
+                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value="<?php if(isset($classrooms)){ echo $classrooms;} ?>"><span id="p_cost_<?php echo $product_id; ?>"><?php if(isset($classrooms)){ echo '$'.($classrooms*$product['price']);} ?></span></div>                        
 
                         <div class="newClear"></div>
 
                      </div>
 
-	<?php } } ?>					 
-
-
+	<?php } } 
+	$total = $classroom_total + $student_total;
+	?>
+	<div class="clearfix"></div>	
+		<div class="col-sm-3 fr"> 
+        	<div class="totalBox">
+            	<div class="totlaBar">
+                	<strong>SubTotal: </strong><span id="subtotal">$<?php echo $total;?></span>
+                </div>
+                <!--<div class="totlaBar">
+                	<strong>Shipping: </strong><span>$0.00</span>
+                </div>
+                <div class="totlaBar">
+                	<strong>Tax </strong><span>$0.00</span>
+                </div>
+                <div class="totlaBar2">
+                	<strong>Total </strong><span id="total">$<?php echo $total;?></span>
+                </div>-->
+            </div>
                      <div class="padsim1">
 
 						<div class="newClear"></div>
@@ -309,7 +327,7 @@ to order a few extras for replacements and new student transfers.
                         <input type="submit" class="btn btn-success" name="submit" value="Next Step">
 
                      </div>
-
+				</div>
                     </div>
 
                    </div>
@@ -329,19 +347,59 @@ to order a few extras for replacements and new student transfers.
 	</form>
 
 </section>
-
-
-
-		
-
-		<div class="clearfix"></div>
-
-
-
-
-
-
-
-
-
+<div class="clearfix"></div>
 <?php get_footer(); ?>
+<script type="text/javascript">
+$(document).ready(function(){ 
+var total = 0;	
+	$('.grey-box2 input[type=text]').each(function(index, element) {
+	//alert();
+		$(this).focusout(function() {
+		//alert($(this).attr("id"));
+		var id = $(this).attr("id");
+		var id_arr = id.split('_');
+		var product_id = id_arr[1];
+		var product_qty = $(this).val();
+		var price = $('#p_price_'+product_id).html();
+		var split_price_arr = price.split('$');
+		var per_price = parseFloat(split_price_arr[1]);
+		//per_price = per_price.toFixed(2);
+		if(product_qty=='')
+		var product_cost = 0;
+		else
+		var product_cost = (per_price) * (parseInt(product_qty));
+		product_cost = product_cost.toFixed(2);
+		//alert(product_cost);
+		var p_cost_str = '$'+product_cost;
+		$('#p_cost_'+product_id).html(p_cost_str);
+		/*total = parseFloat(total) + parseFloat(product_cost);
+		total = total.toFixed(2);
+		alert(total);
+		$('#subtotal').html(total);
+		$('#total').html(total);*/
+		var total = 0;
+		$('.grey-box2 input[type=text]').each(function(index, element) {
+		var id = $(this).attr("id");
+		var id_arr = id.split('_');
+		var product_id = id_arr[1];
+		var product_qty = $(this).val();
+		var price = $('#p_price_'+product_id).html();
+		var split_price_arr = price.split('$');
+		var per_price = parseFloat(split_price_arr[1]);
+		//per_price = per_price.toFixed(2);
+		if(product_qty=='')
+		var product_cost = 0;
+		else
+		var product_cost = (per_price) * (parseInt(product_qty));
+		product_cost = product_cost.toFixed(2);
+		total = parseFloat(total) + parseFloat(product_cost);
+		total = total.toFixed(2);
+		//alert(total);
+		$('#subtotal').html(total);
+		//$('#total').html(total);
+		});
+		});
+		
+	});
+});
+</script>

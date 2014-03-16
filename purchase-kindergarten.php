@@ -33,9 +33,10 @@ if(isset($_POST['single-class'])){
 //session_destroy();
 if(isset($_POST['submit'])){
 //print_r($_SESSION); 
-    //array_pop($_POST);
+    array_pop($_POST);
+	//print_r($_POST); exit;
     // Store Product values and move to next step
-    foreach($_POST['curriculum'] as $key => $row)
+    foreach($_POST as $key => $row)
     { 
         $product_key_arr =explode('_',$key);
       	if(isset($_POST[$key]) && $_POST[$key]!='')
@@ -97,7 +98,7 @@ get_header_inner();
                 <img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive">
                 <div class="space20"></div>
                 </div>
-	<form name="frmquote" id="frmquote" method="post">
+	<form name="frmoption" id="frmoption" method="post">
                 <div class="col-sm-9">
                     <div class="row">
                     <div class="grey-box">
@@ -152,6 +153,8 @@ get_header_inner();
                     </div>
                     </div>
                   </div>
+				  </form>
+<form name="frmquote" id="frmquote" method="post">
 	<div class="col-sm-12" id="yes">
 				<div class="row">
                 <div class="col-sm-3">
@@ -188,7 +191,7 @@ to order a few extras for replacements and new student transfers.
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3 text-right"><span>$<?php echo $product['price'];?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>                        
+                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price'];?></span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""><span id="p_cost_<?php echo $product_id; ?>"></span></div>                        
                         <div class="newClear"></div>
                      </div> 
 	<?php } }?>
@@ -219,7 +222,7 @@ to order a few extras for replacements and new student transfers.
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3 text-right"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>                        
+                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""><span id="p_cost_<?php echo $product_id; ?>"></span></div>                        
                         <div class="newClear"></div>
                      </div>
 	<?php } } ?>
@@ -249,7 +252,7 @@ to order a few extras for replacements and new student transfers.
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3 text-right"><span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>                        
+                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""><span id="p_cost_<?php echo $product_id; ?>"></span></div>                        
                         <div class="newClear"></div>
                      </div> 
 <?php } }?>                   
@@ -258,7 +261,21 @@ to order a few extras for replacements and new student transfers.
                    </div>
                 </div>
                  <div class="clearfix"></div>
-                <div class="col-sm-3 fr">        	
+                <div class="col-sm-3 fr"> 
+        	<div class="totalBox">
+            	<div class="totlaBar">
+                	<strong>SubTotal: </strong><span id="subtotal">$0.00</span>
+                </div>
+                <!--<div class="totlaBar">
+                	<strong>Shipping: </strong><span>$0.00</span>
+                </div>
+                <div class="totlaBar">
+                	<strong>Tax </strong><span>$0.00</span>
+                </div>
+                <div class="totlaBar2">
+                	<strong>Total </strong><span id="total">$0.00</span>
+                </div>-->
+            </div>				
            			<div class="padsim3">
 					<input type="submit" class="btn btn-primary btn-lg" name="submit" value="Add All to Quote"></div>
         		</div>  
@@ -315,6 +332,59 @@ $(document).ready(function(){
 			$( "#multiple-inputs" ).html( newhtml );
 		}
 	}).keyup();	
+	
+ var total = 0;	
+$('.grey-box2 input[type=text]').each(function(index, element) {
+//alert();
+	$(this).focusout(function() {
+	//alert($(this).attr("id"));
+	var id = $(this).attr("id");
+	var id_arr = id.split('_');
+	var product_id = id_arr[1];
+	var product_qty = $(this).val();
+	var price = $('#p_price_'+product_id).html();
+	var split_price_arr = price.split('$');
+	var per_price = parseFloat(split_price_arr[1]);
+	//per_price = per_price.toFixed(2);
+	if(product_qty=='')
+	var product_cost = 0;
+	else
+	var product_cost = (per_price) * (parseInt(product_qty));
+	product_cost = product_cost.toFixed(2);
+	//alert(product_cost);
+	var p_cost_str = '$'+product_cost;
+	$('#p_cost_'+product_id).html(p_cost_str);
+	/*total = parseFloat(total) + parseFloat(product_cost);
+	total = total.toFixed(2);
+	//alert(total);
+	$('#subtotal').html(total);
+	$('#total').html(total);*/
+	var total = 0;
+	$('.grey-box2 input[type=text]').each(function(index, element) {
+		var id = $(this).attr("id");
+		var id_arr = id.split('_');
+		var product_id = id_arr[1];
+		var product_qty = $(this).val();
+		var price = $('#p_price_'+product_id).html();
+		var split_price_arr = price.split('$');
+		var per_price = parseFloat(split_price_arr[1]);
+		//per_price = per_price.toFixed(2);
+		if(product_qty=='')
+		var product_cost = 0;
+		else
+		var product_cost = (per_price) * (parseInt(product_qty));
+		product_cost = product_cost.toFixed(2);
+		total = parseFloat(total) + parseFloat(product_cost);
+		total = total.toFixed(2);
+		//alert(total);
+		$('#subtotal').html(total);
+		//$('#total').html(total);
+		});
+	});
+
+});
+	
+	
 });
 function validate(evt) {
   var theEvent = evt || window.event;

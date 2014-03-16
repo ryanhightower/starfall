@@ -85,7 +85,7 @@ $DB = array(
 		 "type_option" => array(),
 		 "type" => "Per Classroom Items"
          ),
-	"product_item_6" => array(
+	"6" => array(
          "name" => "KIT60 Block Print - Practice Books Kit",
 		 "description" => "Listening and Writing - Book 1 (Block Print), Reading and Writing - Book 2 (Block Print); Backpack Bear's Expanded Cut-Up/Take-Home Book Set; My Starfall Writing Journal; and My Starfall Dictionary. Free pencils with orders of 20+.",
 		 "price" => 5.41,

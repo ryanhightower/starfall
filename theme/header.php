@@ -26,7 +26,7 @@
 			var href = $(this).attr('href');
 			$.ajax({
 				type: "POST",
-				url: "redirect.php",
+				url: "<?php echo SITE_URL; ?>/redirect.php",
 				data: {redirect:href}
 			}).done(function( result ) {
 				window.location.href = "<?php echo SITE_URL; ?>/purchase-method.php";
@@ -39,7 +39,7 @@
 			var redirectLink = $(this).attr('href');
 			$.ajax({
 				type: "POST",
-				url: "pm.php",
+				url: "<?php echo SITE_URL; ?>/pm.php",
 				data: {method:currentId, redirect:redirectLink}
 			}).done(function( data ) {
 				window.location.href = redirectLink;
@@ -50,10 +50,15 @@
 </head>
 <body>
 	<div class="sessions">
+		<a href="#" class="clear-session">Clear SESSION</a>
+         <?php foreach($_SESSION as $key => $value):?>
+
+        	<a href="#" class="clear-session btn btn-link primary btn-sm" data-vars="<?php echo $key; ?>">Clear <?php echo $key; ?></a>
+
+    	<?php endforeach; ?>
     	<pre>
     	<?php print_r($_SESSION); ?>
-    	<?php //print_r($_SESSION['curriculum']); ?>
-        <?php echo session_name(); ?>
+
         </pre>
     </div>
 	<div class="container">

@@ -35,69 +35,45 @@
 
 	<script type="text/javascript">
 	$(document).ready(function() {
-		/*
-		$("a.redirect").click(function( event ) {
-			event.preventDefault();
-			var currentId = $(this).attr('id');
-			$.ajax({
-				type: "POST",
-				url: "redirect.php",
-				data: {redirect:currentId}
-			}).done(function( result ) {
-				window.location.href = "/purchase-method.php";
-			});
-		});
-		*/
+
 		$('a.payment').click(function( event ){
 			event.preventDefault();
 			var currentId = $(this).attr('id');
 			var redirectLink = $(this).attr('href');
 			$.ajax({
 				type: "POST",
-				url: "includes/ajax.php",
+				url: "<?php echo SITE_URL; ?>/includes/ajax.php",
 				data: {fun:"payment", method:currentId, redirect:redirectLink}
 			}).done(function( data ) {
 				$("#price-quote").html(data);
 				if(currentId == "po"){
 					$("#po").html("Pay with Credit Card");
-					$("#price-quote").attr('href', '/checkout-po.php' );
+					$("#price-quote").attr('href', '<?php echo SITE_URL; ?>/checkout-po.php' );
 					$('#po').attr('id', 'cc');
 				}if(currentId == "cc"){
 					$("#cc").html("Convert to Quote");
-					$("#price-quote").attr('href', '/checkout-cc.php' );
+					$("#price-quote").attr('href', '<?php echo SITE_URL; ?>/checkout-cc.php' );
 					$('#cc').attr('id', 'po');
 				}
 				
 			});
 		});
-			$('a.clear-session').click(function( event ){
-				event.preventDefault();
-				var currentId = $(this).attr('id');
-				var vars = $(this).data('vars');
-				$.ajax({
-					type: "POST",
-					url: "includes/ajax.php",
-					data: {fun:"clear-session", vars:vars}
-				}).done(function( data ) {
-					console.log(data);
-    				location.reload();
-				
-				});
+		$('a.clear-session').click(function( event ){
+			event.preventDefault();
+			var currentId = $(this).attr('id');
+			var vars = $(this).data('vars');
+			$.ajax({
+				type: "POST",
+				url: "<?php echo SITE_URL; ?>/includes/ajax.php",
+				data: {fun:"clear-session", vars:vars}
+			}).done(function( data ) {
+				console.log(data);
+				location.reload();
+			
 			});
+		});
 		// TODO: Combine ajax functions into one ajax.php file.
-		//
-		// $('a#clear-session').click(function( event ){
-		// 	event.preventDefault();
-		// 	var redirectLink = $(this).attr('href');
-		// 	var clear = "clear";
-		// 	$.ajax({
-		// 		type: "POST",
-		// 		url: "ajax.php",
-		// 		data: {clear:clear}
-		// 	}).done(function( data ) {
-		// 		window.location.href = redirectLink;
-		// 	});
-		// });
+		
 	});
 	</script>
 

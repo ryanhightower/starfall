@@ -13,7 +13,7 @@ if (isset($_POST['login'])) {
 	}
 }
 
-if($_SESSION["user"]["redirect"]==""){ $_SESSION["user"]["redirect"]= SITE_URL; }
+if(!isset($_SESSION["user"]["redirect"])){ $_SESSION["user"]["redirect"]= SITE_URL; }
 
 
 get_header(); 
@@ -106,7 +106,8 @@ get_header();
 
                       <h2>Continue as a guest, 3 ways to shop!</h2>
 
-                      <p>You can create an account at checkout etc...Schools in the US and Canada can pay by purchase order. Choose purchase order below to create a pricequote etc...</p>
+                      <p>You can create an account at checkout etc...Schools in the US and Canada can pay by purchase order. Choose purchase order below to create a pricequote etc...<br>
+                      	(US & Canada Orders Only)</p>
 
                     </div>
 
@@ -140,7 +141,8 @@ get_header();
 
 								<p><img data-src="holder.js/150x150" alt="150x150" class="img-circle img-center img-responsive"></p>
 
-								<p>I want to create a Price Quote and eventually pay OFFLINE by credit card or check .</p>
+								<p>I want to create a Price Quote and eventually pay OFFLINE by credit card or check. <br>
+									(International Orders click here.)</p>
 
 								</a>
 

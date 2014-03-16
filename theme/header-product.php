@@ -39,37 +39,53 @@
 
 	$(document).ready(function() {
 
-		$( "a.redirect" ).click(function( event ) {
-
+		$("a.redirect").click(function( event ) {
 			event.preventDefault();
-
-			var link = $(this).attr('href');
-
-			window.location.href = "/purchase-method.php?l=" + link;
-
-		});
-
-		$('a.method').click(function( event ){
-
-			event.preventDefault();
-
-			var currentId = $(this).attr('id');
-
+			var href = $(this).attr('href');
 			$.ajax({
-
 				type: "POST",
-
-				url: "pm.php",
-
-				data: {method:currentId}
-
+				url: "redirect.php",
+				data: {redirect:href}
 			}).done(function( result ) {
-
-				$("#check").html(result);
-
+				window.location.href = "<?php echo SITE_URL; ?>/purchase-method.php";
 			});
-
 		});
+
+		$('a.payment').click(function( event ){
+			event.preventDefault();
+			var currentId = $(this).attr('id');
+			var redirectLink = $(this).attr('href');
+			$.ajax({
+				type: "POST",
+				url: "pm.php",
+				data: {method:currentId, redirect:redirectLink}
+			}).done(function( data ) {
+				window.location.href = redirectLink;
+			});
+		});
+
+		// .method moved to dropdown.php
+		// $('a.method').click(function( event ){
+
+		// 	event.preventDefault();
+
+		// 	var currentId = $(this).attr('id');
+
+		// 	$.ajax({
+
+		// 		type: "POST",
+
+		// 		url: "pm.php",
+
+		// 		data: {method:currentId}
+
+		// 	}).done(function( result ) {
+
+		// 		$("#check").html(result);
+
+		// 	});
+
+		// });
 
 	});
 
