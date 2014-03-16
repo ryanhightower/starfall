@@ -19,6 +19,9 @@ if(isset($_POST['single-class'])){
 	if(isset($_POST['member_id2']))
 	$_SESSION['curriculum']['cart'][$_POST['member_id2']]= array("quantity" => 1,"price" => $_POST['option_member2']);
 	
+	if(isset($_POST['image_option']))
+	$_SESSION['curriculum']['image_option']= $_POST['image_option'];
+	
     header("Location: $location", true);
     exit();
 } elseif(isset($_POST['multiple-class'])){
@@ -36,6 +39,8 @@ if(isset($_POST['single-class'])){
 	if(isset($_POST['member_id2']))
 	$_SESSION['curriculum']['cart'][$_POST['member_id2']]= array("quantity" => 1,"price" => $_POST['option_member2']);
 	
+	if(isset($_POST['image_option']))
+	$_SESSION['curriculum']['image_option']= $_POST['image_option'];
 	
     //$_SESSION['curriculum']['students'] = $_POST['students'];
     $location = SITE_URL."/curr-purchase-2.php";
@@ -229,6 +234,18 @@ get_header_inner();
                     </div>
                     </div>
 				<div class="space20"></div>
+                    <div class="row">
+                    <div class="grey-box print_image">
+                      <h3 class="text-center">Do you want to order practice books in Block Print or Manuscript? (ex. Block [image of block print], Manuscript [image of manuscript] )</h3>
+                      <p>
+                        <label for="radio"><input type="radio" name="image_option" id="blockimage" value="6" class="return-image"> Block [image of block print].</label>
+                      </p>
+                       <p>
+                        <label for="radio"><input type="radio" name="image_option" id="manuscript" value="7" class="return-image"> Manuscript [image of manuscript].</label>
+                      </p>
+                    </div>
+                    </div>
+				<div class="space20"></div>
 				<div class="row">
 					<div class="grey-box pre-k-check">
                       <h3 class="text-center"></h3>
@@ -386,7 +403,7 @@ to order a few extras for replacements and new student transfers.
                      <div class="padsim1">
                      	<div class="col-sm-9">
                             <div class="studItemBox">
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
                                 <div><strong><?php echo $product['name']; ?></strong><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
@@ -417,7 +434,7 @@ to order a few extras for replacements and new student transfers.
                      <div class="padsim1">
                      	<div class="col-sm-9">
                             <div class="studItemBox">
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
                                 <div><strong><?php echo $product['name']; ?></strong><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
@@ -447,7 +464,7 @@ to order a few extras for replacements and new student transfers.
                      <div class="padsim1">
                      	<div class="col-sm-9">
                             <div class="studItemBox">
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
                                 <div><strong><?php echo $product['name']; ?></strong><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
@@ -491,10 +508,56 @@ to order a few extras for replacements and new student transfers.
 
 <script type="text/javascript">
 $(document).ready(function(){ 
- $(".conditional-pre").hide();
- $(".conditional-king").hide();
- $(".pre-k-check").hide();
+$(".conditional-pre").hide();
+$(".conditional-king").hide();
+$(".pre-k-check").hide();
+$(".print_image").hide();
 	$(".return-no").change(function(){
+	if($('#cur_option_pre').prop('checked')==false)
+		{
+			$("#yes").hide();
+			$(".pre-k-check").hide();
+			$("#curriculum_price2").prop('disabled', true);
+			$("#Pre_K_id2").prop('disabled', true);
+			$("#member_id2").prop('disabled', true);
+			$('[name="option_member2"]').prop('disabled', true);
+			$(".pre-k-kind").hide();
+			$("#curriculum_price3").prop('disabled', true);
+			$("#Pre_K_id3").prop('disabled', true);
+			$("#member_id3").prop('disabled', true);
+			$('[name="option_member3"]').prop('disabled', true);
+			$(".conditional-1").hide();
+			$('input[type=text]').val("");
+			$( "#multiple-inputs" ).html( "" );
+			$(".print_image").show();
+			if($('#manuscript').prop('checked') || $('#blockimage').prop('checked'))
+			$("#no").show();
+			else
+			$("#no").hide();
+		}else
+		{
+			$("#yes").hide();
+			$(".pre-k-kind").hide();
+			$("#curriculum_price3").prop('disabled', true);
+			$("#Pre_K_id3").prop('disabled', true);
+			$("#member_id3").prop('disabled', true);
+			$('[name="option_member3"]').prop('disabled', true);
+			$(".conditional-1").hide();
+			$('input[type=text]').val("");
+			$( "#multiple-inputs" ).html( "" );
+			$(".pre-k-check").show();
+			$("#curriculum_price2").prop('disabled', false);
+			$("#Pre_K_id2").prop('disabled', false);
+			$("#member_id2").prop('disabled', false);
+			$('[name="option_member2"]').prop('disabled', false);
+			$(".print_image").show(); 
+			if($('#manuscript').prop('checked') || $('#blockimage').prop('checked'))
+			$("#no").show();
+			else
+			$("#no").hide();
+		}
+	});	
+	$(".return-image").change(function(){
 		if($('#cur_option_pre').prop('checked')==false)
 		{
 			$("#yes").hide();
@@ -530,7 +593,7 @@ $(document).ready(function(){
 			$('[name="option_member2"]').prop('disabled', false);
 			$("#no").show();
 		}
-	});	
+	});
 	$(".return-yes").change(function(){
 			if($('#cur_option_pre').prop('checked')==false)
 			{
@@ -544,6 +607,7 @@ $(document).ready(function(){
 				$("#Pre_K_id3").prop('disabled', true);
 				$("#member_id3").prop('disabled', true);
 				$('[name="option_member3"]').prop('disabled', true);
+				$(".print_image").hide();
 				$(".conditional-1").hide();
 				$(".conditional-2").hide();
 				$('input[type=text]').val("");
@@ -564,6 +628,7 @@ $(document).ready(function(){
 				$('[name="option_member3"]').prop('disabled', false);
 				$(".conditional-1").hide();
 				$(".conditional-2").hide();
+				$(".print_image").hide();
 				$('input[type=text]').val("");
 				$('#radio3').prop('checked', false);
 				$('#radio4').prop('checked', false);

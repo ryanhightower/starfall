@@ -74,8 +74,8 @@ get_header_product(); ?>
 
             <div class="col-md-2">
 
-            <img data-src="holder.js/150x150" alt="150x150" class="img-circle pull-left img-responsive">
-
+            <!--<img data-src="holder.js/150x150" alt="150x150" class="img-circle pull-left img-responsive">-->
+			<img src="product_image/<?php echo $DB[$_GET['product_id']]['product_image']; ?>" alt="150x150" class="pull-left img-responsive">
             </div>
 
             <div class="col-md-10">
@@ -112,7 +112,7 @@ get_header_product(); ?>
 
             <div class="clearfix"></div>
 
-              <p><?php echo $DB[$_GET['product_id']]['description']; ?></p>
+              <p><?php echo $DB[$_GET['product_id']]['details_description']; ?></p>
 
               </div>
 

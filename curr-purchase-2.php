@@ -217,7 +217,7 @@ $student_total = 0;
 
                             <div class="studItemBox">
 
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
 
                                 <div><strong><?php echo $product['name']; ?></strong><br />
 
@@ -263,14 +263,17 @@ $student_total = 0;
 
 	<?php 
 $classroom_total = 0;
+if($_SESSION['curriculum']['image_option']==6)
+	$image_option = 7;
+else
+	$image_option = 6;
+
 	foreach($DB as $key => $product)
-
 	{
-
 		if($product['type']=='Per Classroom Items')
-
 		{ 
-
+		if($key!=$image_option)
+		{
 		$product_id = $key;
 		if(isset($classrooms))
 		$classroom_total = $classroom_total + ($classrooms * $product['price']);
@@ -281,7 +284,7 @@ $classroom_total = 0;
 
                             <div class="studItemBox">
 
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
 
                                 <div><strong><?php echo $product['name']; ?></strong><br />
 
@@ -301,7 +304,7 @@ $classroom_total = 0;
 
                      </div>
 
-	<?php } } 
+	<?php } } } 
 	$total = $classroom_total + $student_total;
 	?>
 	<div class="clearfix"></div>	

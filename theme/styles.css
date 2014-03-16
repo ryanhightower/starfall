@@ -326,7 +326,7 @@ background: url("icon/right_iconpic3.jpg") no-repeat 98% 4px; padding:5px 30px 1
 
 
 
-.studItemBox span{ padding:0; margin:0; float:left; width:40px;}
+.studItemBox span{ padding:0; margin:0; float:left; width:100px;}
 
 
 
@@ -499,21 +499,12 @@ input.btn-cart{background:url(icon/btn-cart.jpg) left top no-repeat; width:100px
 .col-md-2.hello { margin:35px 0 0 0; }
 @media (max-width: 768px) {
 
-
-
-	
-
-
-
 ul.list{width:100%; margin-bottom:0px;}	
 
 .credit_card  input[type="submit"]{ margin:0 0 0 0}
 
 .credit_card  input[type="text"]{ width:90%;}	
 
-
-
-
-
-
 }
+#frmproduct .col-md-2 { width: 40% !important;}
+#frmproduct .col-md-10 { width: 60% !important;}

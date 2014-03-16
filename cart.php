@@ -144,7 +144,7 @@ var serial_ids =$('#cart').serializeArray();
                      <div class="padsim2">
                         <div class="col-sm-10">
                             <div class="studItemBox">
-                                <span><img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $DB[$key]['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
                                 <div><strong><?php echo $DB[$key]['name']; ?></strong><br />
                                     <?php echo $DB[$key]['description']; ?>
                                 </div> 
