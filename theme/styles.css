@@ -508,3 +508,8 @@ ul.list{width:100%; margin-bottom:0px;}
 }
 #frmproduct .col-md-2 { width: 40% !important;}
 #frmproduct .col-md-10 { width: 60% !important;}
+
+.left_price{float:left;}
+.right_price{float:right; line-height: 25px; text-align: right; width: 67px;}
+
+

@@ -37,7 +37,7 @@ Each pack contains 5 sheets of colorful stickers featuring Zac, Peg, Mox, Tin Ma
             	<img data-src="holder.js/100x100" alt="100x100" class="img-circle pull-left img-responsive">
 				<h3>Starfall Pre-K Curriculum</h3>
 				<p>Lorem ipsum Laboris dolor eu sint ea minim consequat in dolore esse nostrud Ut consectetur ea ad incididunt irure enim.</p>
-				<a href="<?php echo SITE_URL; ?>/purchase-pre_k.php" id="pre_k" class="btn btn-success redirect">Buy now</a><a href="<?php echo SITE_URL; ?>/curriculum.php" class="btn btn-link">Learn more</a>
+				<a href="<?php echo SITE_URL; ?>/curriculum-page.php" id="pre_k" class="btn btn-success redirect">Buy now</a><a href="<?php echo SITE_URL; ?>/curriculum.php" class="btn btn-link">Learn more</a>
             </div>
             <div class="col-md-6">
             <img data-src="holder.js/100x100" alt="100x100" class="img-circle pull-left img-responsive">

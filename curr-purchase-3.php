@@ -195,11 +195,11 @@ to order a few extras for replacements and new student transfers.
 
                      <div class="padsim1">
 
-                     	<div class="col-sm-9">
+                     	<div class="col-sm-8">
 
                             <div class="studItemBox">
 
-                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
 
                                 <div><strong><?php echo $product['name']; ?></strong><br />
 
@@ -213,10 +213,15 @@ to order a few extras for replacements and new student transfers.
 
                         </div>                       
 
-                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="textfield_<?php echo $product_id; ?>" id="textfield_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>"><span id="p_cost_<?php echo $product_id; ?>"></span></div>                        
-
+                        <div class="col-sm-4 text-right">
+							<div class="left_price">
+							<span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><strong> X </strong><input type="text" name="textfield_<?php echo $product_id; ?>" id="textfield_<?php echo $product_id; ?>" value="<?php echo $total_students; ?>">
+							</div>
+							<div class="right_price">
+							<span id="p_cost_<?php echo $product_id; ?>"></span>
+							</div>
+						</div>                        
                         <div class="newClear"></div>
-
                      </div> 
 
 <?php } }?>
@@ -272,10 +277,17 @@ var total = 0;
 		var id_arr = id.split('_');
 		var product_id = id_arr[1];
 		var product_qty = $(this).val();
-		var price = $('#p_price_'+product_id).html();
-		var split_price_arr = price.split('$');
-		var per_price = parseFloat(split_price_arr[1]);
+	$.ajax({
+	url: "<?php echo SITE_URL; ?>/product_set_price.php",
+	data: {product_id: product_id , quantity: product_qty},
+	success: function( data ) {
+	$('#p_price_'+product_id).html('$'+data);
+	
+		//var price = $('#p_price_'+product_id).html();
+		//var split_price_arr = price.split('$');
+		//var per_price = parseFloat(split_price_arr[1]);
 		//per_price = per_price.toFixed(2);
+		var per_price = parseFloat(data);
 		if(product_qty=='')
 		var product_cost = 0;
 		else
@@ -283,7 +295,9 @@ var total = 0;
 		product_cost = product_cost.toFixed(2);
 		//alert(product_cost);
 		var p_cost_str = '$'+product_cost;
-		$('#p_cost_'+product_id).html(p_cost_str);
+		$('#p_cost_'+product_id).html(' <strong>=</strong> '+p_cost_str);
+	    }
+	});
 		/*total = parseFloat(total) + parseFloat(product_cost);
 		total = total.toFixed(2);
 		//alert(total);
