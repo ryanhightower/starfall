@@ -184,7 +184,7 @@ to order a few extras for replacements and new student transfers.
                      <div class="padsim1">
                      	<div class="col-sm-9">
                             <div class="studItemBox">
-                                <span><!--<img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive">--><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><!--<img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive">--><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
                                 <div><strong><?php echo $product['name']; ?></strong><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
@@ -215,7 +215,7 @@ to order a few extras for replacements and new student transfers.
                      <div class="padsim1">
                      	<div class="col-sm-9">
                             <div class="studItemBox">
-                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
                                 <div><strong><?php echo $product['name']; ?></strong><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
@@ -245,7 +245,7 @@ to order a few extras for replacements and new student transfers.
                      <div class="padsim1">
                      	<div class="col-sm-9">
                             <div class="studItemBox">
-                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
                                 <div><strong><?php echo $product['name']; ?></strong><br />
                                 <?php echo $product['description']; ?>
                                 </div> 

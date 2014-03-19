@@ -49,17 +49,17 @@ if(isset($_POST['single-class'])){
     header("Location: $location", true);
     exit();
 }
-//session_destroy();
+session_destroy();
 if(isset($_POST['submit'])){
 //print_r($_SESSION); 
     array_pop($_POST);
 	/*echo "<pre>";
 	print_r($_POST); exit;*/
     // Store Product values and move to next step
-	if(isset($_POST['Pre_K_id3']))
-	$_SESSION['curriculum']['cart'][$_POST['Pre_K_id3']]= array("quantity" => 1,"price" => $_POST['curriculum_price3']);
-	if(isset($_POST['member_id3']))
-	$_SESSION['curriculum']['cart'][$_POST['member_id3']]= array("quantity" => 1,"price" => $_POST['option_member3']);
+	if(isset($_POST['Pre_K_id2']))
+	$_SESSION['curriculum']['cart'][$_POST['Pre_K_id2']]= array("quantity" => 1,"price" => $_POST['curriculum_price2']);
+	if(isset($_POST['member_id2']))
+	$_SESSION['curriculum']['cart'][$_POST['member_id2']]= array("quantity" => 1,"price" => $_POST['option_member2']);
     foreach($_POST as $key => $row)
     { 
         $product_key_arr =explode('_',$key);
@@ -159,8 +159,8 @@ get_header_inner();
                 <div class="col-sm-9">
                     <div class="row">
 					<form method="post" name="frmpre_k" id="frmpre_k">
-                    <div class="grey-box">
-                      <h3 class="text-center"></h3>
+                    <div class="grey-box"><h1>Pre K Curriculum</h1>
+                      <h3 class="text-center">How many classrooms are you purchasing Kits for?</h3>
 	<?php 
 	foreach($DB as $key => $product)
 	{
@@ -222,33 +222,10 @@ get_header_inner();
 
 	<form name="frmoption" id="frmoption" method="post">
                 <div class="col-sm-9">
-                    <div class="row">
-                    <div class="grey-box">
-                      <h3 class="text-center">Have you purchased this Curriculum before? </h3>
-                      <p>
-                        <label for="radio"><input type="radio" name="return" id="radio_yes" value="yes" class="return-yes"> Yes.Take me straight to the itemized order form.</label>
-                      </p>
-                       <p>
-                        <label for="radio"><input type="radio" name="return" id="radio_no" value="no" class="return-no"> No. Help me calculate how many materials I need.</label>
-                      </p>
-                    </div>
-                    </div>
-				<div class="space20"></div>
-                    <div class="row">
-                    <div class="grey-box print_image">
-                      <h3 class="text-center">Do you want to order practice books in Block Print or Manuscript? (ex. Block [image of block print], Manuscript [image of manuscript] )</h3>
-                      <p>
-                        <label for="radio"><input type="radio" name="image_option" id="blockimage" value="6" class="return-image"> Block [image of block print].</label>
-                      </p>
-                       <p>
-                        <label for="radio"><input type="radio" name="image_option" id="manuscript" value="7" class="return-image"> Manuscript [image of manuscript].</label>
-                      </p>
-                    </div>
-                    </div>
-				<div class="space20"></div>
 				<div class="row">
 					<div class="grey-box pre-k-check">
-                      <h3 class="text-center"></h3>
+                      <h1>Pre K Curriculum</h1>
+					  <h3 class="text-center">How many classrooms are you purchasing Kits for?</h3>
 	<?php 
 	foreach($DB as $key => $product)
 	{
@@ -291,6 +268,31 @@ get_header_inner();
 				</div>
                     <div class="space20"></div>
                     <div class="row">
+                    <div class="grey-box"><h1>Kindergarten Curriculum</h1>
+                      <h3 class="text-center">Have you purchased this Curriculum before? </h3>
+                      <p>
+                        <label for="radio"><input type="radio" name="return" id="radio_yes" value="yes" class="return-yes"> Yes.Take me straight to the itemized order form.</label>
+                      </p>
+                       <p>
+                        <label for="radio"><input type="radio" name="return" id="radio_no" value="no" class="return-no"> No. Help me calculate how many materials I need.</label>
+                      </p>
+                    </div>
+                    </div>
+				<div class="space20"></div>
+                    <div class="row">
+                    <div class="grey-box print_image">
+                      <h3 class="text-center">Do you want to order practice books in Block Print or Manuscript? (ex. Block , Manuscript )</h3>
+                      <p>
+                        <label for="radio"><input type="radio" name="image_option" id="blockimage" value="6" class="return-image"> Block&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label><img src="theme/icon/block.png" alt="block" />
+                      </p>
+                       <p>
+                        <label for="radio"><input type="radio" name="image_option" id="manuscript" value="7" class="return-image"> Manuscript &nbsp;</label><img src="theme/icon/man.png" alt="block" width="84px" height="48px" />
+                      </p>
+                    </div>
+                    </div>
+				<div class="space20"></div>
+				
+                    <div class="row">
                     <div id="no" class="grey-box conditional-1">
                       <h3 class="text-center">Multiple Classrooms or Just one?</h3>
                       <p>
@@ -331,8 +333,7 @@ get_header_inner();
                     </div>
                     </div>
                   </div>
-				  </form>
-<form name="frmquote" id="frmquote" method="post">
+
 	<div class="col-sm-12" id="yes">
 				<div class="row">
                 <div class="col-sm-3">
@@ -342,47 +343,7 @@ get_header_inner();
                 </div>
                 <div class="col-sm-9">		
                  <div class="row">
-				 <div class="grey-box pre-k-kind">
-                      <h3 class="text-center"></h3>
-	<?php 
-	foreach($DB as $key => $product)
-	{
-		if($product['type']=='Pre-K Curriculum')
-		{
-		$product_id = $key;
-	?><input type="hidden" name="curriculum_price3" id="curriculum_price3" value="<?php echo $product['price']; ?>">
-	<input type="hidden" name="Pre_K_id3" id="Pre_K_id3" value="<?php echo $key; ?>">
-                      <div class="col-sm-9">
-                            <div class="studItemBox">
-                                <div><strong><?php echo $product['name']; ?></strong> $<?php echo number_format($product['price'], 2); ?><br />
-                                <?php echo $product['description']; ?>
-                                </div> 
-                                <div class="newClear"></div>
-                            </div>
-                        </div> 
-	<?php } }?>						
-                      
-                        <div class="newClear"></div>
-	<?php 
-	foreach($DB as $key => $product)
-	{
-		if($product['type']=='Pre-K member')
-		{
-		$product_id = $key;
-	?><input type="hidden" name="member_id3" id="member_id3" value="<?php echo $key; ?>">
-                      <div class="col-sm-9">
-                        <label for="radio"><?php echo $product['name']; ?></label>
-            						<ul style="list-style:none;">
-									<?php foreach($product['type_option'] as $opt => $val_type)
-									{
-									?>
-            							<li><input type="radio" name="option_member3" id="option_member_<?php echo $opt; ?>" <?php if($opt==1){echo 'checked';} ?> value="<?php echo $val_type['op_price']; ?>"> &nbsp; &nbsp; $<?php echo number_format($val_type['op_price'], 2); ?> <?php echo $val_type['op_name']; ?> </li>
-									<?php } ?>
-            						</ol>
-                      </div>
-	<?php } }?>
-                      <div class="newClear"></div>
-                    </div>
+				 
                     <div class="grey-box2">
                      <div class="padsim1">
                     	<div class="col-sm-9">
@@ -401,16 +362,20 @@ to order a few extras for replacements and new student transfers.
 		$product_id = $key;
 	?>
                      <div class="padsim1">
-                     	<div class="col-sm-9">
+                     	<div class="col-sm-8">
                             <div class="studItemBox">
-                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
                                 <div><strong><?php echo $product['name']; ?></strong><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price'];?></span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""><span id="p_cost_<?php echo $product_id; ?>"></span></div>                        
+                        <div class="col-sm-4 text-right">
+						<div class="left_price">
+						<span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price'];?></span> <strong> X </strong><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""> </div> <div class="right_price"><span id="p_cost_<?php echo $product_id; ?>"></span>
+						</div>
+						</div>                        
                         <div class="newClear"></div>
                      </div> 
 	<?php } }?>
@@ -432,16 +397,22 @@ to order a few extras for replacements and new student transfers.
 		$product_id = $key;
 	?>
                      <div class="padsim1">
-                     	<div class="col-sm-9">
+                     	<div class="col-sm-8">
                             <div class="studItemBox">
-                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
                                 <div><strong><?php echo $product['name']; ?></strong><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""><span id="p_cost_<?php echo $product_id; ?>"></span></div>                        
+                        <div class="col-sm-4 text-right">
+						<div class="left_price">
+						<span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><strong> X </strong><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>
+						<div class="right_price">
+						<span id="p_cost_<?php echo $product_id; ?>"></span>
+						</div>
+						</div>                        
                         <div class="newClear"></div>
                      </div>
 	<?php } } ?>
@@ -462,16 +433,22 @@ to order a few extras for replacements and new student transfers.
 		$product_id = $key;
 	?>
                      <div class="padsim1">
-                     	<div class="col-sm-9">
+                     	<div class="col-sm-8">
                             <div class="studItemBox">
-                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-circle img-center img-responsive"></span>
+                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
                                 <div><strong><?php echo $product['name']; ?></strong><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""><span id="p_cost_<?php echo $product_id; ?>"></span></div>                        
+                        <div class="col-sm-4 text-right">
+						<div class="left_price">
+						<span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><strong> X </strong><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>
+						<div class="right_price">
+						<span id="p_cost_<?php echo $product_id; ?>"></span>
+						</div>
+						</div>                        
                         <div class="newClear"></div>
                      </div> 
 <?php } }?>                   
@@ -499,8 +476,9 @@ to order a few extras for replacements and new student transfers.
 					<input type="submit" class="btn btn-primary btn-lg" name="submit" value="Add All to Quote"></div>
         		</div>  
 				</div>
-			</form>	
 			</div>
+</form>	
+		
 				</div>
 			</div>
 </section>
@@ -616,16 +594,16 @@ $(".print_image").hide();
 				$("#yes").show();
 			}else
 			{
-				$(".pre-k-check").hide();
-				$("#curriculum_price2").prop('disabled', true);
+				$(".pre-k-check").show();
+				/*$("#curriculum_price2").prop('disabled', true);
 				$("#Pre_K_id2").prop('disabled', true);
 				$("#member_id2").prop('disabled', true);
 				$('[name="option_member2"]').prop('disabled', true);
-				$(".pre-k-kind").show();
-				$("#curriculum_price3").prop('disabled', false);
-				$("#Pre_K_id3").prop('disabled', false);
-				$("#member_id3").prop('disabled', false);
-				$('[name="option_member3"]').prop('disabled', false);
+				$(".pre-k-kind").show();*/
+				$("#curriculum_price2").prop('disabled', false);
+				$("#Pre_K_id2").prop('disabled', false);
+				$("#member_id2").prop('disabled', false);
+				$('[name="option_member2"]').prop('disabled', false);
 				$(".conditional-1").hide();
 				$(".conditional-2").hide();
 				$(".print_image").hide();
@@ -648,16 +626,16 @@ $(".print_image").hide();
 				$(".conditional-pre").hide();
 				$(".conditional-king").show();
 				if($('.return-yes').prop('checked')) {
-				$(".pre-k-check").hide();
-				$("#curriculum_price2").prop('disabled', true);
+				$(".pre-k-check").show();
+				/*$("#curriculum_price2").prop('disabled', true);
 				$("#Pre_K_id2").prop('disabled', true);
 				$("#member_id2").prop('disabled', true);
 				$('[name="option_member2"]').prop('disabled', true);
-				$(".pre-k-kind").show(); 
-				$("#curriculum_price3").prop('disabled', false);
-				$("#Pre_K_id3").prop('disabled', false);
-				$("#member_id3").prop('disabled', false);
-				$('[name="option_member3"]').prop('disabled', false);
+				$(".pre-k-kind").show();*/
+				$("#curriculum_price2").prop('disabled', false);
+				$("#Pre_K_id2").prop('disabled', false);
+				$("#member_id2").prop('disabled', false);
+				$('[name="option_member2"]').prop('disabled', false);
 				}
 				if($('.return-no').prop('checked')) {
 					$(".pre-k-check").show();
@@ -680,16 +658,16 @@ $(".print_image").hide();
 			}else
 			{
 				$(".conditional-pre").hide();
-				$(".pre-k-check").hide();
-				$("#curriculum_price2").prop('disabled', true);
+				$(".pre-k-check").show();
+				/*$("#curriculum_price2").prop('disabled', true);
 				$("#Pre_K_id2").prop('disabled', true);
 				$("#member_id2").prop('disabled', true);
 				$('[name="option_member2"]').prop('disabled', true);
-				$(".pre-k-kind").hide();
-				$("#curriculum_price3").prop('disabled', true);
-				$("#Pre_K_id3").prop('disabled', true);
-				$("#member_id3").prop('disabled', true);
-				$('[name="option_member3"]').prop('disabled', true);
+				$(".pre-k-kind").hide();*/
+				$("#curriculum_price2").prop('disabled', false);
+				$("#Pre_K_id2").prop('disabled', false);
+				$("#member_id2").prop('disabled', false);
+				$('[name="option_member2"]').prop('disabled', false);
 				$(".conditional-king").show();
 			}
 		
@@ -716,7 +694,12 @@ $(".print_image").hide();
 			{
 				$(".conditional-pre").hide();
 				$(".conditional-king").show();
-				if($('.return-yes').prop('checked')) {
+				$(".pre-k-check").show();
+				$("#curriculum_price2").prop('disabled', false);
+				$("#Pre_K_id2").prop('disabled', false);
+				$("#member_id2").prop('disabled', false);
+				$('[name="option_member2"]').prop('disabled', false);
+				/*if($('.return-yes').prop('checked')) {
 				$(".pre-k-check").hide();
 				$("#curriculum_price2").prop('disabled', true);
 				$("#Pre_K_id2").prop('disabled', true);
@@ -739,7 +722,7 @@ $(".print_image").hide();
 				$("#Pre_K_id3").prop('disabled', true);
 				$("#member_id3").prop('disabled', true);
 				$('[name="option_member3"]').prop('disabled', true);
-				}
+				}*/
 			}
 		}else {
 		// something else when not
@@ -812,9 +795,17 @@ $('.grey-box2 input[type=text]').each(function(index, element) {
 	var id_arr = id.split('_');
 	var product_id = id_arr[1];
 	var product_qty = $(this).val();
-	var price = $('#p_price_'+product_id).html();
-	var split_price_arr = price.split('$');
-	var per_price = parseFloat(split_price_arr[1]);
+	
+$.ajax({
+url: "<?php echo SITE_URL; ?>/product_set_price.php",
+data: {product_id: product_id , quantity: product_qty},
+success: function( data ) {
+$('#p_price_'+product_id).html('$'+data);
+	
+	//var price = $('#p_price_'+product_id).html();
+	//var split_price_arr = price.split('$');
+	//var per_price = parseFloat(split_price_arr[1]);
+	var per_price = parseFloat(data);
 	//per_price = per_price.toFixed(2);
 	if(product_qty=='')
 	var product_cost = 0;
@@ -823,7 +814,9 @@ $('.grey-box2 input[type=text]').each(function(index, element) {
 	product_cost = product_cost.toFixed(2);
 	//alert(product_cost);
 	var p_cost_str = '$'+product_cost;
-	$('#p_cost_'+product_id).html(p_cost_str);
+	$('#p_cost_'+product_id).html(' <strong>=</strong> '+p_cost_str);
+	}
+});
 	/*total = parseFloat(total) + parseFloat(product_cost);
 	total = total.toFixed(2);
 	//alert(total);
