@@ -49,7 +49,7 @@ if(isset($_POST['single-class'])){
     header("Location: $location", true);
     exit();
 }
-session_destroy();
+//session_destroy();
 if(isset($_POST['submit'])){
 //print_r($_SESSION); 
     array_pop($_POST);
@@ -63,7 +63,7 @@ if(isset($_POST['submit'])){
     foreach($_POST as $key => $row)
     { 
         $product_key_arr =explode('_',$key);
-      	if(isset($_POST[$key]) && $_POST[$key]!='')
+      	if(isset($_POST[$key]) && $_POST[$key]!='' && $_POST[$key]!=0)
       	{
 			if (is_numeric($product_key_arr[1]))
 			{
@@ -346,12 +346,12 @@ get_header_inner();
 				 
                     <div class="grey-box2">
                      <div class="padsim1">
-                    	<div class="col-sm-9">
+                    	<div class="col-sm-8">
                         <div class="simplleBoldstyle1">Per Student Items<br />
                        <span> A typical classroom will have one of these per student. Tip:you may want
 to order a few extras for replacements and new student transfers.
 						</span></div></div>
-                        <div class="col-sm-3 text-right">Price</div>
+                        <div class="col-sm-4 text-left">Price</div>
                         <div class="newClear"></div>
                     </div>
 	<?php 
@@ -373,20 +373,25 @@ to order a few extras for replacements and new student transfers.
                         </div>                       
                         <div class="col-sm-4 text-right">
 						<div class="left_price">
-						<span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price'];?></span> <strong> X </strong><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""> </div> <div class="right_price"><span id="p_cost_<?php echo $product_id; ?>"></span>
-						</div>
+						  <span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price'];?></span> <strong> X </strong><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""> </div> 
+              <div class="right_price"><span id="p_cost_<?php echo $product_id; ?>"></span></div>
+              <div class="text-left" style="clear:both;">
+                  <?php if(count($product['price_option'])>0){
+                    echo "Buy ".$product['price_option']['quantity']." or more for $".$product['price_option']['set_price']." each";
+                  }  ?>
+                </div>
 						</div>                        
                         <div class="newClear"></div>
                      </div> 
-	<?php } }?>
+	<?php } } ?>
                      <div class="padsim1">
-                    	<div class="col-sm-9">
+                    	<div class="col-sm-8">
                         
 
                         <div class="simplleBoldstyle1">Per Classroom Items<br />
                        <span> A typical classroom will have one or more of each of these per classroom.
 						</span></div></div>
-                        <div class="col-sm-3 text-right">Price</div>
+                        <div class="col-sm-4 text-left">Price</div>
                         <div class="newClear"></div>
                     </div>
 	<?php 
@@ -407,22 +412,23 @@ to order a few extras for replacements and new student transfers.
                             </div>
                         </div>                       
                         <div class="col-sm-4 text-right">
-						<div class="left_price">
-						<span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><strong> X </strong><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>
-						<div class="right_price">
-						<span id="p_cost_<?php echo $product_id; ?>"></span>
-						</div>
-						</div>                        
-                        <div class="newClear"></div>
+              						<div class="left_price">
+              						<span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><strong> X </strong><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>
+              						<div class="right_price">
+              						<span id="p_cost_<?php echo $product_id; ?>"></span>
+                          
+						            </div>
+						          </div>                        
+                      <div class="newClear"></div>
                      </div>
 	<?php } } ?>
                      <div class="padsim1">
-                    	<div class="col-sm-9">
+                    	<div class="col-sm-8">
                         <div class="simplleBoldstyle1">Optional Items<br />
                        <span> A typical classroom will have one of these per student. Tip:you may want
 to order a few extras for replacements and new student transfers.
 						</span></div></div>
-                        <div class="col-sm-3 text-right">Price</div>
+                        <div class="col-sm-4 text-left">Price</div>
                         <div class="newClear"></div>
                     </div>	
  	<?php 

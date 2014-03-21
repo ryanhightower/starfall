@@ -38,12 +38,10 @@ $product_key_arr =explode('_',$key);
 
 
 
-	if(isset($_POST[$key]) && $_POST[$key]!='')
-
+	if(isset($_POST[$key]) && $_POST[$key]!='' && $_POST[$key]!=0)
 	{
 
 		$_SESSION['curriculum']['cart'][$product_key_arr[1]]= array("quantity" => $_POST[$key],"price" => $DB[$product_key_arr[1]]['price']);
-
 	}
 
     //echo $_SESSION['curriculum']['products'][$i]."<br>";
@@ -180,7 +178,7 @@ get_header_inner();
 
                      <div class="padsim1">
 
-                    	<div class="col-sm-9">
+                    	<div class="col-sm-8">
 
                         <div class="simplleBoldstyle1">Per Student Items<br />
 
@@ -190,7 +188,7 @@ to order a few extras for replacements and new student transfers.
 
 						</span></div></div>
 
-                        <div class="col-sm-3 text-right">Price</div>
+                        <div class="col-sm-4 text-left">Price</div>
 
                         <div class="newClear"></div>
 
@@ -238,6 +236,13 @@ $student_total = 0;
 						<div class="right_price">
 						<strong> = </strong><span id="p_cost_<?php echo $product_id; ?>"><?php if(isset($total_students)){ echo '$'.($total_students*$product['price']);} ?></span>
 						</div>
+				<?php if(count($product['price_option'])>0){ ?>
+						<div class="text-left" style="clear:both;">
+                  
+                    <?php echo "Buy ".$product['price_option']['quantity']." or more for $".$product['price_option']['set_price']." each"; ?>
+                  
+                </div>
+                <?php }  ?>
 						</div>                        
 
                         <div class="newClear"></div>
@@ -250,7 +255,7 @@ $student_total = 0;
 
                      <div class="padsim1">
 
-                    	<div class="col-sm-9">
+                    	<div class="col-sm-8">
 
                         
 
@@ -262,7 +267,7 @@ $student_total = 0;
 
 						</span></div></div>
 
-                        <div class="col-sm-3 text-right">Price</div>
+                        <div class="col-sm-4 text-left">Price</div>
 
                         <div class="newClear"></div>
 
@@ -320,7 +325,7 @@ else
 	$total = $classroom_total + $student_total;
 	?>
 	<div class="clearfix"></div>	
-		<div class="col-sm-3 fr"> 
+		<div class="col-sm-4 fr"> 
         	<div class="totalBox">
             	<div class="totlaBar">
                 	<strong>SubTotal: </strong><span id="subtotal">$<?php echo $total;?></span>

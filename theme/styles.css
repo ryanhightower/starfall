@@ -306,7 +306,7 @@ background: url("icon/right_iconpic3.jpg") no-repeat 98% 4px; padding:5px 30px 1
 
 
 
-.padsim1{ padding-bottom:10px;}
+.padsim1{ padding-bottom: 10px; margin: 20px 0;}
 
 
 
@@ -326,11 +326,14 @@ background: url("icon/right_iconpic3.jpg") no-repeat 98% 4px; padding:5px 30px 1
 
 
 
-.studItemBox span{ padding:0; margin:0; float:left; width:100px;}
+.studItemBox span{ padding: 0;
+margin: 0px 15px 0px 0px;
+float: left;
+width: 100px; }
 
 
 
-.studItemBox div{ padding:0; margin:0; float:left; }
+.studItemBox div{ padding:0; margin:0; /*float:left;*/ }
 
 
 
@@ -378,7 +381,7 @@ background: url("icon/right_iconpic3.jpg") no-repeat 98% 4px; padding:5px 30px 1
 
 
 
-.totalBox{ background-color:#ebebeb; padding:12px;}
+.totalBox{ background-color:#ebebeb; padding:12px; margin-top: 30px; }
 
 
 
@@ -510,6 +513,6 @@ ul.list{width:100%; margin-bottom:0px;}
 #frmproduct .col-md-10 { width: 60% !important;}
 
 .left_price{float:left;}
-.right_price{float:right; line-height: 25px; text-align: right; width: 67px;}
+.right_price{float:left; line-height: 25px; text-align: right; width: 67px;}
 
 
