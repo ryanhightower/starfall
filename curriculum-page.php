@@ -795,7 +795,7 @@ $(".print_image").hide();
  var total = 0;	
 $('.grey-box2 input[type=text]').each(function(index, element) {
 //alert();
-	$(this).focusout(function() {
+	$(this).keyup(function() {
 	//alert($(this).attr("id"));
 	var id = $(this).attr("id");
 	var id_arr = id.split('_');
