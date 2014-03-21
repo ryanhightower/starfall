@@ -73,7 +73,7 @@ $DB = array(
     <li><i>The Little Rooster</i><br> An American Folk Tale</br></li>
     <li><i>The Turnip</i><br> A Russian Folk Tale</br></li>
 </ul>",
-		 "type" => "Per Student Items"
+		 "type" => "Per Classroom Items"
          ),
 	"3" => array(
          "name" => "NG01 Starfall Speedway & Alphabet Avenue Games",
@@ -86,7 +86,7 @@ $DB = array(
 		 "details_description" => "<h3>Two complete board games: Starfall Speedway and Alphabet Avenue</h3><p>Both Starfall Speedway and Alphabet Avenue are great games for children to practice phonetic strategies and word recognition. Starfall Speedway is for children ready to start reading.  Skill cards prompt children to identify letter, sound, or word in order to advance their game piece.</p>
 <p>Alphabet Avenue, the other side of the board with alphabet tiles, is for children just learning letter/sound relationships.  No skill cards are required.  Children have the option to name the letter, the sound it represents, or a word beginning with that letter in order to advance their playing piece.</p>
 <p>Enjoy this wonderful, sturdy game set in your classroom or at home.  Both games require collaboration among players, yet there's a clear finish line motivating each player to win!</p><p>Part of our Common Core aligned <a href=\"/order/indexc-kcurric-class.php?idt=FCP9m4HC&&reforderpage=order.indexc-kcurric-class.php&\">Kindergarten Curriculum</a></p>",
-		 "type" => "Per Student Items"
+		 "type" => "Per Classroom Items"
          ),
 	"4" => array(
          "name" => "NP20 Short-Vowel Puzzle Set (5 sturdy puzzles: a,e,i,o,u)",
@@ -107,7 +107,7 @@ $DB = array(
 <li>Which puzzle(s) would you be in? Identify short vowel(s) in your name</li>
 <li>Make up a story using the characters and actions pictured in the puzzle</li>
 </ul>",
-		 "type" => "Per Student Items"
+		 "type" => "Per Classroom Items"
          ),
 	"5" => array(
          "name" => "TKIT02 Kindergarten Classroom Kit",
@@ -176,7 +176,7 @@ $DB = array(
          ),
 	"6" => array(
          "name" => "KIT60 Block Print - Practice Books Kit",
-		 "description" => "Listening and Writing - Book 1 (Block Print), Reading and Writing - Book 2 (Block Print); Backpack Bear's Expanded Cut-Up/Take-Home Book Set; My Starfall Writing Journal; and My Starfall Dictionary. Free pencils with orders of 20+.",
+		 "description" => "Listening and Writing - Book 1 (Block Print), Reading and Writing - Book 2 (Block Print); Backpack Bear's Expanded Cut-Up/Take-Home Book Set; My Starfall Writing Journal; and My Starfall Dictionary. Free pencils with orders of 20+. <img src='".SITE_URL."/theme/icon/man.png'>",
 		 "price" => 5.41,
 		 "price_option" => array(),
 		 "old_price" => 0,
@@ -194,11 +194,11 @@ $DB = array(
 <li><i>My Starfall Dictionary</i></li>
 </ul>
 <p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-		 "type" => "Per Classroom Items"
+		 "type" => "Per Student Items"
          ),
 	"7" => array(
          "name" => "KIT61 Manuscript - Practice Books Kit",
-		 "description" => "Listening and Writing - Book 1 (Manuscript), Reading and Writing - Book 2 (Manuscript); Backpack Bear's Expanded Cut-Up/Take-Home Book Set; My Starfall Writing Journal; and My Starfall Dictionary. Free pencils with orders of 20+.",
+		 "description" => "Listening and Writing - Book 1 (Manuscript), Reading and Writing - Book 2 (Manuscript); Backpack Bear's Expanded Cut-Up/Take-Home Book Set; My Starfall Writing Journal; and My Starfall Dictionary. Free pencils with orders of 20+. <img src='".SITE_URL."/theme/icon/block.png'>",
 		 "price" => 5.41,
 		 "price_option" => array(),
 		 "old_price" => 0,
@@ -216,7 +216,7 @@ $DB = array(
 		<li><i>My Starfall Dictionary</i></li>
 		</ul>
 		<p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-		 "type" => "Per Classroom Items"
+		 "type" => "Per Student Items"
          ),
 	"8" => array(
          "name" => "NS50 Backpack Bear's Level-K Stickers",
@@ -297,7 +297,7 @@ $DB = array(
 			 "product_image" => "NB30_w400-h400.png",
 			 "type_option" => array(),
 			 "details_description" => "<p>These pre-decodable primer books are designed to expand children's awareness of how words function in a sentence and reinforce high frequency words. Read about Backpack Bear's community experiences in these 12 rebus stories.</p><h3>Titles included in this set:</h3><ul><li><i>A Computer</i></li><li><i>At School</i></li><li><i>A Rainbow</i></li><li><i>At the Park</i></li><li><i>At the House</i></li><li><i>The Map</i></li><li><i>At the Post Office</i></li><li><i>Come Vote with Me</i></li><li><i>At the Library</i></li><li><i>The Bottle in the River</i></li><li><i>Ruby Goes to School</i></li><li><i>We Can See!</i></li></ul><p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-			 "type" => "Per Student Items"
+			 "type" => ""
 			 ),
 	"15" => array(
 			 "name" => "NB10 Boxed Set of Learn to Read Books by Starfall - 5 short-vowel books, plus 10 bonus stories",
@@ -308,7 +308,7 @@ $DB = array(
 			 "product_image" => "NB10_w400-h400.png",
 			 "type_option" => array(),
 			 "details_description" => "<p>Launch your children's reading experiences with these primer books designed for explicit phoncis instruction. Interactive versions of these books are available on Starfall's websites.</p><h3>Titles included in this set:</h3><ul><li><i>Zac the Rat</i></li><li><i>Peg the Hen</i></li><li><i>The Big Hit</i></li><li><i>Mox's Shop</i></li><li><i>Gus the Duck</i></li><li><i>Jake's Tale</i></li><li><i>Pete's Sheep</i></li><li><i>Sky Ride</i></li><li><i>Robot and Mr. Mole</i></li><li><i>Dune Buggy</i></li><li><i>Soap Boat</i></li><li><i>Car Race</i></li><li><i>My Horse Glory</i></li><li><i>Surfer Girl</i></li><li><i>My Family</i></p></ul><p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-			 "type" => "Per Student Items"
+			 "type" => ""
 			 ),
 	"16" => array(
 			 "name" => "NB20 Boxed Set of 16 Decodable Short Vowel Pals Books in a sturdy carrying case.",
@@ -319,7 +319,7 @@ $DB = array(
 			 "product_image" => "NB20_w400-h400.png",
 			 "type_option" => array(),
 			 "details_description" => "<p>These decodable primer books provide beginner readers with practice connecting letter sounds.</p><h3>Titles included in this set:</h3><ul><li><i>Zac and Cat</i></li><li><i>Zac and the Hat</i></li><li><i>Peg Helps Zac</i></li><li><i>Peg's Egg</i></li><li><i>Hen</i></li><li><i>Mox Jogs</i></li><li><i>Hop, Bend, Stomp</i></li><li><i>Pop! Pop! Pop!</i></li><li><i>Tin Man Sits</i></li><li><i>Fix the Jet</i></li><li><i>Fish and Me</i></li><li><i>Bug in a Jug</i></li><li><i>Get Up, Cub</i></li><li><i>Gus and His Dog</i></li><li><i>Peg and the Box</i></li><li><i>Zig-Zag</i></li></ul><p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-			 "type" => "Per Student Items"
+			 "type" => ""
 			 )
 );
 
