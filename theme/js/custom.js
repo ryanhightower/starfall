@@ -45,6 +45,35 @@ $(document).ready(function() {
 			});
 		});
 		
+		if($("#price-quote")!= undefined){
+			$('a.payment').click(function( event ){
+				event.preventDefault();
+				var currentId = $(this).attr('id');
+				var redirectLink = $(this).attr('href');
+				$.ajax({
+					type: "POST",
+					url: "<?php echo SITE_URL; ?>/includes/ajax.php",
+					data: {fun:"payment", method:currentId, redirect:redirectLink}
+				}).done(function( data ) {
+				
+					// We're on the cart.php. Do this.
+					$("#price-quote").html(data);
+					if(currentId == "po"){
+						$("#po").html("Pay with Credit Card");
+						<?php if(!empty($_SESSION['user']['account'])){ ?>
+							$("#price-quote").attr('href', '<?php echo SITE_URL; ?>/checkout-po.php' );
+						<?php } else { ?>
+							$("#price-quote").attr('href', '<?php echo SITE_URL; ?>/create_account.php' );
+						<?php } ?>
+						$('#po').attr('id', 'cc');
+					}if(currentId == "cc"){
+						$("#cc").html("Convert to Quote");
+						$("#price-quote").attr('href', '<?php echo SITE_URL; ?>/checkout-cc.php' );
+						$('#cc').attr('id', 'po');
+					}
+				});
+			});
+		}
 		
 		// Redirect from home page Curriculum links to purchase-method.php.
 		$("a.redirect").click(function( event ) {
