@@ -1,6 +1,6 @@
 
 <?php include("includes/functions.php");
-
+    session_start();
 get_header(); ?>
 
 		<section class="jumbotron">
@@ -75,7 +75,7 @@ get_header(); ?>
 
 <?php 
 // ************* Curriculum *************** //
-
+//session_destroy();
 ?>
 		<section class="container">
 			<div class="row">

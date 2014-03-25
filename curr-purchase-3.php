@@ -197,9 +197,9 @@ to order a few extras for replacements and new student transfers.
 
                             <div class="studItemBox">
 
-                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
+                                <span><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
 
-                                <div><strong><?php echo $product['name']; ?></strong><br />
+                                <div><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><strong><?php echo $product['name']; ?></strong></a><br />
 
                                 <?php echo $product['description']; ?>
 

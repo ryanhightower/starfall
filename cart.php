@@ -175,7 +175,7 @@ var serial_ids =$('#cart').serializeArray();
 	}
 	if(isset($_SESSION['curriculum']['cart']))
 	{
-	$total = $products_total;
+	$total = number_format($products_total, 2, '.', '');
 	//session_destroy();
 	}
 	?>

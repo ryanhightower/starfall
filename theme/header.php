@@ -24,10 +24,11 @@
 		$("a.redirect").click(function( event ) {
 			event.preventDefault();
 			var href = $(this).attr('href');
+			var option = $(this).attr('id'); 
 			$.ajax({
 				type: "POST",
 				url: "<?php echo SITE_URL; ?>/redirect.php",
-				data: {redirect:href}
+				data: {redirect:href , curr_option:option}
 			}).done(function( result ) {
 				window.location.href = "<?php echo SITE_URL; ?>/purchase-method.php";
 			});

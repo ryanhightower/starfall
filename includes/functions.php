@@ -176,7 +176,7 @@ $DB = array(
          ),
 	"6" => array(
          "name" => "KIT60 Block Print - Practice Books Kit",
-		 "description" => "Listening and Writing - Book 1 (Block Print), Reading and Writing - Book 2 (Block Print); Backpack Bear's Expanded Cut-Up/Take-Home Book Set; My Starfall Writing Journal; and My Starfall Dictionary. Free pencils with orders of 20+. <img src='".SITE_URL."/theme/icon/man.png'>",
+		 "description" => "Listening and Writing - Book 1 (Block Print), Reading and Writing - Book 2 (Block Print); Backpack Bear's Expanded Cut-Up/Take-Home Book Set; My Starfall Writing Journal; and My Starfall Dictionary. Free pencils with orders of 20+. <img src='".SITE_URL."/theme/icon/block.png'>",
 		 "price" => 5.41,
 		 "price_option" => array(),
 		 "old_price" => 0,
@@ -194,11 +194,11 @@ $DB = array(
 <li><i>My Starfall Dictionary</i></li>
 </ul>
 <p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-		 "type" => "Per Student Items"
+		 "type" => "Practice Books"
          ),
 	"7" => array(
          "name" => "KIT61 Manuscript - Practice Books Kit",
-		 "description" => "Listening and Writing - Book 1 (Manuscript), Reading and Writing - Book 2 (Manuscript); Backpack Bear's Expanded Cut-Up/Take-Home Book Set; My Starfall Writing Journal; and My Starfall Dictionary. Free pencils with orders of 20+. <img src='".SITE_URL."/theme/icon/block.png'>",
+		 "description" => "Listening and Writing - Book 1 (Manuscript), Reading and Writing - Book 2 (Manuscript); Backpack Bear's Expanded Cut-Up/Take-Home Book Set; My Starfall Writing Journal; and My Starfall Dictionary. Free pencils with orders of 20+. <img src='".SITE_URL."/theme/icon/man.png'>",
 		 "price" => 5.41,
 		 "price_option" => array(),
 		 "old_price" => 0,
@@ -216,7 +216,7 @@ $DB = array(
 		<li><i>My Starfall Dictionary</i></li>
 		</ul>
 		<p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-		 "type" => "Per Student Items"
+		 "type" => "Practice Books"
          ),
 	"8" => array(
          "name" => "NS50 Backpack Bear's Level-K Stickers",
