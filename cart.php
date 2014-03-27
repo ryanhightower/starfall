@@ -179,7 +179,42 @@ var serial_ids =$('#cart').serializeArray();
 	//session_destroy();
 	}
 	?>
-  <div class="simplecartTxt"><a href="javascript:void(0);" onclick="return cartupdate();">Update Cart</a></div>
+  <div class="simplecartTxt">
+  <a href="<?php echo SITE_URL; ?>/store.php">Continue shopping</a>&nbsp;&nbsp;
+  <a href="javascript:void(0);" onclick="return cartupdate();">Update Cart</a>
+  </div>
+<?php
+/*$results = array();
+for($i = 1; $i <= 2; $i++) {
+	$rand = rand(1,15);
+	$results[] = $rand;
+}
+print_r($results);*/
+?>
+  
+  <div class="recomend"> 
+  <div><h3>Recommended Products</h3></div>
+  <div class="recomm_thumb">
+  <ul>
+  <li><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=12"><img data-src="holder.js/150x150" alt="150x150" class="img-center img-responsive"></a></li>
+  <li><a href="<?php echo SITE_URL; ?>/purchase-pre_k.php"><img data-src="holder.js/150x150" alt="150x150" class="img-center img-responsive"></a></li>
+ 	<?php 
+	$results = array();
+	foreach($DB as $key => $product)
+	{
+		if($product['type']=='Per Classroom Items')
+		{ 
+		$results[] = $key;
+		} 
+	}
+ 		$rand_keys = array_rand($results, 2);
+		//echo $results[$rand_keys[0]] . "\n";
+		//echo $results[$rand_keys[1]] . "\n";
+  ?>
+ <li><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo$results[$rand_keys[0]]; ?>"><img src="product_image/<?php echo $DB[$results[$rand_keys[0]]]['product_image']; ?>" alt="25x25" width="100px" class="img-center img-responsive"></a></li>
+ <li><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo$results[$rand_keys[1]]; ?>"><img src="product_image/<?php echo $DB[$results[$rand_keys[1]]]['product_image']; ?>" alt="25x25" width="100px" class="img-center img-responsive"></a></li>
+  </ul>
+  </div>
         <div class="col-sm-3 fr">
 	<?php if(isset($_SESSION['curriculum']['cart'])){ ?>
         	<div class="totalBox">
@@ -213,7 +248,8 @@ var serial_ids =$('#cart').serializeArray();
             
 
         </div>
-
+		<div class="newClear"></div>
+		</div>
         </div>
 
            

@@ -58,59 +58,7 @@ $DB = array(
 		 "type" => "Per Student Items"
          ),
 	"2" => array(
-         "name" => "SB554 The Little Red Hen and other Folk Tales",
-		 "description" => "Retold by Starfall - We recommend: at least 1 per class, more for classroom library.",
-		 "price" => 8.95,
-		 "price_option" => array("quantity" => 5,"set_price" => 2.95),
-		 "old_price" => 17.99,
-		 "product_image" => "SB554_w400-h400.png",
-		 "type_option" => array(),
-		 "details_description" => "<p><i>The Little Red Hen and other Folk Tales</i> offers proverbs from around the world with universal themes. Children can compare and contrast the tales or relate them to their own lives. The charming characters and settings are drawn from the cultures and literature of England, America, the Far East and Russia.  </p><h3><i>The Little Red Hen</i> Stories:</h3>
-<ul><li><i>The Little Red Hen</i><br>An English Folk Tale</center></br></li>
-   <li><i>Chicken Little (The Sky Is Falling)</i><br> An English Folk Tale</br></li>
-    <li><i>Mr. Bunny's Carrot Soup</i><br> A Modern American Folk Tale</br></li>
-    <li><i>The Four Friends</i><br> A Tale from the Far East</br></li>
-    <li><i>The Little Rooster</i><br> An American Folk Tale</br></li>
-    <li><i>The Turnip</i><br> A Russian Folk Tale</br></li>
-</ul>",
-		 "type" => "Per Classroom Items"
-         ),
-	"3" => array(
-         "name" => "NG01 Starfall Speedway & Alphabet Avenue Games",
-		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
-		 "price" => 14.95,
-		 "price_option" => array(),
-		 "old_price" => 7.99,
-		 "product_image" => "NG01_w400-h400.png",
-		 "type_option" => array(),
-		 "details_description" => "<h3>Two complete board games: Starfall Speedway and Alphabet Avenue</h3><p>Both Starfall Speedway and Alphabet Avenue are great games for children to practice phonetic strategies and word recognition. Starfall Speedway is for children ready to start reading.  Skill cards prompt children to identify letter, sound, or word in order to advance their game piece.</p>
-<p>Alphabet Avenue, the other side of the board with alphabet tiles, is for children just learning letter/sound relationships.  No skill cards are required.  Children have the option to name the letter, the sound it represents, or a word beginning with that letter in order to advance their playing piece.</p>
-<p>Enjoy this wonderful, sturdy game set in your classroom or at home.  Both games require collaboration among players, yet there's a clear finish line motivating each player to win!</p><p>Part of our Common Core aligned <a href=\"/order/indexc-kcurric-class.php?idt=FCP9m4HC&&reforderpage=order.indexc-kcurric-class.php&\">Kindergarten Curriculum</a></p>",
-		 "type" => "Per Classroom Items"
-         ),
-	"4" => array(
-         "name" => "NP20 Short-Vowel Puzzle Set (5 sturdy puzzles: a,e,i,o,u)",
-		 "description" => "We recommend 2 sets per class of 20; 3 sets per class of 30.",
-		 "price" => 14.95,
-		 "price_option" => array(),
-		 "old_price" => 7.99,
-		 "product_image" => "NP20_w400-h400.png",
-		 "type_option" => array(),
-		 "details_description" => "<p>This set features five puzzles, each focusing on a short vowel.  After your beginning readers put a puzzle together, encourage them to point and say the pictured short vowel words, and notice the common vowel sounds.
-
-<p>Suggested activities:</p>
-<ul>
-<li>After assembling the puzzle, take turns finding and naming all of the short vowel words.  Listen very carefully to the short vowel words your friends choose; don't repeat their words</li>
-<li>Use clues printed on the box to help find the short vowel words.  Sample short-u clues:  \"A baby bear\" (cub); \"You take a bath in this\" (tub)</li>
-<li>Enjoy coming up with your own clues; your friends guess</li>
-<li>Listen to <i>Starfall Sing-Along</i> (vol. 1), tracks 28-32 (short vowel songs) while you work</li> 
-<li>Which puzzle(s) would you be in? Identify short vowel(s) in your name</li>
-<li>Make up a story using the characters and actions pictured in the puzzle</li>
-</ul>",
-		 "type" => "Per Classroom Items"
-         ),
-	"5" => array(
-         "name" => "TKIT02 Kindergarten Classroom Kit",
+		"name" => "TKIT02 Kindergarten Classroom Kit",
 		 "description" => "This kit includes all of the following: Kindergarten Teacher's Guide, Backpack Bear's Pre-Decodable Phonics Kit, Instructional Cards Kit, Decodable Phonics Kit, Books & Other Media Kit. Includes a free one-year School membership to More.Starfall.com. Required practice books and variable quantity items sold separately.",
 		 "price" => 459.91,
 		 "price_option" => array(),
@@ -171,6 +119,59 @@ $DB = array(
 <li><i>Starfall Sing-Along</i> (vol. 1)</li>
 <li><i>Star Writer Melodies</i></li>
 <li>Starfall (Classic) CD-ROM</li>
+</ul>",
+		 "type" => "Per Classroom Items"
+
+         ),
+	"3" => array(
+         "name" => "NG01 Starfall Speedway & Alphabet Avenue Games",
+		 "description" => "Short description of the product and what it does,why it’s useful or fun, etc.",
+		 "price" => 14.95,
+		 "price_option" => array(),
+		 "old_price" => 7.99,
+		 "product_image" => "NG01_w400-h400.png",
+		 "type_option" => array(),
+		 "details_description" => "<h3>Two complete board games: Starfall Speedway and Alphabet Avenue</h3><p>Both Starfall Speedway and Alphabet Avenue are great games for children to practice phonetic strategies and word recognition. Starfall Speedway is for children ready to start reading.  Skill cards prompt children to identify letter, sound, or word in order to advance their game piece.</p>
+<p>Alphabet Avenue, the other side of the board with alphabet tiles, is for children just learning letter/sound relationships.  No skill cards are required.  Children have the option to name the letter, the sound it represents, or a word beginning with that letter in order to advance their playing piece.</p>
+<p>Enjoy this wonderful, sturdy game set in your classroom or at home.  Both games require collaboration among players, yet there's a clear finish line motivating each player to win!</p><p>Part of our Common Core aligned <a href=\"/order/indexc-kcurric-class.php?idt=FCP9m4HC&&reforderpage=order.indexc-kcurric-class.php&\">Kindergarten Curriculum</a></p>",
+		 "type" => "Per Classroom Items"
+         ),
+	"4" => array(
+         "name" => "NP20 Short-Vowel Puzzle Set (5 sturdy puzzles: a,e,i,o,u)",
+		 "description" => "We recommend 2 sets per class of 20; 3 sets per class of 30.",
+		 "price" => 14.95,
+		 "price_option" => array(),
+		 "old_price" => 7.99,
+		 "product_image" => "NP20_w400-h400.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>This set features five puzzles, each focusing on a short vowel.  After your beginning readers put a puzzle together, encourage them to point and say the pictured short vowel words, and notice the common vowel sounds.
+
+<p>Suggested activities:</p>
+<ul>
+<li>After assembling the puzzle, take turns finding and naming all of the short vowel words.  Listen very carefully to the short vowel words your friends choose; don't repeat their words</li>
+<li>Use clues printed on the box to help find the short vowel words.  Sample short-u clues:  \"A baby bear\" (cub); \"You take a bath in this\" (tub)</li>
+<li>Enjoy coming up with your own clues; your friends guess</li>
+<li>Listen to <i>Starfall Sing-Along</i> (vol. 1), tracks 28-32 (short vowel songs) while you work</li> 
+<li>Which puzzle(s) would you be in? Identify short vowel(s) in your name</li>
+<li>Make up a story using the characters and actions pictured in the puzzle</li>
+</ul>",
+		 "type" => "Per Classroom Items"
+         ),
+	"5" => array(
+                  "name" => "SB554 The Little Red Hen and other Folk Tales",
+		 "description" => "Retold by Starfall - We recommend: at least 1 per class, more for classroom library.",
+		 "price" => 8.95,
+		 "price_option" => array("quantity" => 5,"set_price" => 2.95),
+		 "old_price" => 17.99,
+		 "product_image" => "SB554_w400-h400.png",
+		 "type_option" => array(),
+		 "details_description" => "<p><i>The Little Red Hen and other Folk Tales</i> offers proverbs from around the world with universal themes. Children can compare and contrast the tales or relate them to their own lives. The charming characters and settings are drawn from the cultures and literature of England, America, the Far East and Russia.  </p><h3><i>The Little Red Hen</i> Stories:</h3>
+<ul><li><i>The Little Red Hen</i><br>An English Folk Tale</center></br></li>
+   <li><i>Chicken Little (The Sky Is Falling)</i><br> An English Folk Tale</br></li>
+    <li><i>Mr. Bunny's Carrot Soup</i><br> A Modern American Folk Tale</br></li>
+    <li><i>The Four Friends</i><br> A Tale from the Far East</br></li>
+    <li><i>The Little Rooster</i><br> An American Folk Tale</br></li>
+    <li><i>The Turnip</i><br> A Russian Folk Tale</br></li>
 </ul>",
 		 "type" => "Per Classroom Items"
          ),

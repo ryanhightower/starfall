@@ -12,6 +12,8 @@ if(isset($_POST['single-class'])){
     $location = SITE_URL."/curr-purchase-2.php";
     // $_SERVER['curriculum']['returning'] = $_POST['radio'];
     //echo $_SERVER['curriculum']['returning'];
+	if(isset($_POST['image_option']))
+	$_SESSION['curriculum']['image_option']= $_POST['image_option'];
     header("Location: $location", true);
     exit();
 } elseif(isset($_POST['multiple-class'])){
@@ -23,6 +25,8 @@ if(isset($_POST['single-class'])){
     for($i=0;$i<$num; $i++ ){
       $_SESSION['curriculum']['students'] += $_POST['class'.$i];  
     }
+	if(isset($_POST['image_option']))
+	$_SESSION['curriculum']['image_option']= $_POST['image_option'];
     //$_SESSION['curriculum']['students'] = $_POST['students'];
     $location = SITE_URL."/curr-purchase-2.php";
     // $_SERVER['curriculum']['returning'] = $_POST['radio'];
@@ -34,14 +38,18 @@ if(isset($_POST['single-class'])){
 if(isset($_POST['submit'])){
 //print_r($_SESSION); 
     array_pop($_POST);
-	//print_r($_POST); exit;
+	/*echo "<pre>";
+	print_r($_POST); exit;*/
     // Store Product values and move to next step
     foreach($_POST as $key => $row)
     { 
         $product_key_arr =explode('_',$key);
-      	if(isset($_POST[$key]) && $_POST[$key]!='')
+      	if(isset($_POST[$key]) && $_POST[$key]!='' && $_POST[$key]!=0)
       	{
-      		$_SESSION['curriculum']['cart'][$product_key_arr[1]]= array("quantity" => $_POST[$key],"price" => $DB[$product_key_arr[1]]['price']);
+			if (is_numeric($product_key_arr[1]))
+			{
+				$_SESSION['curriculum']['cart'][$product_key_arr[1]]= array("quantity" => $_POST[$key],"price" => $DB[$product_key_arr[1]]['price']);
+			}
       	}
           //echo $_SESSION['curriculum']['products'][$i]."<br>";
     } 
@@ -112,6 +120,20 @@ get_header_inner();
                     </div>
                     </div>
                     <div class="space20"></div>
+
+				<div class="row">
+                    <div class="grey-box print_image">
+                      <h3 class="text-center">Do you want to order practice books in Block Print or Manuscript? (ex. Block , Manuscript )</h3>
+                      <p>
+                        <label for="radio"><input type="radio" name="image_option" id="blockimage" value="6" class="return-image"> Block&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label><img src="theme/icon/block.png" alt="block" />
+                      </p>
+                       <p>
+                        <label for="radio"><input type="radio" name="image_option" id="manuscript" value="7" class="return-image"> Manuscript &nbsp;</label><img src="theme/icon/man.png" alt="block" width="84px" height="48px" />
+                      </p>
+                    </div>
+                    </div>
+				<div class="space20"></div>
+
                     <div class="row">
                     <div id="no" class="grey-box conditional-1">
                       <h3 class="text-center">Multiple Classrooms or Just one?</h3>
@@ -153,8 +175,7 @@ get_header_inner();
                     </div>
                     </div>
                   </div>
-				  </form>
-<form name="frmquote" id="frmquote" method="post">
+
 	<div class="col-sm-12" id="yes">
 				<div class="row">
                 <div class="col-sm-3">
@@ -164,45 +185,16 @@ get_header_inner();
                 </div>
                 <div class="col-sm-9">		
                  <div class="row">
+				 
                     <div class="grey-box2">
-                     <div class="padsim1">
-                    	<div class="col-sm-9">
-                        <div class="simplleBoldstyle1">Per Student Items<br />
-                       <span> A typical classroom will have one of these per student. Tip:you may want
-to order a few extras for replacements and new student transfers.
-						</span></div></div>
-                        <div class="col-sm-3 text-right">Price</div>
-                        <div class="newClear"></div>
-                    </div>
-	<?php 
-	foreach($DB as $key => $product)
-	{
-		if($product['type']=='Per Student Items')
-		{
-		$product_id = $key;
-	?>
-                     <div class="padsim1">
-                     	<div class="col-sm-9">
-                            <div class="studItemBox">
-                                <span><!--<img data-src="holder.js/25x25" alt="25x25" class="img-circle img-center img-responsive">--><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
-                                <div><strong><?php echo $product['name']; ?></strong><br />
-                                <?php echo $product['description']; ?>
-                                </div> 
-                                <div class="newClear"></div>
-                            </div>
-                        </div>                       
-                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price'];?></span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""><span id="p_cost_<?php echo $product_id; ?>"></span></div>                        
-                        <div class="newClear"></div>
-                     </div> 
-	<?php } }?>
-                     <div class="padsim1">
-                    	<div class="col-sm-9">
-                        
 
-                        <div class="simplleBoldstyle1">Per Classroom Items<br />
-                       <span> A typical classroom will have one or more of each of these per classroom.
-						</span></div></div>
-                        <div class="col-sm-3 text-right">Price</div>
+					<div class="padsim1">
+						<div class="col-sm-8">
+							<div class="simplleBoldstyle1">Per Classroom Items<br />
+						   <span> A typical classroom will have one or more of each of these per classroom.</span>
+							</div>
+						</div>
+                        <div class="col-sm-4 text-left">Price</div>
                         <div class="newClear"></div>
                     </div>
 	<?php 
@@ -213,26 +205,130 @@ to order a few extras for replacements and new student transfers.
 		$product_id = $key;
 	?>
                      <div class="padsim1">
-                     	<div class="col-sm-9">
+                     	<div class="col-sm-8">
                             <div class="studItemBox">
-                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
-                                <div><strong><?php echo $product['name']; ?></strong><br />
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""><span id="p_cost_<?php echo $product_id; ?>"></span></div>                        
+                        <div class="col-sm-4 text-right">
+              						<div class="left_price">
+              						<span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><strong> X </strong><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>
+              						<div class="right_price">
+              						<span id="p_cost_<?php echo $product_id; ?>"></span>
+                          
+						            </div>
+						          </div>                        
+                      <div class="newClear"></div>
+                     </div>
+
+				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
+				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <?php echo $product['details_description']; ?></p>
+				</div>
+	<?php } } ?>	
+	
+					<div class="padsim1">
+                    <div class="col-sm-8">
+                        <div class="simplleBoldstyle1">Required Student Practice Books<br />
+						<span> These require replacement year after year.</span>
+						</div>
+					</div>
+                        <div class="col-sm-4 text-left">Price</div>
+                        <div class="newClear"></div>
+                    </div>
+	<?php 
+	foreach($DB as $key => $product)
+	{
+		if($product['type']=='Practice Books')
+		{
+		$product_id = $key;
+	?>
+                     <div class="padsim1">
+                     	<div class="col-sm-8">
+                            <div class="studItemBox">
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
+                                <?php echo $product['description']; ?>
+                                </div> 
+                                <div class="newClear"></div>
+                            </div>
+                        </div>                       
+                        <div class="col-sm-4 text-right">
+						<div class="left_price">
+						  <span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price'];?></span> <strong> X </strong><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""> </div> 
+              <div class="right_price"><span id="p_cost_<?php echo $product_id; ?>"></span></div>
+              <div class="text-left" style="clear:both;">
+                  <?php if(count($product['price_option'])>0){
+                    echo "Buy ".$product['price_option']['quantity']." or more for $".$product['price_option']['set_price']." each";
+                  }  ?>
+                </div>
+						</div>                        
                         <div class="newClear"></div>
                      </div>
+
+				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
+				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <?php echo $product['details_description']; ?></p>
+				</div>
+				
 	<?php } } ?>
+	
                      <div class="padsim1">
-                    	<div class="col-sm-9">
+                    	<div class="col-sm-8">
+                        <div class="simplleBoldstyle1">Per Student Items<br />
+                       <span> A typical classroom will have one of these per student. Tip:you may want
+to order a few extras for replacements and new student transfers.
+						</span></div></div>
+                        <div class="col-sm-4 text-left">Price</div>
+                        <div class="newClear"></div>
+                    </div>
+	<?php 
+	foreach($DB as $key => $product)
+	{
+		if($product['type']=='Per Student Items')
+		{
+		$product_id = $key;
+	?>
+                     <div class="padsim1">
+                     	<div class="col-sm-8">
+                            <div class="studItemBox">
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
+                                <?php echo $product['description']; ?>
+                                </div> 
+                                <div class="newClear"></div>
+                            </div>
+                        </div>                       
+                        <div class="col-sm-4 text-right">
+						<div class="left_price">
+						  <span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price'];?></span> <strong> X </strong><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""> </div> 
+              <div class="right_price"><span id="p_cost_<?php echo $product_id; ?>"></span></div>
+              <div class="text-left" style="clear:both;">
+                  <?php if(count($product['price_option'])>0){
+                    echo "Buy ".$product['price_option']['quantity']." or more for $".$product['price_option']['set_price']." each";
+                  }  ?>
+                </div>
+						</div>                        
+                        <div class="newClear"></div>
+                     </div> 
+
+				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
+				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <?php echo $product['details_description']; ?></p>
+				</div>
+	<?php } } ?>
+                   
+                     <div class="padsim1">
+                    	<div class="col-sm-8">
                         <div class="simplleBoldstyle1">Optional Items<br />
                        <span> A typical classroom will have one of these per student. Tip:you may want
 to order a few extras for replacements and new student transfers.
 						</span></div></div>
-                        <div class="col-sm-3 text-right">Price</div>
+                        <div class="col-sm-4 text-left">Price</div>
                         <div class="newClear"></div>
                     </div>	
  	<?php 
@@ -243,18 +339,30 @@ to order a few extras for replacements and new student transfers.
 		$product_id = $key;
 	?>
                      <div class="padsim1">
-                     	<div class="col-sm-9">
+                     	<div class="col-sm-8">
                             <div class="studItemBox">
-                                <span><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
-                                <div><strong><?php echo $product['name']; ?></strong><br />
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
                             </div>
                         </div>                       
-                        <div class="col-sm-3 text-right"><span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""><span id="p_cost_<?php echo $product_id; ?>"></span></div>                        
+                        <div class="col-sm-4 text-right">
+						<div class="left_price">
+						<span id="p_price_<?php echo $product_id; ?>">$<?php echo $product['price']; ?></span><strong> X </strong><input type="text" name="product_<?php echo $product_id; ?>" id="product_<?php echo $product_id; ?>" value=""></div>
+						<div class="right_price">
+						<span id="p_cost_<?php echo $product_id; ?>"></span>
+						</div>
+						</div>                        
                         <div class="newClear"></div>
-                     </div> 
+                     </div>
+					 
+				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
+				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <?php echo $product['details_description']; ?></p>
+				</div>
+					 
 <?php } }?>                   
 
                     </div>
@@ -271,17 +379,18 @@ to order a few extras for replacements and new student transfers.
                 </div>
                 <div class="totlaBar">
                 	<strong>Tax </strong><span>$0.00</span>
-                </div>
+                </div>-->
                 <div class="totlaBar2">
                 	<strong>Total </strong><span id="total">$0.00</span>
-                </div>-->
+                </div>
             </div>				
            			<div class="padsim3">
 					<input type="submit" class="btn btn-primary btn-lg" name="submit" value="Add All to Quote"></div>
         		</div>  
 				</div>
-			</form>	
 			</div>
+</form>	
+		
 				</div>
 			</div>
 </section>
@@ -289,16 +398,31 @@ to order a few extras for replacements and new student transfers.
 
 <script type="text/javascript">
 $(document).ready(function(){ 
+$(".print_image").hide();
+
 	$(".return-no").change(function(){
-		$("#yes").hide();
-		$(".conditional-1").hide();
-		$('input[type=text]').val("");
-		$( "#multiple-inputs" ).html( "" );
-		$("#no").show();
+			$("#yes").hide();
+			$(".conditional-1").hide();
+			$('input[type=text]').val("");
+			$( "#multiple-inputs" ).html( "" );
+			$(".print_image").show();
+			if($('#manuscript').prop('checked') || $('#blockimage').prop('checked'))
+			$("#no").show();
+			else
+			$("#no").hide();
+	});	
+	$(".return-image").change(function(){
+
+			$("#yes").hide();
+			$(".conditional-1").hide();
+			$('input[type=text]').val("");
+			$( "#multiple-inputs" ).html( "" );
+			$("#no").show();
 	});	
 	$(".return-yes").change(function(){
 		$(".conditional-1").hide();
 		$(".conditional-2").hide();
+		$(".print_image").hide();
 		$('input[type=text]').val("");
 		$('#radio3').prop('checked', false);
 		$('#radio4').prop('checked', false);
@@ -336,15 +460,23 @@ $(document).ready(function(){
  var total = 0;	
 $('.grey-box2 input[type=text]').each(function(index, element) {
 //alert();
-	$(this).focusout(function() {
+	$(this).keyup(function() {
 	//alert($(this).attr("id"));
 	var id = $(this).attr("id");
 	var id_arr = id.split('_');
 	var product_id = id_arr[1];
 	var product_qty = $(this).val();
-	var price = $('#p_price_'+product_id).html();
-	var split_price_arr = price.split('$');
-	var per_price = parseFloat(split_price_arr[1]);
+	
+$.ajax({
+url: "<?php echo SITE_URL; ?>/product_set_price.php",
+data: {product_id: product_id , quantity: product_qty},
+success: function( data ) {
+$('#p_price_'+product_id).html('$'+data);
+	
+	//var price = $('#p_price_'+product_id).html();
+	//var split_price_arr = price.split('$');
+	//var per_price = parseFloat(split_price_arr[1]);
+	var per_price = parseFloat(data);
 	//per_price = per_price.toFixed(2);
 	if(product_qty=='')
 	var product_cost = 0;
@@ -353,7 +485,9 @@ $('.grey-box2 input[type=text]').each(function(index, element) {
 	product_cost = product_cost.toFixed(2);
 	//alert(product_cost);
 	var p_cost_str = '$'+product_cost;
-	$('#p_cost_'+product_id).html(p_cost_str);
+	$('#p_cost_'+product_id).html(' <strong>=</strong> '+p_cost_str);
+	}
+});
 	/*total = parseFloat(total) + parseFloat(product_cost);
 	total = total.toFixed(2);
 	//alert(total);
@@ -378,7 +512,7 @@ $('.grey-box2 input[type=text]').each(function(index, element) {
 		total = total.toFixed(2);
 		//alert(total);
 		$('#subtotal').html(total);
-		//$('#total').html(total);
+		$('#total').html(total);
 		});
 	});
 
@@ -397,4 +531,12 @@ function validate(evt) {
   }
 }
 </script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('a[rel*=facebox]').facebox({
+        loadingImage : '<?php echo THEME_URL; ?>/icon/loading.gif',
+        closeImage   : '<?php echo THEME_URL; ?>/icon/closelabel.png'
+      })
+    })
+  </script>
 <?php get_footer(); ?>

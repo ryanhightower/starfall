@@ -43,8 +43,8 @@ if(isset($_POST['single-class'])){
 //session_destroy();
 if(isset($_POST['btnsubmitpre'])){
  array_pop($_POST);
-
-$_SESSION['curriculum']['cart'][$_POST['Pre_K_id']]= array("quantity" => 1,"price" => $_POST['curriculum_price']);
+$pre_classroom = $_POST['pre_classroom'];
+$_SESSION['curriculum']['cart'][$_POST['Pre_K_id']]= array("quantity" => $pre_classroom,"price" => $_POST['curriculum_price']);
 $_SESSION['curriculum']['cart'][$_POST['member_id']]= array("quantity" => 1,"price" => $_POST['option_member']);
 //echo "<pre>"; 
 //print_r($_SESSION['Pre_K_Curriculum']['cart']); echo "</pre>"; exit;
@@ -108,7 +108,7 @@ get_header_inner();
 	<input type="hidden" name="Pre_K_id" id="Pre_K_id" value="<?php echo $key; ?>">
                       <div class="col-sm-9">
                             <div class="studItemBox">
-                                <div><strong><?php echo $product['name']; ?></strong> $<?php echo number_format($product['price'], 2); ?><br />
+                                <div><strong><?php echo $product['name']; ?></strong> $<?php echo number_format($product['price'], 2); ?>&nbsp;&nbsp;<label for="textfield2"><input type="text" name="pre_classroom" id="pre_classroom" value="1" /> Classrooms </label><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>

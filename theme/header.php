@@ -17,7 +17,10 @@
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	<!-- holder.js temp images -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.3.0/holder.js"></script>
-
+<!-- JS & CSS prototyping for facebox -->
+	<link rel="stylesheet" type="text/css" href="<?php echo THEME_URL; ?>/js/facebox.css">
+	<script src="<?php echo THEME_URL; ?>/js/facebox.js"></script>
+<!-- JS & CSS prototyping for facebox END -->
 	<script type="text/javascript">
 	$(document).ready(function() {
 		

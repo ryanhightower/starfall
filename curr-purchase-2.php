@@ -1,13 +1,8 @@
-<?php include("includes/functions.php");
-
-
-
+<?php 
+include("includes/functions.php");
 if (session_status() == PHP_SESSION_NONE) {
-
 //    echo "session_start"."<br>";
-
     session_start();
-
 }
 
   // echo "returning: ".$_SESSION['curriculum']['returning']."<br>";
@@ -21,43 +16,25 @@ if (session_status() == PHP_SESSION_NONE) {
 //session_destroy();
 
 if(isset($_POST['submit'])){
-
 //print_r($_SESSION);
-
  array_pop($_POST);
-
+ // echo "<pre>";
+ //print_r($_POST);   echo "</pre>"; exit;
   // Store Product values and move to next step
-
 $i=0;	
-
 foreach($_POST as $key => $row)
-
 { $i++;
-
 $product_key_arr =explode('_',$key);
-
-
-
-	if(isset($_POST[$key]) && $_POST[$key]!='' && $_POST[$key]!=0)
+	if(isset($_POST[$key]) && $_POST[$key]!='' && $_POST[$key]!=0 && $key!='hid_subtotal')
 	{
-
 		$_SESSION['curriculum']['cart'][$product_key_arr[1]]= array("quantity" => $_POST[$key],"price" => $DB[$product_key_arr[1]]['price']);
 	}
-
     //echo $_SESSION['curriculum']['products'][$i]."<br>";
-
   } 
-
- //echo "<pre>";
-
- //print_r($_SESSION['curriculum']['cart']);   echo "</pre>"; exit;
-
+  $_SESSION['curriculum']['subtotal'] = $_POST['hid_subtotal'];
   $next_step = SITE_URL."/curr-purchase-3.php";
-
   header("Location: $next_step", true);
-
   exit();
-
 }
 
 
@@ -172,6 +149,7 @@ get_header_inner();
 
                 <div class="col-sm-9">		
                  <div class="row">
+                 	<p>Below are the recomended products from the Starfall Kindergarten curriculum. Quantities have been pre populated with recommended values.</p>
                     <div class="grey-box2">
 					
 					
@@ -207,9 +185,9 @@ else
 
                             <div class="studItemBox">
 
-                                <span><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
 
-                                <div><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><strong><?php echo $product['name']; ?></strong></a><br />
+                                <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
 
                                 <?php echo $product['description']; ?>
 
@@ -232,7 +210,12 @@ else
                         <div class="newClear"></div>
                      </div>
 
-	<?php } } } ?>
+				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
+				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <?php echo $product['details_description']; ?></p>
+				</div>
+
+				<?php } } } ?>
 
 
                     <div class="padsim1">
@@ -262,23 +245,14 @@ else
 	?>
 
                      <div class="padsim1">
-
                      	<div class="col-sm-8">
-
                             <div class="studItemBox">
-
-                                <span><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
-
-                                <div><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><strong><?php echo $product['name']; ?></strong></a><br />
-
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
                                 <?php echo $product['description']; ?>
-
                                 </div> 
-
                                 <div class="newClear"></div>
-
                             </div>
-
                         </div>                       
 
                         <div class="col-sm-4 text-right">
@@ -290,17 +264,17 @@ else
 						</div>
 				<?php if(count($product['price_option'])>0){ ?>
 						<div class="text-left" style="clear:both;">
-                  
                     <?php echo "Buy ".$product['price_option']['quantity']." or more for $".$product['price_option']['set_price']." each"; ?>
-                  
                 </div>
                 <?php }  ?>
 						</div>                        
-
                         <div class="newClear"></div>
-
                      </div> 
-
+					 
+				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
+				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <?php echo $product['details_description']; ?></p>
+				</div>
 	<?php } } }?>
 
 
@@ -333,23 +307,14 @@ else
 	?>
 
                      <div class="padsim1">
-
                      	<div class="col-sm-8">
-
                             <div class="studItemBox">
-
-                                <span><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
-
-                                <div><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><strong><?php echo $product['name']; ?></strong></a><br />
-
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
                                 <?php echo $product['description']; ?>
-
                                 </div> 
-
                                 <div class="newClear"></div>
-
                             </div>
-
                         </div>                       
 
                         <div class="col-sm-4 text-right">
@@ -361,23 +326,24 @@ else
 						</div>
 				<?php if(count($product['price_option'])>0){ ?>
 						<div class="text-left" style="clear:both;">
-                  
                     <?php echo "Buy ".$product['price_option']['quantity']." or more for $".$product['price_option']['set_price']." each"; ?>
-                  
                 </div>
                 <?php }  ?>
 						</div>                        
-
                         <div class="newClear"></div>
-
                      </div> 
-
+					 
+				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
+				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <?php echo $product['details_description']; ?></p>
+				</div>
 	<?php } } }?>
 
                      
 	<?php
 	$total = number_format(($classroom_total + $practice_total + $student_total), 2, '.', '');
 	?>
+	<input type="hidden" name="hid_subtotal" id="hid_subtotal" value="<?php echo $total; ?>" >
 	<div class="clearfix"></div>	
 		<div class="col-sm-4 fr"> 
         	<div class="totalBox">
@@ -479,6 +445,7 @@ var total = 0;
 		total = total.toFixed(2);
 		//alert(total);
 		$('#subtotal').html(total);
+		$('#hid_subtotal').val(total);
 		//$('#total').html(total);
 		});
 		});
@@ -486,3 +453,11 @@ var total = 0;
 	});
 });
 </script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('a[rel*=facebox]').facebox({
+        loadingImage : '<?php echo THEME_URL; ?>/icon/loading.gif',
+        closeImage   : '<?php echo THEME_URL; ?>/icon/closelabel.png'
+      })
+    })
+  </script>

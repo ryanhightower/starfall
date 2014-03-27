@@ -85,7 +85,7 @@ get_header(); ?>
 						<img src="" alt="" class="pull-left" data-src="holder.js/150x150">
 						<h2>Starfall Pre-K</h2>
 						<p>Lorem ipsum Laboris dolor eu sint ea minim consequat in dolore esse nostrud Ut consectetur ea ad incididunt irure enim.</p>
-						<a href="<?php echo SITE_URL; ?>/curriculum-page.php" id="pre_k" class="btn btn-success redirect">Buy now</a><a href="<?php echo SITE_URL; ?>/curriculum.php" class="btn btn-link">Learn more</a>
+						<a href="<?php echo SITE_URL; ?>/purchase-pre_k.php" id="pre_k" class="btn btn-success redirect">Buy now</a><a href="<?php echo SITE_URL; ?>/curriculum.php" class="btn btn-link">Learn more</a>
 						<div class="clearfix"></div>
 						
 					</div>
@@ -93,7 +93,7 @@ get_header(); ?>
 						<img src="" alt="" class="pull-left" data-src="holder.js/150x150">
 						<h2>Starfall Kindergarten</h2>
 						<p>Lorem ipsum Laboris dolor eu sint ea minim consequat in dolore esse nostrud Ut consectetur ea ad incididunt irure enim.</p>
-						<a href="<?php echo SITE_URL; ?>/curriculum-page.php" id="kindergarten" class="btn btn-success redirect">Buy now</a><a href="<?php echo SITE_URL; ?>/curriculum.php" class="btn btn-link">Learn more</a>
+						<a href="<?php echo SITE_URL; ?>/purchase-kindergarten.php" id="kindergarten" class="btn btn-success redirect">Buy now</a><a href="<?php echo SITE_URL; ?>/curriculum.php" class="btn btn-link">Learn more</a>
 						<div class="clearfix"></div>
 						
 					</div>

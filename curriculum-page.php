@@ -365,8 +365,8 @@ get_header_inner();
                      <div class="padsim1">
                      	<div class="col-sm-8">
                             <div class="studItemBox">
-                                <span><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
-                                <div><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><strong><?php echo $product['name']; ?></strong></a><br />
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
@@ -382,6 +382,11 @@ get_header_inner();
 						          </div>                        
                       <div class="newClear"></div>
                      </div>
+
+				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
+				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <?php echo $product['details_description']; ?></p>
+				</div>
 	<?php } } ?>	
 	
 					<div class="padsim1">
@@ -403,8 +408,8 @@ get_header_inner();
                      <div class="padsim1">
                      	<div class="col-sm-8">
                             <div class="studItemBox">
-                                <span><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
-                                <div><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><strong><?php echo $product['name']; ?></strong></a><br />
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
@@ -421,7 +426,13 @@ get_header_inner();
                 </div>
 						</div>                        
                         <div class="newClear"></div>
-                     </div> 
+                     </div>
+
+				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
+				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <?php echo $product['details_description']; ?></p>
+				</div>
+				
 	<?php } } ?>
 	
                      <div class="padsim1">
@@ -443,8 +454,8 @@ to order a few extras for replacements and new student transfers.
                      <div class="padsim1">
                      	<div class="col-sm-8">
                             <div class="studItemBox">
-                                <span><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
-                                <div><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><strong><?php echo $product['name']; ?></strong></a><br />
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
@@ -462,6 +473,11 @@ to order a few extras for replacements and new student transfers.
 						</div>                        
                         <div class="newClear"></div>
                      </div> 
+
+				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
+				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <?php echo $product['details_description']; ?></p>
+				</div>
 	<?php } } ?>
                    
                      <div class="padsim1">
@@ -483,8 +499,8 @@ to order a few extras for replacements and new student transfers.
                      <div class="padsim1">
                      	<div class="col-sm-8">
                             <div class="studItemBox">
-                                <span><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
-                                <div><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank"><strong><?php echo $product['name']; ?></strong></a><br />
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
                                 <div class="newClear"></div>
@@ -498,7 +514,13 @@ to order a few extras for replacements and new student transfers.
 						</div>
 						</div>                        
                         <div class="newClear"></div>
-                     </div> 
+                     </div>
+					 
+				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
+				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <?php echo $product['details_description']; ?></p>
+				</div>
+					 
 <?php } }?>                   
 
                     </div>
@@ -922,4 +944,12 @@ function validate(evt) {
   }
 }
 </script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('a[rel*=facebox]').facebox({
+        loadingImage : '<?php echo THEME_URL; ?>/icon/loading.gif',
+        closeImage   : '<?php echo THEME_URL; ?>/icon/closelabel.png'
+      })
+    })
+  </script>
 <?php get_footer(); ?>

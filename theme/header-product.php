@@ -33,7 +33,10 @@
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.3.0/holder.js"></script>
 
-
+<!-- JS & CSS prototyping for facebox -->
+	<link rel="stylesheet" type="text/css" href="<?php echo THEME_URL; ?>/js/facebox.css">
+	<script src="<?php echo THEME_URL; ?>/js/facebox.js"></script>
+<!-- JS & CSS prototyping for facebox END -->
 
 	<script type="text/javascript">
 

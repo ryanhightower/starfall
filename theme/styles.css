@@ -514,5 +514,8 @@ ul.list{width:100%; margin-bottom:0px;}
 
 .left_price{float:left;}
 .right_price{float:left; line-height: 25px; text-align: left; width: 67px; margin-left: 5px;}
-
-
+.recomm_thumb{border:1px solid #CCCCCC; float:left; padding:12px; width:690px;}
+.fr .totalBox{margin-top: 0px !important;}
+.recomm_thumb ul {list-style-type:none; margin:0; padding:0; }
+.recomm_thumb ul li { display:inline; padding: 10px; }
+.recomm_thumb .img-responsive { display:inline; }
