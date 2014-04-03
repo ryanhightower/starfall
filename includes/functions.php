@@ -51,7 +51,7 @@ $DB = array(
 		 "price" => 15.75,
 		 "price_option" => array(),
 		 "old_price" => 27.99,
-		 "product_image" => "KIT65_w400-h400.png",
+		 "product_image" => SITE_URL."/product_image/KIT65_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>Get all 3 softcover sets at once. This Mega Set of 15 <i>I'm Reading!</i> books by Margaret Hillert is an indispensable addition to any classroom or home library. Invite beginner readers to relate to their own experiences as they build early literacy.</p><h3>Titles included in this set:</h3>
 <ul><li><i>The No-Tail Cat or, I Like What I Am</i></li><li><i>Three Little Plays</i></li><li><i>Not Too Little to Help</i></li><li><i>Happy Mother's Day, Dear Dragon</i></li><li><i>Penguin, Penguin</i></li><li><i>I Can Do It</i></li><li><i>Dragon Goes to the Farm</i></li><li><i>It's Earth Day, Dear Dragon</i></li><li><i>Pumpkin, Pumpkin</i></li><li><i>Wolves</i></li><li><i>Things That Can Go</i></li><li><i>At the Beach</i></li><li><i>Come Play with Me</i></li><li><i>Rainbow, Rainbow</i></li><li><i>A House in a Tree</i></li></ul>",
@@ -63,7 +63,7 @@ $DB = array(
 		 "price" => 459.91,
 		 "price_option" => array(),
 		 "old_price" => 0,
-		 "product_image" => "TKIT02_w400-h400.png",
+		 "product_image" => SITE_URL."/product_image/TKIT02_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<br>Does NOT include children's practice books and variable quantity items.</br>
 <h3>Kindergarten Classroom Kit:</h3>
@@ -129,7 +129,7 @@ $DB = array(
 		 "price" => 14.95,
 		 "price_option" => array(),
 		 "old_price" => 7.99,
-		 "product_image" => "NG01_w400-h400.png",
+		 "product_image" => SITE_URL."/product_image/NG01_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<h3>Two complete board games: Starfall Speedway and Alphabet Avenue</h3><p>Both Starfall Speedway and Alphabet Avenue are great games for children to practice phonetic strategies and word recognition. Starfall Speedway is for children ready to start reading.  Skill cards prompt children to identify letter, sound, or word in order to advance their game piece.</p>
 <p>Alphabet Avenue, the other side of the board with alphabet tiles, is for children just learning letter/sound relationships.  No skill cards are required.  Children have the option to name the letter, the sound it represents, or a word beginning with that letter in order to advance their playing piece.</p>
@@ -142,7 +142,7 @@ $DB = array(
 		 "price" => 14.95,
 		 "price_option" => array(),
 		 "old_price" => 7.99,
-		 "product_image" => "NP20_w400-h400.png",
+		 "product_image" => SITE_URL."/product_image/NP20_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>This set features five puzzles, each focusing on a short vowel.  After your beginning readers put a puzzle together, encourage them to point and say the pictured short vowel words, and notice the common vowel sounds.
 
@@ -163,7 +163,7 @@ $DB = array(
 		 "price" => 8.95,
 		 "price_option" => array("quantity" => 5,"set_price" => 2.95),
 		 "old_price" => 17.99,
-		 "product_image" => "SB554_w400-h400.png",
+		 "product_image" => SITE_URL."/product_image/SB554_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p><i>The Little Red Hen and other Folk Tales</i> offers proverbs from around the world with universal themes. Children can compare and contrast the tales or relate them to their own lives. The charming characters and settings are drawn from the cultures and literature of England, America, the Far East and Russia.  </p><h3><i>The Little Red Hen</i> Stories:</h3>
 <ul><li><i>The Little Red Hen</i><br>An English Folk Tale</center></br></li>
@@ -181,7 +181,7 @@ $DB = array(
 		 "price" => 5.41,
 		 "price_option" => array(),
 		 "old_price" => 0,
-		 "product_image" => "KIT60_w400-h400.png",
+		 "product_image" => SITE_URL."/product_image/KIT60_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>The complete set of Starfall's Level-K practice books.  All five books are packaged together, making it easier to order for a whole class.  Invite children to practice phonemic skills through multiple pathways of learning.  Listening, writing and reading activities in the practice books; reading practice in the take-home books; free-writing and illustrating invitations in the writing journal; word writing and alphabetizing in the dictionary.</p>
 <p>Purchase one kit for each student in your class, year-after-year, so that each child has these practice materials to build a portfolio of their emerging literary skills.</p>
@@ -203,7 +203,7 @@ $DB = array(
 		 "price" => 5.41,
 		 "price_option" => array(),
 		 "old_price" => 0,
-		 "product_image" => "KIT61_w400-h400.png",
+		 "product_image" => SITE_URL."/product_image/KIT61_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>The complete set of Starfall's Level-K practice books.  All five books are packaged together.  Invite children to practice phonemic skills through multiple pathways of learning.  Listening, writing and reading activities in the practice and take-home books; free-writing and illustrating invitations in the writing journal; word writing and alphabetizing in the dictionary.  The writing journals have plenty of room on each page for illustrations, and four sets of guidelines for writing practice.</p>
 		<p><i>My Starfall Dictionary</i> is an essential tool for children to record new words as they learn to read and write them, becoming personal references for each child.  They offer rudimentary alphabetizing practice so children can differentiate beginning, middle, and end of the alphabet. This Kit offers essential tools for students to gain confidence demonstrating their reading and writing proficiencies; great assessment tools.</p>
@@ -225,7 +225,7 @@ $DB = array(
 		 "price" => 1.45,
 		 "price_option" => array(),
 		 "old_price" => 0,
-		 "product_image" => "NS50_w400-h400.png",
+		 "product_image" => SITE_URL."/product_image/NS50_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>What better way to acknowledge success and celebrate progress than an encouraging message from Backpack Bear and other familiar Starfall characters?</p><p>Consider using stickers to encourage writing success or as rebus prompts for reluctant writers.</p>",
 		 "type" => "Optional Items"
@@ -236,7 +236,7 @@ $DB = array(
 		 "price" => 3.95,
 		 "price_option" => array(),
 		 "old_price" => 0,
-		 "product_image" => "NRS01_w400-h400.png",
+		 "product_image" => SITE_URL."/product_image/NRS01_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>Offer Backpack Bear's stamp of approval for good work. Use it to sign notes from Backpack Bear that you retrieve from his backpack. Consider integrating the stamp into science activities or other creative learning prompts.</p>",
 		 "type" => "Optional Items"
@@ -247,7 +247,7 @@ $DB = array(
 		 "price" => 2.95,
 		 "price_option" => array(),
 		 "old_price" => 1.99,
-		 "product_image" => "WKP100_w400-h400.png",
+		 "product_image" => SITE_URL."/product_image/WKP100_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>\"A #2 Pencil and a dream can take you anywhere!\"  --Joyce Meyer (www.brainyquote.com)</p><p>What better way to encourage your writers than by using their very own Starfall pencil! A staple for your classroom or home learning environment. Enjoy encouraging writing success.</p>",
 		 "type" => "Optional Items"
@@ -258,7 +258,7 @@ $DB = array(
 		 "price" => 1.45,
 		 "price_option" => array(),
 		 "old_price" => 2.50,
-		 "product_image" => "NW03_w400-h400.png",
+		 "product_image" => SITE_URL."/product_image/NW03_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>This sturdy wipe board is an ideal learning surface for children to practice letter formation and build a myriad of literacy skills.  Blank on one side, 3 rows of guidelines on reverse, each 1.5\" high with center guide.  Magnetic dry erase surface is an indispensable tool for each child to fully engage in building literacy!  Multi-purpose: for class, small group, and individual writing activities.   A marvelous formative assessment tool to target instruction.</p><p>Part of our common-core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
 		 "type" => "others"
@@ -269,7 +269,7 @@ $DB = array(
 		 "price" => 395.00,
 		 "price_option" => array(),
 		 "old_price" => 0,
-		 "product_image" => "no_image.png",
+		 "product_image" => SITE_URL."/product_image/no_image.png",
 		 "type_option" => array(),
 		 "details_description" => "",
 		 "type" => "Pre-K Curriculum"
@@ -280,7 +280,7 @@ $DB = array(
 		 "price" => 0,
 		 "price_option" => array(),
 		 "old_price" => 0,
-		 "product_image" => "no_image.png",
+		 "product_image" => SITE_URL."/product_image/data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCI+PHJlY3Qgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNlZWUiPjwvcmVjdD48dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI3NSIgeT0iNzUiIHN0eWxlPSJmaWxsOiNhYWE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LXNpemU6MTJweDtmb250LWZhbWlseTpBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4xNTB4MTUwPC90ZXh0Pjwvc3ZnPg==",
 		 "type_option" => array(
 					 "1" => array("op_name" => "Teacher Membership","op_price" => 70),
 					 "2" => array("op_name" => "Classroom Membership","op_price" => 150),
@@ -295,7 +295,7 @@ $DB = array(
 			 "price" => 11.95,
 			 "price_option" => array("quantity" => 5,"set_price" => 9.95),
 			 "old_price" => 27.99,
-			 "product_image" => "NB30_w400-h400.png",
+			 "product_image" => SITE_URL."/product_image/NB30_w400-h400.png",
 			 "type_option" => array(),
 			 "details_description" => "<p>These pre-decodable primer books are designed to expand children's awareness of how words function in a sentence and reinforce high frequency words. Read about Backpack Bear's community experiences in these 12 rebus stories.</p><h3>Titles included in this set:</h3><ul><li><i>A Computer</i></li><li><i>At School</i></li><li><i>A Rainbow</i></li><li><i>At the Park</i></li><li><i>At the House</i></li><li><i>The Map</i></li><li><i>At the Post Office</i></li><li><i>Come Vote with Me</i></li><li><i>At the Library</i></li><li><i>The Bottle in the River</i></li><li><i>Ruby Goes to School</i></li><li><i>We Can See!</i></li></ul><p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
 			 "type" => ""
@@ -306,7 +306,7 @@ $DB = array(
 			 "price" => 19.95,
 			 "price_option" => array("quantity" => 5,"set_price" => 16.95),
 			 "old_price" => 27.99,
-			 "product_image" => "NB10_w400-h400.png",
+			 "product_image" => SITE_URL."/product_image/NB10_w400-h400.png",
 			 "type_option" => array(),
 			 "details_description" => "<p>Launch your children's reading experiences with these primer books designed for explicit phoncis instruction. Interactive versions of these books are available on Starfall's websites.</p><h3>Titles included in this set:</h3><ul><li><i>Zac the Rat</i></li><li><i>Peg the Hen</i></li><li><i>The Big Hit</i></li><li><i>Mox's Shop</i></li><li><i>Gus the Duck</i></li><li><i>Jake's Tale</i></li><li><i>Pete's Sheep</i></li><li><i>Sky Ride</i></li><li><i>Robot and Mr. Mole</i></li><li><i>Dune Buggy</i></li><li><i>Soap Boat</i></li><li><i>Car Race</i></li><li><i>My Horse Glory</i></li><li><i>Surfer Girl</i></li><li><i>My Family</i></p></ul><p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
 			 "type" => ""
@@ -317,7 +317,7 @@ $DB = array(
 			 "price" => 19.95,
 			 "price_option" => array("quantity" => 5,"set_price" => 16.95),
 			 "old_price" => 27.99,
-			 "product_image" => "NB20_w400-h400.png",
+			 "product_image" => SITE_URL."/product_image/NB20_w400-h400.png",
 			 "type_option" => array(),
 			 "details_description" => "<p>These decodable primer books provide beginner readers with practice connecting letter sounds.</p><h3>Titles included in this set:</h3><ul><li><i>Zac and Cat</i></li><li><i>Zac and the Hat</i></li><li><i>Peg Helps Zac</i></li><li><i>Peg's Egg</i></li><li><i>Hen</i></li><li><i>Mox Jogs</i></li><li><i>Hop, Bend, Stomp</i></li><li><i>Pop! Pop! Pop!</i></li><li><i>Tin Man Sits</i></li><li><i>Fix the Jet</i></li><li><i>Fish and Me</i></li><li><i>Bug in a Jug</i></li><li><i>Get Up, Cub</i></li><li><i>Gus and His Dog</i></li><li><i>Peg and the Box</i></li><li><i>Zig-Zag</i></li></ul><p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
 			 "type" => ""

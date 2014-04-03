@@ -135,8 +135,8 @@ get_header(); ?>
 					</ul>
 				</div>
 				<div class="col-sm-4">
-					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
-					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product-details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product-details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
 				</div>
 			</section>
 			<section class="row">
@@ -151,8 +151,8 @@ get_header(); ?>
 					</ul>
 				</div>
 				<div class="col-sm-4">
-					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
-					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product-details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product-details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
 				</div>
 			</section>
 			<section class="row">
@@ -167,8 +167,8 @@ get_header(); ?>
 					</ul>
 				</div>
 				<div class="col-sm-4">
-					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
-					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product-details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product-details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
 				</div>
 			</section>
 			<section class="row">
@@ -183,8 +183,8 @@ get_header(); ?>
 					</ul>
 				</div>
 				<div class="col-sm-4">
-					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
-					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product-details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product-details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
 				</div>
 			</section>
 			<section class="row">
@@ -199,8 +199,8 @@ get_header(); ?>
 					</ul>
 				</div>
 				<div class="col-sm-4">
-					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
-					<a href="<?php echo SITE_URL; ?>/product_details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product-details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
+					<a href="<?php echo SITE_URL; ?>/product-details.php?product_id=1"><img class="img" data-src="holder.js/100x100" alt=""></a>
 				</div>
 			</section>
 			
