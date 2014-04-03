@@ -1,4 +1,8 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+//    echo "session_start"."<br>";
+    session_start();
+}
 $method = $_POST['method'];
 $redirect = $_POST['redirect'];
 if ($method == "po") { $payMethod = "Checkout w/ purchase order"; }

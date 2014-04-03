@@ -28,7 +28,18 @@ $(document).ready(function() {
 				data: {method:currentId, redirect:redirectLink}
 			}).done(function( data ) {
 				$("#check").html(data);
+				updateSession();
 			});
 		});
+
+		function updateSession(){
+			$.ajax({
+				type: "POST",
+				url: "<?php echo SITE_URL; ?>/includes/ajax.php",
+				data: {fun:"refresh-session"}
+			}).done(function(data){
+				$(".sessions > pre").html(data);
+			});
+		}
 });
 </script>
