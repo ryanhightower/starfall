@@ -39,7 +39,7 @@ switch($_SESSION['user']['payment']){
 // elseif ($_SESSION['user']['payment'] == "off") { $payMethod = "Checkout offline (mail/phone)"; $cart = "Cart"; $submit_message = "Checkout offline (mail/phone)"; }
 
 
-
+//session_destroy();
 
  if(isset($_SESSION['curriculum']['cart']) || isset($_SESSION['Pre_K_Curriculum']['cart'])) {
 		//
@@ -211,8 +211,8 @@ print_r($results);*/
 		//echo $results[$rand_keys[0]] . "\n";
 		//echo $results[$rand_keys[1]] . "\n";
   ?>
- <li><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo$results[$rand_keys[0]]; ?>"><img src="product_image/<?php echo $DB[$results[$rand_keys[0]]]['product_image']; ?>" alt="25x25" width="100px" class="img-center img-responsive"></a></li>
- <li><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo$results[$rand_keys[1]]; ?>"><img src="product_image/<?php echo $DB[$results[$rand_keys[1]]]['product_image']; ?>" alt="25x25" width="100px" class="img-center img-responsive"></a></li>
+ <li><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo$results[$rand_keys[0]]; ?>"><img src="<?php echo $DB[$results[$rand_keys[0]]]['product_image']; ?>" alt="25x25" width="100px" class="img-center img-responsive"></a></li>
+ <li><a href="<?php echo SITE_URL; ?>/product-details.php?product_id=<?php echo$results[$rand_keys[1]]; ?>"><img src="<?php echo $DB[$results[$rand_keys[1]]]['product_image']; ?>" alt="25x25" width="100px" class="img-center img-responsive"></a></li>
   </ul>
   </div>
         <div class="col-sm-3 fr">

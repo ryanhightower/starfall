@@ -185,7 +185,7 @@ else
 
                             <div class="studItemBox">
 
-                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
 
                                 <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
 
@@ -211,7 +211,7 @@ else
                      </div>
 
 				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
-				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <img src="<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
 				<p> <?php echo $product['details_description']; ?></p>
 				</div>
 
@@ -247,7 +247,7 @@ else
                      <div class="padsim1">
                      	<div class="col-sm-8">
                             <div class="studItemBox">
-                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
                                 <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
@@ -272,7 +272,7 @@ else
                      </div> 
 					 
 				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
-				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <img src="<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
 				<p> <?php echo $product['details_description']; ?></p>
 				</div>
 	<?php } } }?>
@@ -309,7 +309,7 @@ else
                      <div class="padsim1">
                      	<div class="col-sm-8">
                             <div class="studItemBox">
-                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="product_image/<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                <span><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><img src="<?php echo $product['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
                                 <div><a href="#product_info_<?php echo $product_id; ?>" rel="facebox"><strong><?php echo $product['name']; ?></strong></a><br />
                                 <?php echo $product['description']; ?>
                                 </div> 
@@ -334,7 +334,7 @@ else
                      </div> 
 					 
 				<div id="product_info_<?php echo $product_id; ?>" style="display:none;">
-				<p> <img src="product_image/<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
+				<p> <img src="<?php echo $product['product_image']; ?>" alt="150x150" class="pull-left img-responsive"></p>
 				<p> <?php echo $product['details_description']; ?></p>
 				</div>
 	<?php } } }?>
