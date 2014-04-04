@@ -12,26 +12,27 @@
 
 
 	<!-- Stylesheets -->
-
 	<link rel="stylesheet" type="text/css" href="<?php echo THEME_URL; ?>/styles.css">
 
 	<!-- jQuery -->
-
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+	<script src="<?php echo SITE_URL; ?>/theme/js/jquery.min.js"></script>
+	
 	<!-- BOOTSTRAP CSS/JS for rapid prototyping -->
 
-	<!-- Latest compiled and minified CSS -->
+		<!-- Latest compiled and minified CSS -->
+<!-- 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"> -->
+		<link rel="stylesheet" href="<?php echo SITE_URL; ?>/theme/css/bootstrap.min.css">
 
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 
-	<!-- Latest compiled and minified JavaScript -->
-
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script> -->
+		<script src="<?php echo SITE_URL; ?>/theme/js/bootstrap.min.js"></script>
 
 	<!-- holder.js temp images -->
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.3.0/holder.js"></script>  -->
+	<script src="<?php echo SITE_URL; ?>/theme/js/holder.js"></script>
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.3.0/holder.js"></script>
 
 <!-- JS & CSS prototyping for facebox -->
 	<link rel="stylesheet" type="text/css" href="<?php echo THEME_URL; ?>/js/facebox.css">
