@@ -60,6 +60,8 @@
 					$("#price-quote").attr('href', '<?php echo SITE_URL; ?>/checkout-cc.php' );
 					$('#cc').attr('id', 'po');
 				}
+
+				$(".sessions > pre").html()
 				
 			});
 		});

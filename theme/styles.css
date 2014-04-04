@@ -1,17 +1,7 @@
 /*
-
-
-
 * Starfall Prototype
-
-
-
 * Author: Ryan Hightower
-
-
-
 */
-
 
 
 /* Session Info */
@@ -20,495 +10,141 @@
 
 body{margin-top: 100px !important;}
 
-
-
 /* Global Styles */
-
-
-
 img.pull-left{margin:0 20px 20px 0;}
-
-
-
 img.pull-right{margin: 0 0 20px 20px;}
-
-
 
 section{border-bottom: #999 1px solid; margin-bottom: 30px; padding-bottom: 40px;}
 
-
-
 .img{background: #eee; color: #aaa; display: block; text-align: center; font-weight: bold; padding: 30px 10px; margin: 10px 0; border-radius: 6px;}
-
-
 
 img.img { padding: 0; display: inline-block; margin: 10px;}
 
-
-
 /* Header */
-
-
-
 header{ /*padding: 30px 0 0;*/ }
-
-
-
-/* Footer */
-
-
-
-footer{padding-bottom: 40px;}
-
-
-
 header{ border-bottom:1px solid #eeeeee; padding-bottom:15px;  width:100%; margin:0 auto 20px auto;}
 
-
-
-
-
-
+/* Footer */
+footer{padding-bottom: 40px;}
 
 .newClear{ clear:both;}
 
-
-
-
-
-
-
 /* Home */
-
-
-
 .price{font-size: 36px; vertical-align: middle;}
 
-
-
-
-
-
-
 /* Sidebar */
-
-
-
 #sidebar li{ margin: 20px 0;}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* custom Styles */
-
-
-
-
-
-
-
 .purchse-btn{margin-top:7%;}
-
-
-
 /*.purchse-btn button{border-radius:20px;}*/
-
-
-
-
-
-
-
 ul.list{margin:0 0 10px 15px; padding:0; width:45%; float:left;}
-
-
-
 ul.list li{list-style-type:disc;}
 
-
-
-
-
-
-
-
-
-
-
 .form-group input[type=text], .form-group input[type=password]{width:98%; border:1px solid #D7D7D7; height:30px;}
-
-
-
 .form-group label{font-weight:normal; font-size:13px;}
-
-
-
-
-
-
 
 .space20{margin-bottom:20px; clear:both;}
 
-
-
 img.img-center {margin:0 auto;}
 
-
-
-
-
-
-
 .grey-box{background:#ebebeb; padding:2% 10%; margin-bottom:15px; font-size:13px; font-weight:normal;}
-
-
-
 .grey-box input[type=text]{width:50px; height:25px; border:1px solid #D7D7D7;}
-
-
-
-
-
-
-
 .grey-box2{background:#ebebeb; padding:2% 5%; margin-bottom:15px; font-size:13px; font-weight:normal;}
-
-
-
 .grey-box2 input[type=text]{width:50px; height:25px; border:1px solid #D7D7D7;}
-
-
-
-
-
-
-
-.white-box{ padding:2% 0; margin-bottom:15px; font-size:13px; font-weight:normal;}
-
-
-
-.white-box input[type=text]{width:50px; height:25px; border:1px solid #D7D7D7;}
-
-
-
-
-
-
-
 .grey-box3{ padding:2% 5%; margin-bottom:15px; font-size:13px; font-weight:normal; background-color:#ebebeb;}
-
-
-
 .grey-box3 input[type=text]{width:50px; height:25px; border:1px solid #D7D7D7;}
 
-
-
-
-
-
+.white-box{ padding:2% 0; margin-bottom:15px; font-size:13px; font-weight:normal;}
+.white-box input[type=text]{width:50px; height:25px; border:1px solid #D7D7D7;}
 
 .top_rightCorner{ float:right; text-align:right; padding:35px 0 0 0;}
-
-
-
 .top_rightCorner a{ color:#999999;}
-
-
-
 .top_rightCorner a:hover{ color:#999999; text-decoration:none;}
-
-
-
-
-
-
-
 .top_rightCorner a.check{ color:#999999; background: url("icon/right_iconpic1.jpg") no-repeat right 0; padding:10px 45px 10px 0; line-height:20px;}
-
-
-
-.top_rightCorner .dropdown-menu {
-
-
-
-background-color: #ebebeb; border:none; border-radius:0; box-shadow:none; min-width:200px; font-size:12px;
-
-
-
-}
-
-
-
-
-
-
-
-.top_rightCorner .dropdown-menu li.one a {
-
-
-
-background: url("icon/right_iconpic1.jpg") no-repeat 98% 4px; padding:5px 30px 10px 0;
-
-
-
-}
-
-
-
-
-
-
-
-.top_rightCorner .dropdown-menu li.two a {
-
-
-
-background: url("icon/right_iconpic2.jpg") no-repeat 98% 4px; padding:5px 30px 10px 0;
-
-
-
-}
-
-
-
-
-
-
-
-.top_rightCorner .dropdown-menu li.three a {
-
-
-
-background: url("icon/right_iconpic3.jpg") no-repeat 98% 4px; padding:5px 30px 10px 0;
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
+.top_rightCorner .dropdown-menu { background-color: #ebebeb; border:none; border-radius:0; box-shadow:none; min-width:200px; font-size:12px;}
+.top_rightCorner .dropdown-menu li.one a {background: url("icon/right_iconpic1.jpg") no-repeat 98% 4px; padding:5px 30px 10px 0;}
+.top_rightCorner .dropdown-menu li.two a {background: url("icon/right_iconpic2.jpg") no-repeat 98% 4px; padding:5px 30px 10px 0;}
+.top_rightCorner .dropdown-menu li.three a {background: url("icon/right_iconpic3.jpg") no-repeat 98% 4px; padding:5px 30px 10px 0;}
 
 .padsim1{ padding-bottom: 10px; margin: 20px 0;}
 
-
-
 .simplleBoldstyle1{ font-weight:bold; font-size:18px;}
-
-
-
 .simplleBoldstyle1 span{ font-weight:normal; font-size:12px; line-height:15px !important; display:block;}
-
-
 
 .conditional-1, .conditional-2, #yes, .num-classrooms { display:none; }
 
-
-
 .studItemBox{ padding:0; margin:0;}
-
-
-
-.studItemBox span{ padding: 0;
-margin: 0px 15px 0px 0px;
-float: left;
-width: 100px; }
-
-
-
+.studItemBox span{ padding: 0; margin: 0px 15px 0px 0px; float: left; width: 100px; }
 .studItemBox div{ padding:0; margin:0; /*float:left;*/ }
 
-
-
-
-
-
-
 .padsim2{ padding-bottom:10px; border-bottom:1px solid #cccccc; margin-bottom:10px;}
-
-
+.padsim3{ text-align:center; padding:15px 0 0 0;}
+.padsim4{ padding:15px 0 35px 0;}
 
 .rightfinshedBox{ padding:0; margin:0;}
-
-
-
 .rightfinshedBox span{ padding:0; margin:0; float:left; width:40px;}
-
-
-
 .rightfinshedBox span.moresapce{ padding:0; margin:0; float:left; width:80px;}
-
-
-
 .rightfinshedBox input{ padding:0; margin:0 9px 0 0; float:left; text-align:center;}
-
-
-
 .rightfinshedBox img{ padding:0; margin:0; float:left;}
-
-
-
-
-
-
 
 .simplecartTxt{ text-align:right; color:#00F;}
 
-
-
-
-
-
-
 .fr{ float:right !important;}
 
-
-
 .totalBox{ background-color:#ebebeb; padding:12px; margin-top: 30px; }
-
-
-
 .totalBox2{ background-color:#ffffff; padding:12px;}
-
-
-
 .totlaBar{ padding:0 5px 5px 10px;}
-
-
-
 .totlaBar strong,totlaBar span{ float:left; width:50%;}
-
-
-
-
-
-
-
 .totlaBar2{ padding:6px 30px 5px 30px; border-top:2px solid #FFF;}
-
-
-
 .totlaBar2 strong,totlaBar2 span{ float:left; width:50%;}
 
-
-
-.padsim3{ text-align:center; padding:15px 0 0 0;}
-
-
-
-.padsim4{ padding:15px 0 35px 0;}
-
-
-
-
-
-
-
 a.print{background: url("icon/normal_icon3.jpg") no-repeat 98% 4px; padding:5px 40px 10px 0; margin-right:50px;}
-
-
-
 a.email{background: url("icon/normal_icon4.jpg") no-repeat 98% 4px; padding:5px 40px 10px 0;}
 
-
-
-
-
 .dropdown{ margin-top:20px;}
-
 .dropdown a{color:#a19999; background:url(icon/arrow.jpg) right center no-repeat; padding-right:20px;}
-
 .dropdown a:hover{color:#a19999; text-decoration:none;}
-
 .dropdown-menu > li > a{background:none; color:#0066cc !important;}
-
 .dropdown-menu{background:#e5e5e5 !important;}
 
-
-
 .top-links{margin-top:20px;}
-
 .top-links a{color:#a19999;}
 
-
-
 .change{margin-top:20px; height:38px;}
-
 .change a{color:#0066cc; background:url(icon/right_iconpic1.jpg) left top no-repeat; padding-left:50px; line-height:38px; display:block;}
 
-
-
 .store-nav{margin-bottom:15px;}
-
 .store-nav ul.nav > li > a{padding-top:0 !important; color:#99999b !important;}
-
 .store-nav ul.nav > li > a:hover{color:#0066cc !important; background:none !important;}
 
-
-
 .featured-product{width:90%; margin:0 auto;}
-
 /*.featured-product img{float:left; margin-right:20px;}*/
 
-
-
 .pro-list{text-align:center; font-size:11px; line-height:18px;}
-
 .pro-list span{color:#0A0A0A;}
-
 .pro-list img{display:inline-block !important; margin-bottom:10px;}
 
-
-
-.cut-price{text-decoration:line-through;}
+.product-info{text-align: center;}
+.product-info > img { margin: 0 auto;}
+.featured-product .price, .product-info .cut-price{text-decoration:line-through;}
+.featured-product .price, .product-info .price{ color: #FF1D25; font-size: 14px; vertical-align: baseline;}
 
 input.btn-cart{background:url(icon/btn-cart.jpg) left top no-repeat; width:100px; height:29px; border:0; color:#fff; cursor:pointer;}
 
-
-
-
-
 .credit_card  {}
-
 .credit_card  label{ width:150px}
-
 .credit_card  select{ vertical-align: top; }
 .credit_card  input[type="text"], .credit_card input[type="password"]{ width:43%; margin:0px 0 10px 0; vertical-align: top;}
-
 .credit_card  input[type="submit"]{ margin:0px 0 0 150px}
 
 #qty_id { width:85px; border:1px solid #D7D7D7}
 
-
 #frmproduct .col-sm-3, #frmproduct .col-sm-1 { line-height:34px; }
 #frmproduct .col-sm-3 label, #frmproduct .col-sm-1 label { margin:0px; }
 .col-md-2.hello { margin:35px 0 0 0; }
-@media (max-width: 768px) {
 
-ul.list{width:100%; margin-bottom:0px;}	
-
-.credit_card  input[type="submit"]{ margin:0 0 0 0}
-
-.credit_card  input[type="text"]{ width:90%;}	
-
-}
 #frmproduct .col-md-2 { width: 40% !important;}
 #frmproduct .col-md-10 { width: 60% !important;}
 
@@ -519,3 +155,15 @@ ul.list{width:100%; margin-bottom:0px;}
 .recomm_thumb ul {list-style-type:none; margin:0; padding:0; }
 .recomm_thumb ul li { display:inline; padding: 10px; }
 .recomm_thumb .img-responsive { display:inline; }
+
+
+@media (max-width: 768px) {
+
+	ul.list{width:100%; margin-bottom:0px;}	
+
+	.credit_card  input[type="submit"]{ margin:0 0 0 0}
+
+	.credit_card  input[type="text"]{ width:90%;}	
+
+}
+
