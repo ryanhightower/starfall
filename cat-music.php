@@ -27,7 +27,7 @@ get_header_product(); ?>
 			<div class="featured-product">
 			<img data-src="holder.js/150x150" alt="150x150" class="img-circle pull-left img-responsive">
 			
-			<p class="book_left_small">Categorydescription. Each pack contains 5 sheets of colorful stickersfeaturing Zac, Peg, Mox, Tin Man, Gus, and introducing Backpack Bear.</p>
+			<p class="book_left_small">Category description. Each pack contains 5 sheets of colorful stickersfeaturing Zac, Peg, Mox, Tin Man, Gus, and introducing Backpack Bear.</p>
 			</div>
 			<div class="clearfix"></div>
             
