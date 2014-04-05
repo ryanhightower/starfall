@@ -68,7 +68,7 @@ get_header_product(); ?>
 		  <div class="row">
 			<div class="col-md-3 product-info">
 				<h4 class="bookTtile">Starfall Sing-Along Volume 1 (CD included)</h4>
-				<img src="http://starfall.dev/product_image/SB912_w150-h150.png <?php echo SITE_URL; ?>/product_image/SB912_w150-h150.png" alt="100x100" class="img-responsive"><br>
+				<img src="<?php echo SITE_URL; ?>/product_image/SB912_w150-h150.png" alt="100x100" class="img-responsive"><br>
 				<div class="product-price"><span class="cut-price">$12.05</span> <span class="price">$7.95</span></div>
 				<a href="#">Add to cart</a>
 				<p>Your children will love to sing and dance along with this collection of 49 favorite songs, nursery rhymes and chants.</p>
