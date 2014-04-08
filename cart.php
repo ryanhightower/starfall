@@ -123,7 +123,7 @@ var serial_ids =$('#cart').serializeArray();
 
         <div class="row">
         <div class="col-sm-12">	
-<form name="cart" id="cart" method="post">		
+        <form name="cart" id="cart" method="post">		
             <div class="row">
                 <div class="white-box">
                     <div class="padsim1">
@@ -139,35 +139,38 @@ var serial_ids =$('#cart').serializeArray();
                     		$products_total = 0;
                     		foreach($_SESSION['curriculum']['cart'] as $key => $product)
                             {
+                                
                                 $products_total = $products_total + ($product['quantity'] * $product['price']);
+                                $product_url = SITE_URL.'/product-details.php?product_id='. $key; 
+                                
                                 ?>
-                     <div class="padsim2">
-                        <div class="col-sm-10">
-                            <div class="studItemBox">
-                                <span><img src="<?php echo $DB[$key]['product_image']; ?>" alt="25x25" class="img-center img-responsive"></span>
-                                <div><strong><?php echo $DB[$key]['name']; ?></strong><br />
-                                    <?php echo $DB[$key]['description']; ?>
-                                </div> 
-                                <div class="newClear"></div>
-                            </div>
-                        </div>                       
-                        <div class="col-sm-2">
-                            <div class="rightfinshedBox">
-                                <span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="products_<?php echo $key;?>" id="products_<?php echo $key;?>" value="<?php echo $product['quantity']; ?>">
-                                <a href="javascript:void(0);" onclick="return cartupdate();"><img src="<?php echo THEME_URL; ?>/icon/update.png" alt="update" class="" width="25" height="25"></a>
-                                <div class="newClear"></div>
-                            </div>
-                        </div>                        
-                        <div class="newClear"></div>
-                     </div> 
-    		          <?php 
-                    } 
-                } ?>
+                                <div class="padsim2">
+                                    <div class="col-sm-10">
+                                        <div class="studItemBox">
+                                            <span><a href="<?php echo $product_url; ?>"><img src="<?php echo $DB[$key]['product_image']; ?>" alt="25x25" class="img-center img-responsive"></a></span>
+                                            <div><strong><a href="<?php echo $product_url; ?>"><?php echo $DB[$key]['name']; ?></a></strong><br />
+                                                <?php echo $DB[$key]['description']; ?>
+                                            </div> 
+                                            <div class="newClear"></div>
+                                        </div>
+                                    </div>                       
+                                    <div class="col-sm-2">
+                                        <div class="rightfinshedBox">
+                                            <span>$<?php echo $product['price']; ?>&nbsp;</span><input type="text" name="products_<?php echo $key;?>" id="products_<?php echo $key;?>" value="<?php echo $product['quantity']; ?>">
+                                            <a href="javascript:void(0);" onclick="return cartupdate();"><img src="<?php echo THEME_URL; ?>/icon/update.png" alt="update" class="" width="25" height="25"></a>
+                                            <div class="newClear"></div>
+                                        </div>
+                                    </div>                        
+                                    <div class="newClear"></div>
+                                 </div> 
+                		          <?php 
+                                } 
+                            } ?>
 
-            </div>
+                    </div>
 
-        </div>
-</form> 
+                </div>
+            </form> 
 		<?php 
 		  if(isset($_SESSION['Pre_K_Curriculum']['cart'])){ ?>
 

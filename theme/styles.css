@@ -119,8 +119,7 @@ a.email{background: url("icon/normal_icon4.jpg") no-repeat 98% 4px; padding:5px 
 .store-nav ul.nav > li > a{padding-top:0 !important; color:#99999b !important;}
 .store-nav ul.nav > li > a:hover{color:#0066cc !important; background:none !important;}
 
-.featured-product{width:90%; margin:0 auto;}
-/*.featured-product img{float:left; margin-right:20px;}*/
+
 
 .pro-list{text-align:center; font-size:11px; line-height:18px;}
 .pro-list span{color:#0A0A0A;}
@@ -128,6 +127,9 @@ a.email{background: url("icon/normal_icon4.jpg") no-repeat 98% 4px; padding:5px 
 
 .product-info{text-align: center;}
 .product-info > img { margin: 0 auto;}
+
+.featured-product{font-size: 18px; margin:0 auto;}
+.featured-product img{ max-width: 150px; height: auto; }
 .featured-product .price, .product-info .cut-price{text-decoration:line-through;}
 .featured-product .price, .product-info .price{ color: #FF1D25; font-size: 14px; vertical-align: baseline;}
 

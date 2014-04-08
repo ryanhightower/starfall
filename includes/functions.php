@@ -43,7 +43,7 @@ function get_dropdown(){
 * Mock Database
 * setup the global $DB array to act like the product database
 */
-global $DB;
+global $DB , $DB_cat;
 $DB = array(
 	"1" => array(
          "name" => "KIT65 'I'm Reading!' Mega Set of 15 Books",
@@ -55,7 +55,8 @@ $DB = array(
 		 "type_option" => array(),
 		 "details_description" => "<p>Get all 3 softcover sets at once. This Mega Set of 15 <i>I'm Reading!</i> books by Margaret Hillert is an indispensable addition to any classroom or home library. Invite beginner readers to relate to their own experiences as they build early literacy.</p><h3>Titles included in this set:</h3>
 <ul><li><i>The No-Tail Cat or, I Like What I Am</i></li><li><i>Three Little Plays</i></li><li><i>Not Too Little to Help</i></li><li><i>Happy Mother's Day, Dear Dragon</i></li><li><i>Penguin, Penguin</i></li><li><i>I Can Do It</i></li><li><i>Dragon Goes to the Farm</i></li><li><i>It's Earth Day, Dear Dragon</i></li><li><i>Pumpkin, Pumpkin</i></li><li><i>Wolves</i></li><li><i>Things That Can Go</i></li><li><i>At the Beach</i></li><li><i>Come Play with Me</i></li><li><i>Rainbow, Rainbow</i></li><li><i>A House in a Tree</i></li></ul>",
-		 "type" => "Per Student Items"
+		"type" => "Per Student Items",
+		"category_id" => "0"
          ),
 	"2" => array(
 		"name" => "TKIT02 Kindergarten Classroom Kit",
@@ -120,7 +121,8 @@ $DB = array(
 <li><i>Star Writer Melodies</i></li>
 <li>Starfall (Classic) CD-ROM</li>
 </ul>",
-		 "type" => "Per Classroom Items"
+		"type" => "Per Classroom Items",
+		"category_id" => "0"
 
          ),
 	"3" => array(
@@ -134,7 +136,8 @@ $DB = array(
 		 "details_description" => "<h3>Two complete board games: Starfall Speedway and Alphabet Avenue</h3><p>Both Starfall Speedway and Alphabet Avenue are great games for children to practice phonetic strategies and word recognition. Starfall Speedway is for children ready to start reading.  Skill cards prompt children to identify letter, sound, or word in order to advance their game piece.</p>
 <p>Alphabet Avenue, the other side of the board with alphabet tiles, is for children just learning letter/sound relationships.  No skill cards are required.  Children have the option to name the letter, the sound it represents, or a word beginning with that letter in order to advance their playing piece.</p>
 <p>Enjoy this wonderful, sturdy game set in your classroom or at home.  Both games require collaboration among players, yet there's a clear finish line motivating each player to win!</p><p>Part of our Common Core aligned <a href=\"/order/indexc-kcurric-class.php?idt=FCP9m4HC&&reforderpage=order.indexc-kcurric-class.php&\">Kindergarten Curriculum</a></p>",
-		 "type" => "Per Classroom Items"
+		"type" => "Per Classroom Items",
+		"category_id" => "0"
          ),
 	"4" => array(
          "name" => "NP20 Short-Vowel Puzzle Set (5 sturdy puzzles: a,e,i,o,u)",
@@ -155,7 +158,8 @@ $DB = array(
 <li>Which puzzle(s) would you be in? Identify short vowel(s) in your name</li>
 <li>Make up a story using the characters and actions pictured in the puzzle</li>
 </ul>",
-		 "type" => "Per Classroom Items"
+		"type" => "Per Classroom Items",
+		"category_id" => "0"
          ),
 	"5" => array(
                   "name" => "SB554 The Little Red Hen and other Folk Tales",
@@ -173,7 +177,8 @@ $DB = array(
     <li><i>The Little Rooster</i><br> An American Folk Tale</br></li>
     <li><i>The Turnip</i><br> A Russian Folk Tale</br></li>
 </ul>",
-		 "type" => "Per Classroom Items"
+		"type" => "Per Classroom Items",
+		"category_id" => "0"
          ),
 	"6" => array(
          "name" => "KIT60 Block Print - Practice Books Kit",
@@ -195,7 +200,8 @@ $DB = array(
 <li><i>My Starfall Dictionary</i></li>
 </ul>
 <p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-		 "type" => "Practice Books"
+		"type" => "Practice Books",
+		"category_id" => "0"
          ),
 	"7" => array(
          "name" => "KIT61 Manuscript - Practice Books Kit",
@@ -217,7 +223,8 @@ $DB = array(
 		<li><i>My Starfall Dictionary</i></li>
 		</ul>
 		<p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-		 "type" => "Practice Books"
+		"type" => "Practice Books",
+		"category_id" => "0"
          ),
 	"8" => array(
          "name" => "NS50 Backpack Bear's Level-K Stickers",
@@ -228,7 +235,8 @@ $DB = array(
 		 "product_image" => SITE_URL."/product_image/NS50_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>What better way to acknowledge success and celebrate progress than an encouraging message from Backpack Bear and other familiar Starfall characters?</p><p>Consider using stickers to encourage writing success or as rebus prompts for reluctant writers.</p>",
-		 "type" => "Optional Items"
+		 "type" => "Optional Items",
+		"category_id" => "0"
          ),
     "9" => array(
          "name" => "NRS01 Backpack Bear's Paw Print Stamp",
@@ -239,7 +247,8 @@ $DB = array(
 		 "product_image" => SITE_URL."/product_image/NRS01_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>Offer Backpack Bear's stamp of approval for good work. Use it to sign notes from Backpack Bear that you retrieve from his backpack. Consider integrating the stamp into science activities or other creative learning prompts.</p>",
-		 "type" => "Optional Items"
+		 "type" => "Optional Items",
+		 "category_id" => "0"
          ),
 	"10" => array(
          "name" => "WKP100 Pack of 100 Starfall Pencils",
@@ -250,7 +259,8 @@ $DB = array(
 		 "product_image" => SITE_URL."/product_image/WKP100_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>\"A #2 Pencil and a dream can take you anywhere!\"  --Joyce Meyer (www.brainyquote.com)</p><p>What better way to encourage your writers than by using their very own Starfall pencil! A staple for your classroom or home learning environment. Enjoy encouraging writing success.</p>",
-		 "type" => "Optional Items"
+		 "type" => "Optional Items",
+		 "category_id" => "0"
          ),
 	"11" => array(
          "name" => "NW03 Magnetic Dry Erase Board",
@@ -261,7 +271,8 @@ $DB = array(
 		 "product_image" => SITE_URL."/product_image/NW03_w400-h400.png",
 		 "type_option" => array(),
 		 "details_description" => "<p>This sturdy wipe board is an ideal learning surface for children to practice letter formation and build a myriad of literacy skills.  Blank on one side, 3 rows of guidelines on reverse, each 1.5\" high with center guide.  Magnetic dry erase surface is an indispensable tool for each child to fully engage in building literacy!  Multi-purpose: for class, small group, and individual writing activities.   A marvelous formative assessment tool to target instruction.</p><p>Part of our common-core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-		 "type" => "others"
+		 "type" => "others",
+		 "category_id" => "0"
          ),
 	"12" => array(
          "name" => "Pre-K Curriculum Kit",
@@ -272,7 +283,8 @@ $DB = array(
 		 "product_image" => SITE_URL."/product_image/no_image.png",
 		 "type_option" => array(),
 		 "details_description" => "",
-		 "type" => "Pre-K Curriculum"
+		 "type" => "Pre-K Curriculum",
+		 "category_id" => "0"
          ),
 	"13" => array(
          "name" => "Membership",
@@ -287,7 +299,8 @@ $DB = array(
 					 "3" => array("op_name" => "School Membership","op_price" => 270)
 					 ),
 		"details_description" => "",
-		 "type" => "Pre-K member"
+		 "type" => "Pre-K member",
+		"category_id" => "0"
          ),
 	"14" => array(
 			 "name" => "NB30 Backpack Bear’s Books Set of 12 Pre-decodable books (6” x 8”)",
@@ -298,7 +311,8 @@ $DB = array(
 			 "product_image" => SITE_URL."/product_image/NB30_w400-h400.png",
 			 "type_option" => array(),
 			 "details_description" => "<p>These pre-decodable primer books are designed to expand children's awareness of how words function in a sentence and reinforce high frequency words. Read about Backpack Bear's community experiences in these 12 rebus stories.</p><h3>Titles included in this set:</h3><ul><li><i>A Computer</i></li><li><i>At School</i></li><li><i>A Rainbow</i></li><li><i>At the Park</i></li><li><i>At the House</i></li><li><i>The Map</i></li><li><i>At the Post Office</i></li><li><i>Come Vote with Me</i></li><li><i>At the Library</i></li><li><i>The Bottle in the River</i></li><li><i>Ruby Goes to School</i></li><li><i>We Can See!</i></li></ul><p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-			 "type" => ""
+			 "type" => "",
+			 "category_id" => "0"
 			 ),
 	"15" => array(
 			 "name" => "NB10 Boxed Set of Learn to Read Books by Starfall - 5 short-vowel books, plus 10 bonus stories",
@@ -309,7 +323,8 @@ $DB = array(
 			 "product_image" => SITE_URL."/product_image/NB10_w400-h400.png",
 			 "type_option" => array(),
 			 "details_description" => "<p>Launch your children's reading experiences with these primer books designed for explicit phoncis instruction. Interactive versions of these books are available on Starfall's websites.</p><h3>Titles included in this set:</h3><ul><li><i>Zac the Rat</i></li><li><i>Peg the Hen</i></li><li><i>The Big Hit</i></li><li><i>Mox's Shop</i></li><li><i>Gus the Duck</i></li><li><i>Jake's Tale</i></li><li><i>Pete's Sheep</i></li><li><i>Sky Ride</i></li><li><i>Robot and Mr. Mole</i></li><li><i>Dune Buggy</i></li><li><i>Soap Boat</i></li><li><i>Car Race</i></li><li><i>My Horse Glory</i></li><li><i>Surfer Girl</i></li><li><i>My Family</i></p></ul><p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-			 "type" => ""
+			 "type" => "",
+			 "category_id" => "0"
 			 ),
 	"16" => array(
 			 "name" => "NB20 Boxed Set of 16 Decodable Short Vowel Pals Books in a sturdy carrying case.",
@@ -320,11 +335,67 @@ $DB = array(
 			 "product_image" => SITE_URL."/product_image/NB20_w400-h400.png",
 			 "type_option" => array(),
 			 "details_description" => "<p>These decodable primer books provide beginner readers with practice connecting letter sounds.</p><h3>Titles included in this set:</h3><ul><li><i>Zac and Cat</i></li><li><i>Zac and the Hat</i></li><li><i>Peg Helps Zac</i></li><li><i>Peg's Egg</i></li><li><i>Hen</i></li><li><i>Mox Jogs</i></li><li><i>Hop, Bend, Stomp</i></li><li><i>Pop! Pop! Pop!</i></li><li><i>Tin Man Sits</i></li><li><i>Fix the Jet</i></li><li><i>Fish and Me</i></li><li><i>Bug in a Jug</i></li><li><i>Get Up, Cub</i></li><li><i>Gus and His Dog</i></li><li><i>Peg and the Box</i></li><li><i>Zig-Zag</i></li></ul><p>Part of our Common Core aligned <a href=\"#\">Kindergarten Curriculum</a></p>",
-			 "type" => ""
-			 )
+			 "type" => "",
+			 "category_id" => "0"
+			 ),
+	"17" => array(
+         "name" => "Starfall Sing-Along Volume 1 (CD included)",
+		 "description" => "A book of lyrics & a CD.",
+		 "price" => 7.95,
+		 "price_option" => array(),
+		 "old_price" => 12.95,
+		 "product_image" => SITE_URL."/product_image/SB912_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>Your children will love to sing and dance along with this collection of 49 favorite songs, nursery rhymes and chants. Softcover book & audio CD, 32 p. 8\" x 5.75.\"</p>",
+		"type" => "Music",
+		"category_id" => 1
+         ),
+	"18" => array(
+         "name" => "Starfall Sing-Along Volume 2 (CD included)",
+		 "description" => "A book of more lyrics & a CD",
+		 "price" => 7.95,
+		 "price_option" => array(),
+		 "old_price" => 12.95,
+		 "product_image" => SITE_URL."/product_image/SB1520_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>Your children will love to sing and dance along with this collection of more of your favorites: 52 songs, nursery rhymes and chants. Softcover book & audio CD, 40 p. 8\" x 5.75.\"</p>",
+		"type" => "Music",
+		"category_id" => 1
+         ),
+	"19" => array(
+         "name" => "Starfall's Selected Nursery Rhymes with CD",
+		 "description" => "Starfall's Selected Nursery Rhymes with CD.",
+		 "price" => 10.95,
+		 "price_option" => array(),
+		 "old_price" => 12.95,
+		 "product_image" => SITE_URL."/product_image/SB1582_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>Children will delight in singing along or chanting with these classic nursery rhymes throughout the year. Vibrant color illustrations. Softcover book and CD, 48 p. 10\" x 8.\"</p>",
+		"type" => "Music",
+		"category_id" => 1
+         ),
+	"20" => array(
+         "name" => "Star Writer Melodies CD",
+		 "description" => "A lovely collection of classical music.",
+		 "price" => 6.99,
+		 "price_option" => array(),
+		 "old_price" => 12.95,
+		 "product_image" => SITE_URL."/product_image/ND60_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>Star Writer Melodies are perfect for encouraging focus or relaxation. This CD of instrumental selections is sure to inspire. Audio CD, 9 tracks, 31 minutes.</p>",
+		"type" => "Music",
+		"category_id" => 1
+         )
 );
 
-
+$DB_cat = array(
+"1" => array(
+         "name" => "Music",
+		 "description" => "Starfall's musical selections inspire children to clap, dance and chant to the beat, reinforcing their reading and math skills with music."),
+"2" => array(
+         "name" => "Books",
+		 "description" => "Starfall's book selections inspire children to clap, dance and chant to the beat, reinforcing their reading and math skills with books."),
+);
 
 
 ?>

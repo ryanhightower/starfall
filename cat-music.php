@@ -4,7 +4,12 @@ if (session_status() == PHP_SESSION_NONE) {
 //    echo "session_start"."<br>";
     session_start();
 }
-get_header_product(); ?>
+get_header_product(); 
+//session_destroy();
+$category_id = 1;
+//print_r($DB_cat[$category_id]);
+//echo THEME_URL;
+?>
 		<div class="container">
 			<div class="col-lg-12 store-nav">
 			<ul class="nav nav-pills">
@@ -23,10 +28,10 @@ get_header_product(); ?>
 		<div class="clearfix"></div>
 			
     	<section class="container">
-			<h2>Music</h2>
+			<h2><?php echo $DB_cat[$category_id]['name']; ?></h2>
 			<div class="featured-product">
-				<img data-src="holder.js/150x150" alt="150x150" class="pull-left img-responsive">			
-				<p>Category description. Each pack contains 5 sheets of colorful stickersfeaturing Zac, Peg, Mox, Tin Man, Gus, and introducing Backpack Bear.</p>
+				<img src="<?php echo THEME_URL ?>/images/music-notes-md.png" alt="Starfall Music" class="pull-left img-responsive">			
+				<p><?php echo $DB_cat[$category_id]['description']; ?></p>
 			</div>
 			<div class="clearfix"></div>
         
@@ -36,66 +41,36 @@ get_header_product(); ?>
 		<section class="container pro-list2 nobod">			
 			
 		  <div class="row">
+	<?php 
+	$j = 0;
+	foreach($DB as $key => $product)
+	{
+		if($product['category_id']=='1')
+		{ 
+		$product_id = $key;
+		$j++;
+	?>		  
 			<div class="col-md-3 product-info">
-				<h4 class="bookTtile">Starfall Sing-Along Volume 1 (CD included)</h4>
-				<img src="<?php echo SITE_URL; ?>/product_image/SB912_w150-h150.png" alt="100x100" class="img-responsive"><br>
-				<div class="product-price"><span class="cut-price">$12.05</span> <span class="price">$7.95</span></div>
-				<a href="#">Add to cart</a>
-				<p>Your children will love to sing and dance along with this collection of 49 favorite songs, nursery rhymes and chants.</p>
+				<a href="<?php echo SITE_URL;?>/product-details.php?product_id=<?php echo $product_id; ?>" target="_blank">
+					<img src="<?php echo $product['product_image']; ?>" alt="100x100" class="img-center img-responsive">
+					<h4 class="bookTtile"><?php echo $product['name']; ?></h4>
+				</a>
+				<p><?php echo $product['description']; ?></p>
+				<div class="product-price">
+					<span class="cut-price">$<?php echo $product['old_price']; ?></span> 
+					<span class="price">$<?php echo $product['price']; ?></span>
+				</div>
+				<a class="btn btn-success" href="javascript:void(0);" onclick="return add_to_cart(<?php echo $product_id; ?>);">Add to cart</a>
             </div>
-            <div class="col-md-3 product-info">
-				<h4 class="bookTtile">Starfall Sing-Along Volume 2 (CD included)</h4>
-				<img src="<?php echo SITE_URL; ?>/product_image/SB1520_w150-h150.png" alt="100x100" class="img-responsive"><br>
-				<div class="product-price"><span class="cut-price">$12.05</span> <span class="price">$7.95</span></div>
-				<a href="#">Add to cart</a>
-				<p>Your children will love to sing and dance along with this collection of 52 favorite songs, nursery rhymes and chants.</p>
-            </div>
-            <div class="col-md-3 product-info">
-				<h4 class="bookTtile">Starfall's Selected Nursery Rhymes with CD</h4>
-				<img src="<?php echo SITE_URL; ?>/product_image/SB1582_w150-h150.png" alt="100x100" class="img-responsive"><br>
-				<div class="product-price"><span class="cut-price">$12.05</span> <span class="price">$7.95</span></div>
-				<a href="#">Add to cart</a>
-				<p>Children will delight in singing along or chanting with these classic nursery rhymes throughout the year. Vibrant color illustrations. Softcover book and CD, 48 p. 10" x 8."</p>
-            </div>
-            <div class="col-md-3 product-info">
-				<h4 class="bookTtile">Star Writer Melodies CD</h4>
-				<img src="<?php echo SITE_URL; ?>/product_image/ND60_w150-h150.png" alt="100x100" class="img-responsive"><br>
-				<div class="product-price"><span class="cut-price">$12.05</span> <span class="price">$7.95</span></div>
-				<a href="#">Add to cart</a>
-				<p>Star Writer Melodies are perfect for encouraging focus or relaxation. This CD of instrumental selections is sure to inspire. Audio CD, 9 tracks,31minutes.</p>
-			</div>
+<?php
+		if($j%4==0)
+		{
+		echo '</div><div class="row">';
+		}
+		}
+	}
+	?>
 		  </div>
-		  <div class="row">
-			<div class="col-md-3 product-info">
-				<h4 class="bookTtile">Starfall Sing-Along Volume 1 (CD included)</h4>
-				<img src="<?php echo SITE_URL; ?>/product_image/SB912_w150-h150.png" alt="100x100" class="img-responsive"><br>
-				<div class="product-price"><span class="cut-price">$12.05</span> <span class="price">$7.95</span></div>
-				<a href="#">Add to cart</a>
-				<p>Your children will love to sing and dance along with this collection of 49 favorite songs, nursery rhymes and chants.</p>
-            </div>
-			<div class="col-md-3 product-info">
-				<h4 class="bookTtile">Starfall Sing-Along Volume 2 (CD included)</h4>
-				<img src="<?php echo SITE_URL; ?>/product_image/SB1520_w150-h150.png" alt="100x100" class="img-responsive"><br>
-				<div class="product-price"><span class="cut-price">$12.05</span> <span class="price">$7.95</span></div>
-				<a href="#">Add to cart</a>
-				<p>Your children will love to sing and dance along with this collection of 52 favorite songs, nursery rhymes and chants.</p>
-			</div>
-			<div class="col-md-3 product-info">
-				<h4 class="bookTtile">Starfall's Selected Nursery Rhymes with CD</h4>
-				<img src="<?php echo SITE_URL; ?>/product_image/SB1582_w150-h150.png" alt="100x100" class="img-responsive"><br>
-				<div class="product-price"><span class="cut-price">$12.05</span> <span class="price">$7.95</span></div>
-				<a href="#">Add to cart</a>
-				<p>Children will delight in singing along or chanting with these classic nursery rhymes throughout the year. Vibrant color illustrations. Softcover book and CD, 48 p. 10" x 8."</p>
-			</div>
-			<div class="col-md-3 product-info">
-				<h4 class="bookTtile">Star Writer Melodies CD</h4>
-				<img src="<?php echo SITE_URL; ?>/product_image/ND60_w150-h150.png" alt="100x100" class="img-responsive"><br>
-				<div class="product-price"><span class="cut-price">$12.05</span> <span class="price">$7.95</span></div>
-				<a href="#">Add to cart</a>
-				<p>Star Writer Melodies are perfect for encouraging focus or relaxation. This CD of instrumental selections is sure to inspire. Audio CD, 9 tracks,31minutes.</p>
-			</div>
-		  </div>
-		
 		<div class="clearfix"></div>
 
 		</section>
@@ -103,3 +78,18 @@ get_header_product(); ?>
 
 
 <?php get_footer(); ?>
+<script>
+function add_to_cart(product_id)
+{
+	$.ajax({
+	url: "<?php echo SITE_URL; ?>/category_product_cart.php",
+	data: {product_id: product_id},
+	success: function( data ) {
+			if(data=="true")
+			{
+				window.location.href="<?php echo SITE_URL;?>/cart.php";
+			}
+		}
+	});
+}
+</script>

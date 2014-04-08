@@ -9,8 +9,8 @@ get_header_product(); ?>
 			<div class="col-lg-12 store-nav">
 			<ul class="nav nav-pills">
 				<li><a href="#">Workbooks</a></li>
-				<li><a href="#">Books</a></li>
-				<li><a href="#">Music</a></li>
+				<li><a href="<?php echo SITE_URL; ?>/cat-books.php">Books</a></li>
+				<li><a class="btn btn-link" href="<?php echo SITE_URL; ?>/cat-music.php">Music</a></li>
 				<li><a href="#">Goodies</a></li>
 				<li><a href="#">Teaching Tool</a></li>
 				<li><a href="#">sKits</a></li>
