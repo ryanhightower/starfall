@@ -385,16 +385,126 @@ $DB = array(
 		 "details_description" => "<p>Star Writer Melodies are perfect for encouraging focus or relaxation. This CD of instrumental selections is sure to inspire. Audio CD, 9 tracks, 31 minutes.</p>",
 		"type" => "Music",
 		"category_id" => 1
+         ),
+	"21" => array(
+         "name" => "Boxed Set of Learn to Read Books",
+		 "description" => "5 short-vowel books, plus 10 bonus stories.",
+		 "price" => 19.95,
+		 "price_option" => array(),
+		 "old_price" => 23.50,
+		 "product_image" => SITE_URL."/product_image/NB10_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>5 short-vowel books, plus 10 bonus stories.</p>",
+		"type" => "Books",
+		"category_id" => 3
+         ),
+	"22" => array(
+         "name" => "Boxed Set of Short-Vowel Pals",
+		 "description" => "16 decodable books, a companion to our first set.",
+		 "price" => 19.95,
+		 "price_option" => array(),
+		 "old_price" => 23.50,
+		 "product_image" => SITE_URL."/product_image/NB20_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>16 decodable books, a companion to our first set.</p>",
+		"type" => "Books",
+		"category_id" => 3
+         ),
+	"23" => array(
+         "name" => "Set of Backpack Bear's Books",
+		 "description" => "12 predecodable books for the earliest readers.",
+		 "price" => 11.95,
+		 "price_option" => array(),
+		 "old_price" => 13.95,
+		 "product_image" => SITE_URL."/product_image/NB30_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>12 predecodable books for the earliest readers.</p>",
+		"type" => "Books",
+		"category_id" => 3
+         ),
+	"24" => array(
+         "name" => "ABC Rhyme Book",
+		 "description" => "A rhyme for each letter of the alphabet.",
+		 "price" => 4.95,
+		 "price_option" => array(),
+		 "old_price" => 5.95,
+		 "product_image" => SITE_URL."/product_image/SB530_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>A rhyme for each letter of the alphabet.</p>",
+		"type" => "Books",
+		"category_id" => 3
+         ),
+	"25" => array(
+         "name" => "Backpack Bear's Plant Book",
+		 "description" => "Learn about plant cycles.",
+		 "price" => 4.95,
+		 "price_option" => array(),
+		 "old_price" => 6.95,
+		 "product_image" => SITE_URL."/product_image/SB776_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>Learn about plant cycles.</p>",
+		"type" => "Books",
+		"category_id" => 4
+         ),
+	"26" => array(
+         "name" => "Backpack Bear's Mammal Book",
+		 "description" => "Learn about vertebrates we call mammals.",
+		 "price" => 4.95,
+		 "price_option" => array(),
+		 "old_price" => 6.95,
+		 "product_image" => SITE_URL."/product_image/SB868_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>Learn about vertebrates we call mammals.</p>",
+		"type" => "Books",
+		"category_id" => 4
+         ),
+	"27" => array(
+         "name" => "Backpack Bear's Reptiles, Amphibians, & Fish Book",
+		 "description" => "Learn about animals we call cold-blooded.",
+		 "price" => 4.95,
+		 "price_option" => array(),
+		 "old_price" => 6.95,
+		 "product_image" => SITE_URL."/product_image/SB882_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>Learn about animals we call cold-blooded.</p>",
+		"type" => "Books",
+		"category_id" => 4
+         ),
+	"28" => array(
+         "name" => "Backpack Bear's Invertebrates Book",
+		 "description" => "Learn about spiders and insects.",
+		 "price" => 4.95,
+		 "price_option" => array(),
+		 "old_price" => 6.95,
+		 "product_image" => SITE_URL."/product_image/SB899_w150-h150.png",
+		 "type_option" => array(),
+		 "details_description" => "<p>Learn about spiders and insects.</p>",
+		"type" => "Books",
+		"category_id" => 4
          )
 );
 
 $DB_cat = array(
 "1" => array(
          "name" => "Music",
-		 "description" => "Starfall's musical selections inspire children to clap, dance and chant to the beat, reinforcing their reading and math skills with music."),
+		 "description" => "Starfall's musical selections inspire children to clap, dance and chant to the beat, reinforcing their reading and math skills with music.",
+		 "parent_id" => 0),
 "2" => array(
          "name" => "Books",
-		 "description" => "Starfall's book selections inspire children to clap, dance and chant to the beat, reinforcing their reading and math skills with books."),
+		 "description" => "Category description. Starfall books will help your child learn to readwith fun and interesting books in both fiction and non-fiction.",
+		 "parent_id" => 0),
+"3" => array(
+         "name" => "<strong>Learn to Read</strong> Books",
+		 "description" => "These are the books children use to learn how to read. The books feature systematic and sequential sound and letter relationships or controlled vocabulary.",
+		 "parent_id" => 2),
+"4" => array(
+         "name" => "<strong>Read to Me</strong> Books",
+		 "description" => "These are the books read to children by adults and are perfect for developing spoken vocabullary and comprchension guided by a teacher. Advancing readers will also appreciate these titles.",
+		 "parent_id" => 2),
+"5" => array(
+         "name" => "Starfall Book Levels",
+		 "description" => "Browse our catalog of books by reading level. Teachers should use their professional judgement of additional qualitative criteria along with reader and task considerations to determine reading level.",
+		 "parent_id" => 2)
 );
 
 
